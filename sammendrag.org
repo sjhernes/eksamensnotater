@@ -149,23 +149,36 @@
      Lage en enkel versjon av programmet, i stor grad for å finne
      krav og passe på at man lager riktig program
 **** Evolusjonære modeller
-     Dette er de modellene vi gjerne bruker i dag, alt ettersom
-     hva som passer prosjektet og de som skal bygge systemet.
-**** inkrementelle
-     Der alle nye krav bygger på et underliggende
-     system
+     Bygger ofte på en liten prototype som et rammeverk som man
+     gradvis utvider med funksjonalitet kunden ønsker og finpusser
+     til prosjektet til slutt er ferdig. Boka anbefaler denne metoden
+     for små til mellomstore prosjekter.
+**** Modulbasert
+     Bygger i så stor grad som mulig på moduler som allerede eksisterer,
+     gjennbruk av kode er et nøkkelord her. Alle prosjekter baserer
+     seg i stor grad på gjennbruk av kode eller andre prosjekter, for eksempel
+     databaser eller andre verktøy, og dette er den fullverdige metoden som 
+     består av å finne flest mulig moduler og heller fokusere tiden på å
+     skape bindemiddel mellom modulene.
+
+     Farene med dette er at modulene kanskje ikke gjør akkurat det man vil
+     og man vil kanskje skape et system som ikke passer helt, men bare godt nok
+
+     Fordelen er jo at ved at man vet at modulene funker i utgangspunktet, vil 
+     man kunne levere prosjektet raskere og med mindre risiko, og man kan også 
+     håpe at noe av oppdateringer senere vil komme gjennom prosjektene som lager
+     modulene.
 **** iterative
-**** spiralmodellen
+     Forandring vil alltid skje i prosjekter
+***** inkrementelle
+      
+***** spiralmodellen
 **** XP
 **** Scrum
 **** RUP
 
 *** Kjenne til ulike typer utviklingsmetoder og prinsipper
     fordeler og ulemper
-**** Modulbasert
-     Fordel at det meste er utvliklet i mindre moduler, som er lette å
-     teste, og med tanke på gjenbruk 
-**** 
 *** Kjenne til ulike faser i de ulike utviklingsmetodene
     samt hvilke krav/leveranse hver fase har
 *** vite hvorfor man setter milepæler
