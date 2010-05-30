@@ -3,7 +3,6 @@
 #+STYLE:     <link rel="stylesheet" type="text/css" href="org.css" />
 
 * TODO Hovedtemaer
-
 ** Hvordan styres utviklingsprosessen
 
 *** Valg av utviklingsprosess
@@ -140,7 +139,7 @@
     - osv
 *** Riktig valg av systemutviklingsmetode
     begrunne valget
-**** fossefall
+**** Fossefall
      Ved enkle og forutsigbare prosjekter, ofte veldig små
      prosjekter kan det være en mulighet å bruke denne, som
      regel vil det være lønnsomt å bruke en mer fleksibel 
@@ -168,12 +167,20 @@
      man kunne levere prosjektet raskere og med mindre risiko, og man kan også 
      håpe at noe av oppdateringer senere vil komme gjennom prosjektene som lager
      modulene.
-**** iterative
-     Forandring vil alltid skje i prosjekter
-***** inkrementelle
+**** Iterative
+     Dele opp prosjektet i flere mini-proskelter (iterasjoner) der
+     hvert mini-prosjekt bruker en annen utviklingsmetode.
+***** Inkrementelle
       
-***** spiralmodellen
+***** Spiralmodellen
 **** XP
+     Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
+     for eksempel par-programering (to programerere på en maskin, pilot og kopilot
+     der piloten programmerer og kopiloten validerer koden fortløpende) og også
+     måter å gjennomføre arkitektur og testing av systemet. Metodene er ikke 
+     nødvendigvis bare gjennomførbare med XP, og brukes ofte som teknikker under
+     andre systemutviklingsprosesser...
+     
 **** Scrum
 **** RUP
 
@@ -272,6 +279,7 @@
     samt forskjell på testing av funksjonelle vs. ikke-funksjonelle krav
 *** Blackbox vs. whitebox-testing
 *** Control Flow Graph?
+    
 *** Enhets-, integrasjons‐ og systemtesting, samt akseptansetesting
 *** V-modell?
 *** Utfordringer ved testing
