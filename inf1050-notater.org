@@ -851,47 +851,43 @@
    - Lag en prototype, test den og utvikle den videre.
 * DONE Kapittel 25 (Ikke hoved) - Managing people
   En av de viktigste rollene ved prosjektledelse, er håndtering av medarbeidere og holde dem motivert.
-
+** valg av arbeidere
   Å velge nye medarbeidere til et prosjekt kan ofte være svært vanskelig, 
   og man er nødt til å analysere hvilke kvaliteter til hvilke stilling man 
   er mest opptatt av. (Teknisk, sosialt, etc.).
+** Motivering av arbeidere
+   Motivasjon er også svært viktig. Uten motivasjon vil arbeidet gå saktere, 
+   og arbeiderene vil ikke bidra like konstruktivt til utviklingen eller for 
+   firmaet, og kan lettere gjøre feil. En måte å motivere på er å gi oppgaver 
+   som er utfordrende, men gjennomførbare, sørge for at arbeidere hele tiden 
+   lærer etc. Samt sørge for et godt sosial miljø.
+** Generalisering rundt mennesketyper
+   Generelt sett har man tre kategorier mennesker, som verdsetter forskjellige ting:
 
-  Motivasjon er også svært viktig. Uten motivasjon vil arbeidet gå saktere, 
-  og arbeiderene vil ikke bidra like konstruktivt til utviklingen eller for 
-  firmaet, og kan lettere gjøre feil. En måte å motivere på er å gi oppgaver 
-  som er utfordrende, men gjennomførbare, sørge for at arbeidere hele tiden 
-  lærer etc. Samt sørge for et godt sosial miljø.
-
-  Generelt sett har man tre kategorier mennesker, som verdsetter forskjellige ting:
-
-  - Oppgave-orienterte: 
-    Motivert av oppgaven de gjør.
-  - Selv-orienterte: 
-    Motivert av suksess.
-  - Interaksjons-orienterte: 
-    Motivert av interaksjon med medarbeidere.
-
-  Hvis det blir for mange medarbeidere på ett prosjekt, deler man inn i grupper, 
-  med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
-  holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
-  De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
+   - Oppgave-orienterte: 
+     Motivert av oppgaven de gjør.
+   - Selv-orienterte: 
+     Motivert av suksess.
+   - Interaksjons-orienterte: 
+     Motivert av interaksjon med medarbeidere.
+** Inndeling i grupper
+ Hvis det blir for mange medarbeidere på ett prosjekt, deler man inn i grupper, 
+ med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
+ holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
+ De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
 
 * DONE Kapittel 29 (Ikke hoved) - Konfigurasjonsstyring (Subversion)
-** Fra bok
-   Siden systemkrav forandrer seg under hele utviklingsprosessen er det vikig med versjonskontroll. 
-
-   Man kan også branche baselinen ut i flere brancher, f.eks. om man lager fere versjoner for flere operativsystemer (Solaris, UNIX, Windows, etc.). 
-
-   Lurt å bruke ett sterkt hierarkisk filstruktur.
-
-   På større prosjekter har man også en *konfigurasjonsdatabase* der man lagrer relevant informasjon til hver versjon. 
-
-   System release er navnet på utgaven som slippes til brukere. For å kalle det en release, bør den inneholde ny funksjonalitet eller hvere laget for en ny platform.
-
-   Til versjonsidentifikasjon bruker man versjonnummerering. Hver release får ett hovedtall f.eks. 1.0, og mindre endringer øker desimaltallet, f.eks. 1.1. Og v2.0 trenger ikke nødvendigvis branche fra siste (1.1), men kan godt branche fra 1.0.
-
-   Det finnes CASE-tools som kan ta hånd om alle disse prosessene og endringhåndtering etc.
-** Fra foil
+  Siden systemkrav forandrer seg under hele utviklingsprosessen er det vikig med versjonskontroll. 
+  
+  Man kan også branche baselinen ut i flere brancher, f.eks. om man lager flere versjoner for 
+  flere operativsystemer (Solaris, UNIX, Windows, etc.). 
+  
+  Til *versjonsidentifisering* kan man bruke /versjonnummerering/. Hver system release 
+  får ett hovedtall f.eks. 1.0, og mindre endringer øker desimaltallet, f.eks. 1.1. v2.0 
+  trenger ikke nødvendigvis branche fra siste (1.1), men kan godt branche fra 1.0.
+   
+  Det finnes CASE-tools som kan ta hånd om alle disse prosessene og endringhåndtering etc.
+** Subversion
    Hvis flere jobber på samme kildefiler, kan det fort bli kluss med forskjellige versjoner av filene. 
    Derfor bruker vi versjonskontrollsystem.
    Subversion løser dette ved å låse tilgang til filen, hvis den allerede blir jobbet med. 
