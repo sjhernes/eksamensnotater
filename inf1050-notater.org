@@ -111,7 +111,19 @@
 * DONE Kapittel 4 - Systemutviklingsprosess
   Hvordan programvare skal produseres. Organiseringen rundt det å skrive kode etc.
   - Økt produktivitet og kvalitet.
-  Systemutviklingsmodeller
+** Programvare er en del av samfunnet. 
+   Utfordringer med å levere tilfredsstillende kvalitet.
+   Tidsplan og budsjett overskrides svært ofte.
+   Mange prosjekter feiler.
+
+   - Livssyklus: 
+     Fra oppstart av utvikling til nedleggelse.
+   - Utviklingsprosess: 
+     Fasene fra oppstart, utvikling til leveranse.
+     
+   Store kostnader med utvikling av systemer og dermed har man over
+   tid fått mange forskjellige utviklingsmodeller som kan hjelpe oss
+   å minimere risiko og kostnad for utviklingen.
 
 ** Fossefallsmodellen: 
   1. Requirements analysis and definition: 
@@ -160,7 +172,6 @@
    Kravene forandrer seg stort under en prosess. Ny teknologi, press utenfra, forandring i ledelse etc. 
    Inkrementelle prosesser prøver å ta forbehold om dette.
    - Systemspesifikasjonene er ikke ferdig før siste inkrement er ferdig.
-
 *** Incremental delivery: 
     Skriver generelle outline-krav og struktur. Så skriver man krav til enkeltinkrementer, utvikler dem og leverer deler, og skriver nye krav til nye inkrementer.
     - Fordeler: 
@@ -198,35 +209,11 @@
 
 **** Software validation:
      Kontrollerer at programvare er slik den skal være, og tilfredsstiller kunden.
+     Hvis godkjent fortsette på ny iterasjon, hvis ikke gå den samme iterasjonen på nytt
 
 **** Software evolution:
      utvikling og vedlikehold knyttes mer og mer sammen, og software-produksjon er en evolusjonær prosess som utvikler seg.
-     RUP (Rational Unified Process)
 
-     Hybrid prosessmodell. Basert på UML.
-     1. Inception: 
-	Buisness-analyse og eventuelt klarsignal.
-     2. Elaboration: 
-	Forstå problem-området, få oversikt over rammeverk-arkitekturen, risk-analyse. Ved slutt har man use case UML.
-     3. Construction: 
-	Programmet utvikles og dokumenteres. 
-     4. Transition: 
-	Fører det over til brukere. 
-
-     Computer-Aided Software Engineering (CASE)
-
-     Kan automatisere noe av utviklingsprosessen.
-     Blant annet grafisk system modeller, generere grafisk brukergrensesnitt, programdebugging, oversette programkode fra gammel til ny.
-
-*** KONKLUSJON: Programvare er en del av samfunnet. 
-    Utfordringer med å levere tilfredsstillende kvalitet.
-    Tidsplan og budsjett overskrides svært ofte.
-    Mange prosjekter feiler.
-
-    - Livssyklus: 
-      Fra oppstart av utvikling til nedleggelse.
-    - Utviklingsprosess: 
-      Fasene fra oppstart, utvikling til leveranse.
 
 ** Prøv-og-feil
    Dårlig idè, man har ingen forutsetninger for å planlegge eller estimere tid
@@ -249,6 +236,24 @@
 
     Arkitektursentrert, objektorienterte utviklingsprinsipper, UML-modelering er sentralt.
     ModellDrevet utvikling
+
+    Hybrid prosessmodell. Basert på UML.
+    1. Inception: 
+       Buisness-analyse og eventuelt klarsignal.
+    2. Elaboration: 
+       - Forstå problem-området
+       - få oversikt over rammeverk-arkitekturen
+       - risk-analyse. 
+       - Ved slutt har man use case UML.
+    3. Construction: 
+       Programmet utvikles og dokumenteres. 
+    4. Transition: 
+       Fører det over til brukere. 
+
+*** Computer-Aided Software Engineering (CASE)
+
+    Kan automatisere noe av utviklingsprosessen.
+    Blant annet grafisk system modeller, generere grafisk brukergrensesnitt, programdebugging, oversette programkode fra gammel til ny.
 
     Blant annet Genova. Tegner UML og får generert kode.
     - Datamodell og klassediagram.
@@ -277,35 +282,36 @@
 
      Engangsoppgave som ikke er utført tidligere. Skal lede til ett bestemt resultat. Krever ulike tverrfaglige ressurser. Begrenset i tid.
 
-*** Vikige elementer i prosjektplanlegging: 
+** Vikige elementer i prosjektplanlegging: 
 
-    Prosjektarbeid er å organisere og kontrollere prosessen. Ulike utviklingsmodeller er forslag/tilnærminger til en løsning.
-    
-    For å Planlegge: brukes resursene riktig?. Oppføligng. Og korreksjon (budsjett, leveransedato).
+   Prosjektarbeid er å organisere og kontrollere prosessen. Ulike utviklingsmodeller er forslag/tilnærminger til en løsning.
+   
+   For å Planlegge: brukes resursene riktig?. Oppføligng. Og korreksjon (budsjett, leveransedato).
 
-     Sytringsgruppen: De økonomiske ineressene. Overordnet styring.
-     Prosjektlederen: Daglig ledelse av prosjektet. Ansvar for fremdrift etc. Skriver rapporter.
+    Styringsgruppen: De økonomiske ineressene. Overordnet styring.
+    Prosjektlederen: Daglig ledelse av prosjektet. Ansvar for fremdrift etc. Skriver rapporter.
 
-     Viktige faktorer
-     - Kostnadsramme
-     - Tidsramme
-     - Personalramme (antall prosjektdeltagere og kompetanse)
-     - Utstyrsramme (maskiner, programvare, nettverk, etc)
-     - Krav til leveransene
-     - Offentlige krav (lover, retningslinjer, etc)
-     - Produksjonstekniske krav
+    Viktige faktorer
+    1. Kostnadsramme
+    2. Tidsramme
+    3. Personalramme (antall prosjektdeltagere og kompetanse)
+    4. Utstyrsramme (maskiner, programvare, nettverk, etc)
+    5. Krav til leveransene
+    6. Offentlige krav (lover, retningslinjer, etc)
+    7. Produksjonstekniske krav
 
-    - Identifisere og planlegge mål og delmål. 
-    - Prioritere oppgaver. 
-    - Estimere arbeidsomfang. 
-    - Beslutte start og sluttdato. 
-    - Holde oversikt over avhengigheter mellom aktiviteter. 
+    Viktige elementer i prosjektplanleggingen
+    1. Identifisere og planlegge mål og delmål. 
+    2. Prioritere oppgaver. 
+    3. Estimere arbeidsomfang. 
+    4. Beslutte start og sluttdato. 
+    5. Holde oversikt over avhengigheter mellom aktiviteter. 
 
-    Bruker timeboxing for å holde angitt tid. Starter med høyeste priorierte oppgaver.
+   Bruker timeboxing for å holde angitt tid. Starter med høyeste priorierte oppgaver.
 
-    Gjør en oppfølging av fremdrift. Alle rapporterer tidsbruk. Planer oppdateres gjenvlig.
+   Gjør en oppfølging av fremdrift. Alle rapporterer tidsbruk. Planer oppdateres gjenvlig.
 
-    Ved korte iterasjoner har man råd til å feile.
+   Ved korte iterasjoner har man råd til å feile.
 
 * DONE Kapittel 5 - Prosjekthåndtering
 ** Management activities: 
