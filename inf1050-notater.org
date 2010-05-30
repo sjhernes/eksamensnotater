@@ -228,15 +228,15 @@
     - Utviklingsprosess: 
       Fasene fra oppstart, utvikling til leveranse.
 
-    Prøv-og-feil
-
-    Oblig-metoden. Funker dårlig på større systemer. Vanskelig for samarbeid.
-    
+** Prøv-og-feil
+   Dårlig idè, man har ingen forutsetninger for å planlegge eller estimere tid
+** TODO Oblig-metoden. Funker dårlig på større systemer. Vanskelig for samarbeid.
+   Utdype?
 ** Prototyping
 
    Introduser for å avhjelpe problemer ved fossefallsmodellen. Lager protyper som du kan vise frem. 
    Greit å vise noe visuelt. (Har både kast-prot. og evolusonær-protyp. (bruker siste utkast).
-   
+
 ** Evolusjonære modeller
 
    Fossefall forutser forutsigbarhet og repeterbar. Det er det ikke. Evolusjon er ett svar på disse modellene. 
@@ -262,6 +262,13 @@
 
 **** XP (Extreme programming) 
 
+     Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
+     for eksempel par-programering (to programerere på en maskin, pilot og kopilot
+     der piloten programmerer og kopiloten validerer koden fortløpende) og også
+     måter å gjennomføre arkitektur og testing av systemet. Metodene er ikke
+     nødvendigvis bare gjennomførbare med XP, og brukes ofte som teknikker under
+     andre systemutviklingsprosesser.
+
      Fokus på programmering, test og tilhørendeteknikker.
      Få krav til spesifikasjon og planlegging. Raske iterasjoner (1-3 uker).
      Ineresentene integrert i prosjektorganisasjonen.
@@ -270,9 +277,11 @@
 
      Engangsoppgave som ikke er utført tidligere. Skal lede til ett bestemt resultat. Krever ulike tverrfaglige ressurser. Begrenset i tid.
 
-     Prosjektarbeid er å organisere og kontrollere prosessen. Ulike utviklingsmodeller er forslag/tilnærminger til en løsning.
+*** Vikige elementer i prosjektplanlegging: 
 
-     For å Planlegge: brukes resursene riktig?. Oppføligng. Og korreksjon (budsjett, leveransedato).
+    Prosjektarbeid er å organisere og kontrollere prosessen. Ulike utviklingsmodeller er forslag/tilnærminger til en løsning.
+    
+    For å Planlegge: brukes resursene riktig?. Oppføligng. Og korreksjon (budsjett, leveransedato).
 
      Sytringsgruppen: De økonomiske ineressene. Overordnet styring.
      Prosjektlederen: Daglig ledelse av prosjektet. Ansvar for fremdrift etc. Skriver rapporter.
@@ -286,7 +295,6 @@
      - Offentlige krav (lover, retningslinjer, etc)
      - Produksjonstekniske krav
 
-*** Vikige elementer i prosjektplanlegging: 
     - Identifisere og planlegge mål og delmål. 
     - Prioritere oppgaver. 
     - Estimere arbeidsomfang. 
@@ -359,15 +367,6 @@
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
   - /System-krav/. 
     En mer detaljert beskrivelse av delene til systemet, og nøyaktig hva som skal bli implementert. Kan være en del av kontrakten.
-
-** Krav til krav
-   kode krav bør bestå disse kravene
-   - Er de forsåelige?
-   - Er det konsistens?
-   - Er det kompletthet?
-   - Er de testbare?
-   - Er de verifiserbare?
-   - Er de relevante?
 
 ** Funksjonelle og ikke-funksjonelle krav
    Programvare-system-krav klassifiseres ofte i tre kategorier funksjonelle, ikke-funksjonelle eller domene-krav.
@@ -468,13 +467,38 @@
    Må ta stilling til at krav kan endres/slettes. Da må endringen dokumenteres, gjøre konsekvensanalyse og implementere. Sporer gjerne endringene i et verktøy.
 
 * DONE Kapittel 7 - Kravspesifisering
-** Studie av gjennomførbarheten
-   Først starter man med å se om prosjektet er gjennomførbart, teknologisk, tidsmessig, kostnadsmessig, og i forhold til målene for selskapet.
+** Foranalyse - Kravinnsamling og research
+              
+   Uten en skikkelig foranalyse kan det være vanskelig
+   å vite hvilke risikoer som er involvert, om systemet
+   trengs, eller om det har livets rett økonomisk sett.
+   
+   Forutsigbarheten for prosjektet øker og man vil være
+   bedre i stand til å levere prosjektet til rett tid eller
+   minimere overskridelser av planen
+
+   Første spørsmålene man må spørre seg er har dette systemet livets rett?
+   - er prosjektet gjennomførbart?
+   - teknologisk gjennomførbart?
+   - er det tidsmessig og kostnadsmessig lønnsomt
+   - og samsvarer systemet med målene til selskapet
+
    Man finner så informasjon i forhold til disse problemene, og lager en rapport på bakgrunn av dette.
    Man ser også på om dette vil være en forbedring for organisasjonen, i forhold til gamle systemer, 
    takler den gammel data fra tidligere som organisisajonen måtte ha.
-   Man spør også alle som måtte ha interesse av systemet om det er gjennomførbart, og om det bør gjennomføres. Vanlig tid for prosessen er 2 til 3 uker.
+   Man spør også alle som måtte ha interesse av systemet om det er gjennomførbart, og om det bør gjennomføres. 
+   Vanlig tid for  prosessen er 2 til 3 uker.
+** Krav til krav
+   gode krav bør bestå disse kravene
+   - Er de forsåelige?
+   - Er det konsistens?
+   - Er det kompletthet?
+   - Er de testbare?
+   - Er de verifiserbare?
+   - Er de relevante?
+
 ** Kravinnsamling og analysering
+
    Jobber med kunder og sluttbrukere for å samle krav. Denne prosessen
    kan være vanskelig, siden det finnes så mange stakeholder
    (interessenter) med ulike interesser.
@@ -808,7 +832,6 @@
    Del1: Kontraktsdokument 
    Del2: Generelle kontraktsbestemmelser 
    Del3: Kontraktsbilag
-* 
 * DONE Kapittel 11 (Ikke hoved) - Arkitekturdesign
   Valg av arkitektur-rammeverket influerer viktige deler av systemet, som hastighet, sikkerhet og tilgjengelighet. 
 
@@ -934,3 +957,151 @@
    og eventuelt gi tilbakemeldinger om det er gjort endringer på samme sted, ellers spleiser den endringene inn i den nye filen.
    Av slike systemer har vi både *CVS* (Concurrent Versions System) og *Subversion*. Subversion kan opperere 
    på to måter. Enten ligger alt lokalt, eller så har man et repository på en server, som man sjekker inn og ut av.
+
+
+
+* Kjernepensum
+** Prosjektstyring og planlegging(oblig 1)
+*** Vikigheten av foranalysen
+    kravinsamling og research
+
+    Uten en skikkelig foranalyse kan det være vanskelig
+    å vite hvilke risikoer som er involvert, om systemet
+    trengs, eller om det har livets rett økonomisk sett.
+    
+    Forutsigbarheten for prosjektet øker og man vil være
+    bedre i stand til å levere prosjektet til rett tid eller
+    minimere overskridelser av planen
+
+*** Prosjektplanlegging og organisering
+    viktige faktorer og rammer
+    - tid
+    - kostnad
+    - personale
+    - utstyr
+    - osv
+*** Riktig valg av systemutviklingsmetode
+    begrunne valget
+**** Fossefall
+     Ved enkle og forutsigbare prosjekter, ofte veldig små
+     prosjekter kan det være en mulighet å bruke denne, som
+     regel vil det være lønnsomt å bruke en mer fleksibel 
+     metode
+**** Prototyping
+     Lage en enkel versjon av programmet, i stor grad for å finne
+     krav og passe på at man lager riktig program
+**** Evolusjonære modeller
+     Bygger ofte på en liten prototype som et rammeverk som man
+     gradvis utvider med funksjonalitet kunden ønsker og finpusser
+     til prosjektet til slutt er ferdig. Boka anbefaler denne metoden
+     for små til mellomstore prosjekter.
+**** Modulbasert
+     Bygger i så stor grad som mulig på moduler som allerede eksisterer,
+     gjennbruk av kode er et nøkkelord her. Alle prosjekter baserer
+     seg i stor grad på gjennbruk av kode eller andre prosjekter, for eksempel
+     databaser eller andre verktøy, og dette er den fullverdige metoden som 
+     består av å finne flest mulig moduler og heller fokusere tiden på å
+     skape bindemiddel mellom modulene.
+
+     Farene med dette er at modulene kanskje ikke gjør akkurat det man vil
+     og man vil kanskje skape et system som ikke passer helt, men bare godt nok
+
+     Fordelen er jo at ved at man vet at modulene funker i utgangspunktet, vil 
+     man kunne levere prosjektet raskere og med mindre risiko, og man kan også 
+     håpe at noe av oppdateringer senere vil komme gjennom prosjektene som lager
+     modulene.
+**** Iterative
+     Dele opp prosjektet i flere mini-proskelter (iterasjoner) der
+     hvert mini-prosjekt bruker en annen utviklingsmetode.
+***** Inkrementelle
+      
+***** Spiralmodellen
+**** XP
+     Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
+     for eksempel par-programering (to programerere på en maskin, pilot og kopilot
+     der piloten programmerer og kopiloten validerer koden fortløpende) og også
+     måter å gjennomføre arkitektur og testing av systemet. Metodene er ikke 
+     nødvendigvis bare gjennomførbare med XP, og brukes ofte som teknikker under
+     andre systemutviklingsprosesser...
+     
+**** Scrum
+**** RUP
+
+*** Kjenne til ulike typer utviklingsmetoder og prinsipper
+    fordeler og ulemper
+*** Kjenne til ulike faser i de ulike utviklingsmetodene
+    samt hvilke krav/leveranse hver fase har
+*** vite hvorfor man setter milepæler
+    og hvor det er naturlig å plasere dem i forhold til modellens faser
+*** risiko, identifisering av risiko
+    samt hvordan redusere risikomomenter
+*** aktivitetskart og nettverksdiagram
+*** Kritiske veier vs ikke-kritiske veier
+** Kravhåndtering (oblig 2)
+
+*** Funksjonelle vs ikke-funksjonelle krav
+    Funksjonelle krav utføres av utvikler, resten kan overlates til andre
+    
+**** Gode krav
+     kode krav bør bestå disse spørsmålene
+     - Er de forsåelige?
+     - Er det konsistens?
+     - Er det kompletthet?
+     - Er de testbare?
+     - Er de verifiserbare?
+     - Er de relevante?
+
+**** Funksjonelle krav
+***** essensielt
+      - Tenk hva slags krav dere vil ha for å kunne lage use cases
+      - Konkrete oppgaver som skal utføres
+      - Enten/eller-scenarioer
+***** Eksempler fra oblig 1
+      - Systemet må kunne vise oversikt over ledige hotellrom
+      - Resepsjonister og nettbrukere må kunne booke hotellrom
+      - Systemet må kunne skrive ut raporter for alle hoteller
+      - Nettbrukere må kunne få opp oversikt over sine reservasjoner
+**** Ikke-funksjonelle krav
+     * Produktkrav
+       - Brukervennlighet
+       - Effektivitetskrav
+       - Pålitelighetskrav
+       - Portabilitetskrav
+
+     * Prosesskrav
+       - leveransekrav
+       - Implementasjonskrav
+       - Krav til standard
+     * Eksterne krav
+       - Lovmessige krav
+       - Etiske krav
+***** Eksempler
+****** Ytelse
+       - Systemet skal behandle alle responser på under 1 sekund
+       - Systemet skal ha en oppetid på 99,9%
+****** Sikkerhet
+       - Systemet skal tilby full backup 6 måneder tilbake i tid
+       - Systemet skal ha sikker og kyptert forbindelse mellom hotellene og databasen
+****** Andre ting
+       - Krav til brukervennlighet
+       - juridiske krav
+	 Personopplysningsloven etc.
+       - Ikke gjennbruk av mailadresser til spam?
+****** Testing
+       Whitebox og blackbox-testing
+*** hvorfor trenger vi veldefinerte krav
+
+    "a camel is a horse designed by a committee"
+
+    Vi trenger veldefinerte krav for å ha holdeplasser i virkeligheten
+    når vi utvikler et system, hva skal systemet gjøre og hvordan
+    skal det fungere. Krav er et slags sikkerhetsnett for at man lager et 
+    system som samsvarer med kundens behov. 
+
+*** Koblingen mellom funksjonelle krav og ikke funksjonelle krav
+    (bruksmønster og arkitektur)
+    
+    
+
+*** Identifisering av krav
+    hvilke krav følger typisk de ulike interessentene
