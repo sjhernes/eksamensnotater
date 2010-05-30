@@ -357,24 +357,63 @@
   Kravspesifikasjon kan deles inn i to grupper.
   - /Bruker-krav/. 
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
-  - /System-rav/. 
+  - /System-krav/. 
     En mer detaljert beskrivelse av delene til systemet, og nøyaktig hva som skal bli implementert. Kan være en del av kontrakten.
+
+** Krav til krav
+   kode krav bør bestå disse kravene
+   - Er de forsåelige?
+   - Er det konsistens?
+   - Er det kompletthet?
+   - Er de testbare?
+   - Er de verifiserbare?
+   - Er de relevante?
+
 ** Funksjonelle og ikke-funksjonelle krav
    Programvare-system-krav klassifiseres ofte i tre kategorier funksjonelle, ikke-funksjonelle eller domene-krav.
-   - /Funksjonelle krav/ 
-     sier hvilke tjenester systemet skal utføre, hvordan det skal oppføre seg i spesielle sitasjoner, hvordan svare på input.
-   - /Ikke-funksjonelle-krav/ 
-     beskriver generelt sett systemet i helhet, og deler av utviklingsprosessen som tidsbegrensning, og andre begrensninger.
-   - /Domene-krav/ 
-     er krav som kommer fra applikasjons-domenet, og kan være funksjonelle og ikke-funkjsonelle.
-*** Funksjonelle krav
+*** Funksjonelle krav 
     De funksjonelle kravene bør være *komplette*, altså alle krav er definert, og *konsistente*, ingen selvmotsigende krav.
+
+    sier hvilke tjenester systemet skal utføre, hvordan det skal oppføre seg i spesielle sitasjoner, hvordan svare på input.
+
+    - Tenk hva slags krav dere vil ha for å kunne lage use cases
+    - Konkrete oppgaver som skal utføres
+    - Enten/eller-scenarioer
+**** Eksempler fra Oblig 1
+     - Systemet må kunne vise oversikt over ledige hotellrom
+     - Resepsjonister og nettbrukere må kunne booke hotellrom
+     - Systemet må kunne skrive ut raporter for alle hoteller
+     - Nettbrukere må kunne få opp oversikt over sine reservasjoner
 *** Ikke-funksjonelle krav
-    Handler om ikke helt funksjonsspesifikke krav, som for eksempel tid, relabilitet, data-representasjon etc. 
-    Vi kan ha ikke-funksjonelle krav på produktet, organisasjonen og eksterne, som f.eks. etiske og personvernsmessige krav.
+    * Produktkrav
+      - Brukervennlighet
+      - Effektivitetskrav
+      - Pålitelighetskrav
+      - Portabilitetskrav
+    * Prosesskrav
+      - leveransekrav
+      - Implementasjonskrav
+      - Krav til standard
+    * Eksterne krav
+      - Lovmessige krav
+      - Etiske krav
+
     Ikke-funksjonelle krav bør, så langt det lar seg gjøre, skrives som testbare krav, slik at man kan avgjøre om kravet er møtt. Ungå vagt definerte krav.
-*** Domene-krav
-    Kommer fra applikasjons-domenet, istedenfor spesifikke krav. På ett litt mer overordnet nivå, f.eks. "følg standard X" i databasedesignet.
+**** Elsempler
+***** Ytelse
+      - Systemet skal behandle alle responser på under 1 sekund
+      - Systemet skal ha en oppetid på 99,9%
+***** Sikkerhet
+      - Systemet skal tilby full backup 6 måneder tilbake i tid
+      - Systemet skal ha sikker og kyptert forbindelse mellom hotellene og databasen
+***** Andre ting
+      - Krav til brukervennlighet
+      - juridiske krav
+	Personopplysningsloven etc.
+      - Ikke gjennbruk av mailadresser til spam?
+***** Testing
+      Whitebox og blackbox-testing
+
 ** Bruker-krav
    Bør skrives, så langt det lar seg gjøre, så enkelt og lett forståelig som mulig. Skal kunne beskrive funksjonelle 
    og ikke-funksjonelle krav til folk uten særlig teknisk kunskap.
@@ -871,11 +910,10 @@
    - Interaksjons-orienterte: 
      Motivert av interaksjon med medarbeidere.
 ** Inndeling i grupper
- Hvis det blir for mange medarbeidere på ett prosjekt, deler man inn i grupper, 
- med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
- holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
- De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
-
+   Hvis det blir for mange medarbeidere på ett prosjekt, deler man inn i grupper, 
+   med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
+   holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
+   De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
 * DONE Kapittel 29 (Ikke hoved) - Konfigurasjonsstyring (Subversion)
   Siden systemkrav forandrer seg under hele utviklingsprosessen er det vikig med versjonskontroll. 
   

@@ -198,7 +198,7 @@
 
 *** Funksjonelle vs ikke-funksjonelle krav
     Funksjonelle krav utføres av utvikler, resten kan overlates til andre
-
+    
 **** Gode krav
      kode krav bør bestå disse spørsmålene
      - Er de forsåelige?
