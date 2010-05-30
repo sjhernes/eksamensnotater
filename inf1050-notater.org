@@ -1,4 +1,4 @@
-* DONE Kapittel 1 - Hva er programvare?
+* Kapittel 1 - Hva er programvare?
 ** Introduksjon
   Programvare brukes over alt i dagens samfunn. Har ingen direkte fysisk begrensing, 
   og kan derfor fort bli svært komplekst og uoversiktelig. Prisantydning kan være 
@@ -23,7 +23,7 @@
   
    På grunn av stor innvirkning av samfunnet er software engineers nødt til å opptre etisk og tenke konsekvenser. 
 
-* DONE Kapittel 2 - Sosiotekniske systemer
+* Kapittel 2 - Sosiotekniske systemer
 
   Et sosio-teknisk system består av mer enn bare programvare (maskinvare, mennesker).
 
@@ -84,7 +84,7 @@
 ** Rammer
    Menneskelige, politiske og organisatoriske bestemmelser har en stor effekt på sosio-tekniske systemer.
 
-* DONE Kapittel 3 - Kritiske systemer
+* Kapittel 3 - Kritiske systemer
   Kostnadene for kritiske systemer er MYE høyere. 
   Må gjennomgå mye dyr testing og bevisføring av systemet og koden.
   Det er også mye mer som står på spill om noe galt skulle skje, både økonomiske skader og menneskelige skader.
@@ -106,9 +106,9 @@
    2. feil i spesifiseringen av systemet
    3. operatør-feil.
 
-   - Må ta hensyn til menneskene som er med i systemet, samt alle komponentene som jobber sammen.
+   Må ta hensyn til menneskene som er med i systemet, samt alle komponentene som jobber sammen.
 
-* DONE Kapittel 4 - Systemutviklingsprosess
+* Kapittel 4 - Systemutviklingsprosess
   Hvordan programvare skal produseres. Organiseringen rundt det å skrive kode etc.
   - Økt produktivitet og kvalitet.
 ** Programvare er en del av samfunnet. 
@@ -316,7 +316,7 @@
     Hvis det er et offentlig firma/en offentlig etat som skal leie inn leverandør
     må det være en åpen anbudsrunde dersom estimert pris er over 500 000 kroner
 
-* DONE Kapittel 5 - Prosjekthåndtering
+* Kapittel 5 - Prosjekthåndtering
 ** Management activities: 
    Prosjektleder holder orden på alt. 
    Snakker med prosjektarbeidere. 
@@ -347,7 +347,7 @@
     man er i prosessen etc. Milestones er logiske målpunkter i prosjektutviklingen. 
     Deliverables (leveringer) er resultater man leverer kunden. Som oftes er dette milestones, men ikke andre veien.
 
-*** Prosjekttidestimering: 
+*** Prosjekttidestimering og aktivitetsnett 
     Vanskelig jobb. Opdateres gjevnlig etterhvert som mer informasjon kommer inn. 
     En aktivitet bør ta fra 1 til 8-10 uker. Samt må resursser estimeres. Mennesker og eventuelt hardware.
 
@@ -356,6 +356,21 @@
       Lager så aktivitetsnettverk, og finner tiden prosjektet tar ved å finne den kritiske veien.
     For å få oversikt over tidsdisponeringen kan man også bruke Gantt charts. Kan også brukes til "staff allocation". Med navn og oppgaver nedover.
 
+**** Eksempel på aktivitetstabell
+
+    |------+-------------+---------------------------+----------+---------------------|
+    | navn | Tidsestimat | Oppgave                   | Dep      | kommentar           |
+    |------+-------------+---------------------------+----------+---------------------|
+    | T1   | 3 dager     | Kravspesifisering         | none     | funksjonalitet      |
+    | T2   | 3 dager     | Prosjektevaluering        | T1       | Tidligere systemer? |
+    | T3   | 20 dager    | Database og sentralsystem | T2       |                     |
+    | T4   | 5 dager     | Faktureringssytem         | T3       |                     |
+    | T5   | 15 dager    | Webgrensesnitt            | T3       | eksterne designere? |
+    | T6   | 10 dager    | Internt grensesnitt       | T3       |                     |
+    | T7   | 20 dager    | Integrering av systemene  | T4,T5,T6 |                     |
+    | T8   | 10 dager    | Sluttesting og bugfiksing | T7       |                     |
+    |------+-------------+---------------------------+----------+---------------------|
+    
 *** Risk management
 
     - Prøver å se problemer som kan oppstå på forhånd og ta forhåndsregler. Riskplan dokumenteres i prosjektplanen.
@@ -408,7 +423,7 @@
 	- Ansvarlig
 	  begge
 
-* DONE Kapittel 6 - Kravhåndtering / Programvare-krav
+* Kapittel 6 - Kravhåndtering / Programvare-krav
   Kravspesifikasjon kan deles inn i to grupper.
   - /Bruker-krav/. 
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
@@ -497,9 +512,9 @@
    Endringer i krav er uungåelig.
 
    - Interessenter: 
-     Opprdragsgivere, kunder, lovgivere, brkergrupper, systemeiere (Direkte eller indirekte interesse)
+     Oppdragsgivere, kunder, lovgivere, brukergrupper, systemeiere (Direkte eller indirekte interesse)
    - Funksjonelle krav: 
-     Beksriver oppførsel/funksjoner.
+     Beskriver oppførsel/funksjoner.
    - Ikke-funksjonelle krav: 
      Ytelse, sikkerhet, brukervennligehet, kostnader, tidsrammer etc.
 
@@ -509,7 +524,7 @@
       (Nødvendighet, pris, konkurenter, skal vi satse på det?)
    2. Kravinnsamling og -analyse: 
       Identifiser krav, priorier, løs konflikter mellom interessenter. 
-      Ofte lurt å visualisere på forhånd for interessenter. Da vet de letter hva de ønsker etc.
+      Ofte lurt å visualisere på forhånd for interessenter. Da vet de lettere hva de ønsker etc.
    3. Kravspesifikasjon: 
       Spesifiser presist, f.eks. ved UML. 
    4. Validering av kravspesifkasjon: 
@@ -522,7 +537,7 @@
 
    Må ta stilling til at krav kan endres/slettes. Da må endringen dokumenteres, gjøre konsekvensanalyse og implementere. Sporer gjerne endringene i et verktøy.
 
-* DONE Kapittel 7 - Kravspesifisering
+* Kapittel 7 - Kravspesifisering
 ** Foranalyse - Kravinnsamling og research
               
    Uten en skikkelig foranalyse kan det være vanskelig
@@ -609,7 +624,7 @@
    kontrollere om enkelte endringer av krav, vil påvirke andre deler av
    systemet. For større systemer setter man opp egne databaser, som kan
    gjøre dette automatisk.
-* DONE Kapittel 8 - System-modeller
+* Kapittel 8 - System-modeller
   En systemmodel representerer systemet på en mer overordnet, abstrakt og helhetlig måte. 
 ** Context models
    Her jobber man med å finne grensene til systemet, og grensene til de forskjellige delene i systemet. 
@@ -641,7 +656,7 @@
     for å hjelpe til med denne prosessen. Det er verktøy som kan alt fra datamodelering, 
     automatisk generering av kildekode, og brukergrensesnitt-manipulering.
 
-* DONE Kapittel 13 - Applikasjons-arkitektur
+* Kapittel 13 - Applikasjons-arkitektur
 ** Data-processing systems
    Får input-data fra database, eller filer, som den utfører en prosess på og sender det 
    ut igjen, enten tilbake i databasen, eller printe ut i ny fil.
@@ -660,7 +675,7 @@
    Tar et naturlig, eller artificial konstruert språk, og generer en annen form 
    for representasjon som output. Vanligste eksemplet er *compilers*. Denne komponenten kan 
    være hardware (de fleste kompilatorer) eller software (slik Java er). 
-* DONE Kapittel 23 - Software-testing
+* Kapittel 23 - Software-testing
 ** Kvaliteter vi trenger i produktene:
    - Korrekt programvare
    - Pålitelighet
@@ -739,7 +754,7 @@
 
    Testingsfasen er ofte estimert til å være 50% av utviklingskostnadene.
 
-* DONE Kapittel 26 - Software cost estimation
+* Kapittel 26 - Software cost estimation
 ** Software productivity
    Handler om å kartlegge produktiviteten til utviklerene, effektivitetskostnadene 
    for jobben, og fordele arbeidet utover. Har ofte behov for dette, for å senere 
@@ -796,7 +811,7 @@
      Det er da viktig å ikke ta inn for mange arbeidere av gangen, da dette fører til problemer
      og kan senke prosessen. Det bør gjøres gradvis.
 
-* DONE UML
+* UML
   Notasjon som støtter opp under modellbasert systemtvikling.
   - Godt utgangspunkt for dokumentasjon.
   Kan brukes til datamodeliering, arbeidsflyt-modelering eller objektmodelering.
@@ -821,7 +836,7 @@
 *** <<include>>
     F.eks. hvis flere use case utfører samme prosedyre, kan vi lage use case av det, og include.
 
-* DONE PS2000
+* PS2000
 ** Bruksområde:
    1. Drift av IT- løsninger
       - Utstyr 
@@ -888,7 +903,7 @@
    Del1: Kontraktsdokument 
    Del2: Generelle kontraktsbestemmelser 
    Del3: Kontraktsbilag
-* DONE Kapittel 11 (Ikke hoved) - Arkitekturdesign
+* Kapittel 11 (Ikke hoved) - Arkitekturdesign
   Valg av arkitektur-rammeverket influerer viktige deler av systemet, som hastighet, sikkerhet og tilgjengelighet. 
 
   Store systemer deles inn i subsystemer. ARkitekturdesign er å fastsette disse subsystemene, og kommunikasjonen dem imelom.
@@ -910,7 +925,7 @@
   2. Funksjons-orienter 
      der man har input-data som går gjennom forskjellige funksjoner (subsystemer) og får til slutt en output.
 
-* DONE Kapittel 12 (Ikke hoved) - Distributed system architecture
+* Kapittel 12 (Ikke hoved) - Distributed system architecture
   Så og si alle større systemer i dag, er distrubert over flere maskiner. Det har en del fordeler, blant annet
 
   - Deling av resursser, både hardware og software.
@@ -944,7 +959,7 @@
   Peer-to-peer er desentralisert, distribuert system, der alle klientene er direkte
   koblet til hverandre i ett nettverk, og beregninger gjøres på flere maskiner/klienter.
 
-* DONE Kapittel 16 (Ikke hoved) - Brukergrensesnitt-design
+* Kapittel 16 (Ikke hoved) - Brukergrensesnitt-design
 ** Et godt grensesnitt er viktig, for god programvare. 
    Noen ting å huske på er blant annet,
 
@@ -967,7 +982,7 @@
 ** Prosessen ved GUI-utvikling:
    - Start med analyse av brukere og bruken av programmet.
    - Lag en prototype, test den og utvikle den videre.
-* DONE Kapittel 25 (Ikke hoved) - Managing people
+* Kapittel 25 (Ikke hoved) - Managing people
   En av de viktigste rollene ved prosjektledelse, er håndtering av medarbeidere og holde dem motivert.
 ** valg av arbeidere
   Å velge nye medarbeidere til et prosjekt kan ofte være svært vanskelig, 
@@ -993,7 +1008,7 @@
    med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
    holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
    De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
-* DONE Kapittel 29 (Ikke hoved) - Konfigurasjonsstyring (Subversion)
+* Kapittel 29 (Ikke hoved) - Konfigurasjonsstyring (Subversion)
   Siden systemkrav forandrer seg under hele utviklingsprosessen er det vikig med versjonskontroll. 
   
   Man kan også branche baselinen ut i flere brancher, f.eks. om man lager flere versjoner for 
