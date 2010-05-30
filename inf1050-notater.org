@@ -313,6 +313,10 @@
 
    Ved korte iterasjoner har man råd til å feile.
 
+*** EØS lov om anbud
+    Hvis det er et offentlig firma/en offentlig etat som skal leie inn leverandør
+    må det være en åpen anbudsrunde dersom estimert pris er over 500 000 kroner
+
 * DONE Kapittel 5 - Prosjekthåndtering
 ** Management activities: 
    Prosjektleder holder orden på alt. 
@@ -366,6 +370,44 @@
     Risk identifisering -> Risk-analysering -> Risk-planlegging -> Risk-overvåking.
 
     Så graderer man risikoen etter sannsynlighet og utfall.
+
+**** Eksempel på risikoanalyse (fra oblig 1)
+
+     1. Databasen blir kapret av uønskede
+	- Kundens vurdering:
+	  + sansynlighet:
+	    3
+	  + konsekvens:
+	    4
+	- Leverandørens vurdering:
+	  + sansynlighet:
+	    2
+	  + konsekvens:
+	    5
+	- Tiltak:
+	  Adskille webgrensesnittet og det interne grensesnittet i metoder
+	  og generelt minske mulighet for databasemanipulering fra web. Og
+	  at innlogging fra interne terminaler er passordbeskyttet uten at pas-
+	  sordene er lett tilgjengelig.
+	- Ansvarlig
+	  begge
+     2. Nøkkelpersoner forsvinner fra prosjektet
+	- Kundens vurdering:
+	  + sansynlighet:
+	    2
+	  + konsekvens:
+	    4
+	- Leverandørens vurdering:
+	  + sansynlighet:
+	    2
+	  + konsekvens:
+	    4
+	- Tiltak:
+	  Tett sammarbeid og god kommunikasjon fra nøkelpersoner og videre
+	  til deres kolegaer, slik at plassen kan fylles. Fjerne urelevante arbei-
+	  dsoppgaver fra personell som er engasjert i prosjektet
+	- Ansvarlig
+	  begge
 
 * DONE Kapittel 6 - Kravhåndtering / Programvare-krav
   Kravspesifikasjon kan deles inn i to grupper.
