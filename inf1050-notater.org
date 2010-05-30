@@ -214,7 +214,6 @@
 **** Software evolution:
      utvikling og vedlikehold knyttes mer og mer sammen, og software-produksjon er en evolusjonær prosess som utvikler seg.
 
-
 ** Prøv-og-feil
    Dårlig idè, man har ingen forutsetninger for å planlegge eller estimere tid
 ** TODO Oblig-metoden. Funker dårlig på større systemer. Vanskelig for samarbeid.
