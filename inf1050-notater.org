@@ -666,17 +666,97 @@
    til ett eksternt selskap er man nødt til å beskrive kravene mye mer detaljert, så det ikke oppstår feiltolkninger.
 
 * Kapittel 8 - System-modeller
+
+  Notasjon som støtter opp under modellbasert systemtvikling.
+  - Godt utgangspunkt for dokumentasjon.
+  Kan brukes til datamodeliering, arbeidsflyt-modelering eller objektmodelering.
+
   En systemmodel representerer systemet på en mer overordnet, abstrakt og helhetlig måte. 
+  Kan ses på den tekniske motvekten til Krav. Da krav skal bli forstått av også
+  ikke tekniske mennesker, er det naturlig for utvikleren å lage en mer teknisk
+  modell basert på kravene. Man baserer ofte modellene sine på UML-standarden
+  
 ** Context models
-   Her jobber man med å finne grensene til systemet, og grensene til de forskjellige delene i systemet. 
+   
+   Her ser vi på systemet og konteksten i forhold til andre systemer, og hvilke 
+   undersystemer som har kontakt med verandre, og i hvilken rekkefølge? Hvilket system
+   er databasen koblet til, hvor kommer lenken mot internett hvis noen, er det et 
+   sikkerhetssystem mellom internett og andre systemer?
+
 ** Behaviour models
    Jobber med å beskrive oppførselen til systemet. F.eks. dataflyt gjennom programmet, 
    eller hvordan systemer reagerer på spesielle hendelser.
+
+   Dette kan ofte modeleres med use-case diagrammer, direkte spesifisert på kravene
+   fra interessentene
+
+*** Use Case
+    Use case: Beskrive funksjonelle krav ved use case. Beskriver systemet utenfra, og bruksmønsteret. 
+    Tegnes med Akøtrer (mennesker og andre komponenter som interakter med use casen) og Use Case (oval).
+    - Kan også bruke <<extend>> og <<include>>.
+    Kan bruke struktrert tekstlig spesifikasjon til hver use case.
+
+    #+CAPTION: Eksempel på kravtabell til casediagram
+    #+LABEL: fig:kravogcase
+    #+ATTR_LaTeX: width=0.75\textwidth
+    [[./kravogcase.eps]]
+
+**** <<extend>>
+     Utvider funksjonalitet, f.eks. i alteriantiv flyt.
+**** <<include>>
+     F.eks. hvis flere use case utfører samme prosedyre, kan vi lage use case av det, og include.
+
+**** Hovedflyt
+     Brukes for å beskrive hvordan systemet skal fungere ut i fra Use case diagrammer
+     og gjør det enklere å se hva som kan gå galt, og dermed gi alternative flyt
+
+     eks. basert på use case diagrammet over
+
+     1. Søkeren fyller ut online lånesøknad
+     2. Søkeren sender søknaden til banken via internett
+     3. Systemet validerer informasjonen i lånesøknaden ved å 
+       	sjekke at den er så korrekt og komplett som mulig
+     4. Systemet innhenter kredittrapport for søkeren fra et
+       	eksternt kredittbyrå for kredittraport.
+     5. Systemet henter søkerens kontohistorie med banken
+       	fra kontosystemet
+     6. Systemet beregner søkerens kredittscore basert på
+       	kredittrapport og kontohistorie
+     7. Systemet informerer søkeren via e-mail om at søknaden 
+       	er mottatt og blir vurdert
+     8. Systemet setter status på lånesøknaden til "Initiell
+       	kredittsjekk ferdig
+     9. Systemet allokerer lånesøknaden til en lånekonsulent 
+       	for videre behandling
+
+**** Pre- og postbetingelser
+     Use case "Vurder lånesøknad":
+
+     *Prebetingelse:*
+     - Lånesøknaden har status "Initiell kredittsjekk ferdig"
+     *Postbetingelse: (en av de)*
+     - Lånesøknaden har status "Godkjent"
+     - Lånesøknaden har status "Informasjon mangler"
+     - Lånesøknaden har status "Avslått" og søker har fått
+       beskjed om at søknaden er avslått
+    
 ** Datamodeller
+
    Datamodeller er digrammer som beskriver systemet på en objektorientert-lignende måte, 
    bare med dataen i systemet, istedenfor objektene. Man tegner opp enheter, attributter, 
    tjenester og deres relasjoner (med navn og antall/forhold/relasjoner). 
+
+   Herunder kommer CRC-kort som beskriver hva objektene må vite om seg selv, og hvilke andre
+   objekter som den har relasjoner til, hvordan skal den få tak i informasjon, hva 
+   slags objektdet er - kant, kontroll, eller foretningsobjekt
+   
+   #+CAPTION: Eksempel på CRC-kort
+   #+LABEL: fig:CRC-kort
+   #+ATTR_LaTeX: width=\textwidth
+   [[./CRC.eps]]
+
 ** Objektmodeller
+
    Mye brukt i programvareutvikling, med objektorienterte språk. 
    Representerer systemet i en objektorientert måte, med UML. 
    Ofte er denne metoden veldig naturlig, siden den beskriver 
@@ -684,6 +764,37 @@
 
    Objekter kan også arve egenskaper fra mer genrelle objekter i ett klassehierarki. 
    Spesialiserte objekter kan så legge til egne atributter og egenskaper.
+
+*** Domenemodeller
+    Enkle klassediagrammer, uten metoder. Skal beskrive virkeligheten. Tegne opp relasjoner.
+
+    Domenemodeller er nyttig i forbindelse med use case modellering fordi
+    1. Domenemodellen fanger opp informasjon om objekter i use casene og er
+       et viktig verktøy for at use casene er beskrevet med riktig detaljeringsnivå
+    2. Klassene i domenemodellen kan brukes i utforming av mer presise pre- og postbetingelser
+
+    Hensikten med domenemodellen er å forstå objektene og få en oversikt over terminologi.
+
+**** Forretningsobjekter 
+     De har evig liv. Lagrer i database.
+**** Kontrollobjekter
+     Kontrolerer handlingsforløpet.
+**** Kantobjekter
+     Kommniserer med brukere.
+
+*** Sekvensdiagrammer
+    Bygger på domenemodellen og objektene som er definert der
+    og viser en interaksjon mellom aktører og objekter i systemet for
+    et bestemt bruksmønster.
+    
+    Det er ofte nyttig med sekvensdiagrammer for å identifisere (og
+    spesifisere bruken av) metodene til objektene i systemet
+
+   #+CAPTION: Eksempel på sekvensdiagram
+   #+LABEL: fig:sekvensdiagram
+   #+ATTR_LaTeX: width=\textwidth
+    [[./sekvensdiagram.eps]]
+
 ** Structured methods
    Karakteristikker:
 
@@ -852,86 +963,6 @@
      Det er da viktig å ikke ta inn for mange arbeidere av gangen, da dette fører til problemer
      og kan senke prosessen. Det bør gjøres gradvis.
 
-* UML
-  Notasjon som støtter opp under modellbasert systemtvikling.
-  - Godt utgangspunkt for dokumentasjon.
-  Kan brukes til datamodeliering, arbeidsflyt-modelering eller objektmodelering.
-** Use Case
-   Use case: Beskrive funksjonelle krav ved use case. Beskriver systemet utenfra, og bruksmønsteret. 
-   Tegnes med Akøtrer (mennesker og andre komponenter som interakter med use casen) og Use Case (oval).
-   - Kan også bruke <<extend>> og <<include>>.
-   Kan bruke struktrert tekstlig spesifikasjon til hver use case.
-
-   Vedlagt ligger bilder av en kravtabell med use-case diagram
-
-*** Hovedflyt
-    Brukes for å beskrive hvordan systemet skal fungere ut i fra Use case diagrammer
-    og gjør det enklere å se hva som kan gå galt, og dermed gi alternative flyt
-
-    eks. basert på use case diagrammet over
-
-    1. Søkeren fyller ut online lånesøknad
-    2. Søkeren sender søknaden til banken via internett
-    3. Systemet validerer informasjonen i lånesøknaden ved å 
-       sjekke at den er så korrekt og komplett som mulig
-    4. Systemet innhenter kredittrapport for søkeren fra et
-       eksternt kredittbyrå for kredittraport.
-    5. Systemet henter søkerens kontohistorie med banken
-       fra kontosystemet
-    6. Systemet beregner søkerens kredittscore basert på
-       kredittrapport og kontohistorie
-    7. Systemet informerer søkeren via e-mail om at søknaden 
-       er mottatt og blir vurdert
-    8. Systemet setter status på lånesøknaden til "Initiell
-       kredittsjekk ferdig
-    9. Systemet allokerer lånesøknaden til en lånekonsulent 
-       for videre behandling
-
-*** Pre- og postbetingelser
-    Use case "Vurder lånesøknad":
-
-    *Prebetingelse:*
-    - Lånesøknaden har status "Initiell kredittsjekk ferdig"
-    *Postbetingelse: (en av de)*
-    - Lånesøknaden har status "Godkjent"
-    - Lånesøknaden har status "Informasjon mangler"
-    - Lånesøknaden har status "Avslått" og søker har fått
-      beskjed om at søknaden er avslått
-
-** Domenemodeller
-   Enkle klassediagrammer, uten metoder. Skal beskrive virkeligheten. Tegne opp relasjoner.
-
-   Domenemodeller er nyttig i forbindelse med use case modellering fordi
-   1. Domenemodellen fanger opp informasjon om objekter i use casene og er
-      et viktig verktøy for at use casene er beskrevet med riktig detaljeringsnivå
-   2. Klassene i domenemodellen kan brukes i utforming av mer presise pre- og postbetingelser
-
-   Hensikten med domenemodellen er å forstå objektene og få en oversikt over terminologi.
-
-*** Forretningsobjekter 
-    De har evig/langt liv. Lagrer i daabase.
-*** Kontrollobjekter
-    Kontrolerer handlingsforløpet.
-*** Kantobjekter
-    Kommniserer med brukere /aktørene.
-
-** Sekvensdiagrammer
-   Bygger på domenemodellen og objektene som er definert der
-   og viser en interaksjon mellom aktører og objekter i systemet for
-   et bestemt bruksmønster.
-   
-   Det er ofte nyttig med sekvensdiagrammer for å identifisere (og
-   spesifisere bruken av) metodene til objektene i systemet
-
-   vedlagt er sekvensdiagram for å melde seg på kurs på uio
-   
-
-** convensjoner
-*** <<extend>>
-    Utvider funksjonalitet, f.eks. i alteriantiv flyt.
-*** <<include>>
-    F.eks. hvis flere use case utfører samme prosedyre, kan vi lage use case av det, og include.
-
 * PS2000
 ** Bruksområde:
    1. Drift av IT- løsninger
@@ -974,7 +1005,8 @@
 
 ** PS2000 vs andre kontrakter
 
-   Kontraktsstandarden skiller seg vesentlig fra andre standarder i markedet. Spesielt kan følgende trekkes frem: 
+   Kontraktsstandarden skiller seg vesentlig fra andre standarder i markedet. 
+   Spesielt kan følgende trekkes frem: 
 
    - Kontraktsstandarden er utviklet av kunder og leverandører i samarbeid, 
      slik at begge parters interesser er ivaretatt og balansert. 
@@ -992,6 +1024,17 @@
      og en effektiv og separat prosess for eventuell konfliktløsning. 
    - Kontraktsstrukturen med forhåndsutfylte bilag og veiledning gjør det enklere å utforme spesifikke kontrakter tilpasset ulike behov. 
      Alle referanser i de generelle kontraktsbestemmelsene er utdypet i bilagene.
+
+*** Andre kontrakter
+    
+    Begge de to andre avtalene som er pressentert på forelesninger er basert
+    på å ivareta en interessent sin interesse, og ikke begge, PS2000 er unik der
+    og det er derfor vi nesten utelukkende har om PS2000
+
+**** IKT Norge: Standardavtale om systemutvikling og systemutviklingsprosjekt
+     Laget for å ivareta leverandørs interesser
+**** Statens standardavtaler (DIFI): Programmutviklingsavtalen
+     Laget for å ivareta kunders interesser
 
 ** Oppbygging av PS2000
    Kontrakten er delt inn i
