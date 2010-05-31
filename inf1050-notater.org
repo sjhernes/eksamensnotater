@@ -1098,19 +1098,49 @@
   Man kan også branche baselinen ut i flere brancher, f.eks. om man lager flere versjoner for 
   flere operativsystemer (Solaris, UNIX, Windows, etc.). 
   
+  Når man skal bruke versjonkontroll på ett prosjekt er det lurt å bruke en sterkt 
+  hierarkisk filstruktur. På større prosjekter har man også en *konfigurasjonsdatabase*
+  der man lagrer relevant informasjon til hver versjon.
+
+** Versjoner
+
   Til *versjonsidentifisering* kan man bruke /versjonnummerering/. Hver system release 
   får ett hovedtall f.eks. 1.0, og mindre endringer øker desimaltallet, f.eks. 1.1. v2.0 
   trenger ikke nødvendigvis branche fra siste (1.1), men kan godt branche fra 1.0.
    
   Det finnes CASE-tools som kan ta hånd om alle disse prosessene og endringhåndtering etc.
-** Subversion
+** Versionskontroll
    Hvis flere jobber på samme kildefiler, kan det fort bli kluss med forskjellige versjoner av filene. 
    Derfor bruker vi versjonskontrollsystem.
-   Subversion løser dette ved å låse tilgang til filen, hvis den allerede blir jobbet med. 
-   Man /sjekker inn/ og /sjekker ut/ filen.
-   Det finnes også innsjekkingssystemer som kan sammenlignede endringene som har gjort i filene, 
-   og eventuelt gi tilbakemeldinger om det er gjort endringer på samme sted, ellers spleiser den endringene inn i den nye filen.
-   Av slike systemer har vi både *CVS* (Concurrent Versions System) og *Subversion*. Subversion kan opperere 
-   på to måter. Enten ligger alt lokalt, eller så har man et repository på en server, som man sjekker inn og ut av.
+   En klar deling mellom disse systemene er for eksempel distribuerte systemer
+   som for eksempel *git*, *Bazaar* eller *Subversion* (kan også brukes sentralisert)
+   og sentraliserte systemer som *CVS* (Concurrent Versions System) og *Subversion*
+*** Sentraliserte systemer
+    Subversion løser dette ved å låse tilgang til filen, hvis den allerede blir jobbet med. 
+    Man /sjekker inn/ og /sjekker ut/ filen.
+    Det finnes også innsjekkingssystemer som kan sammenlignede endringene som har gjort i filene, 
+    og eventuelt gi tilbakemeldinger om det er gjort endringer på samme sted, ellers 
+    spleiser den endringene inn i den nye filen.
+    
+    Fordelen med et slikt system er selvfølgelig at man har veldig god kontroll på koden
+    (det finnes bare en kode), og man vil alltid kunne teste den nyeste koden
+    
+    Ulempen er selvfølgelig at ved f.eks filkorrupsjon vil man få større problemer, med mindre 
+    man har en god og fullstendig backup. En annen ulempe er at man må jobbe online(ustabilt 
+    trådløst nettverk?), og kanskje eieren av prosjektet har sperret koden for ekstern 
+    tilkobling av sikkerhetsgrunner og man må alltid være på et sted når man koder. Overføring
+    må også være kryptert som kan gi ytelsestap i en rekke tilfeller.
+    
+*** Distribuerte systemer
+    Alle som kobler seg til kildekoden for å redigere laster ned en fullstendig kopi
+    av all kode og historie, man får da et stort nettverk av versjoner som utvikles i
+    parallell.
 
+    Ulempen er at det kan være vanskelig å "lime" sammen filer etter omstendig redigering
+    og sikkerheten for et firma som vil beskytte koden sin er redusert. Man må også laste
+    ned all kildekode og historie til et prosjekt for å være en del av det. Dette kan ta sin
+    tid med store prosjekter, men er i stor grad en engangskostnad.
 
+    Fordeler med distribuerte systermer er selvfølgelig at man har minst like mange backuper
+    som kodere, man kan jobbe offline (fordel ved ustabile trådløse nett), og fra hvor som helst
+    i verden, å redigere kode lokalt vil også være raskere og sikrere.
