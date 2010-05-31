@@ -423,7 +423,7 @@
 	- Ansvarlig
 	  begge
 
-* Kapittel 6 - Kravhåndtering / Programvare-krav
+* Kapittel 6 og - Kravhåndtering, Programvare-krav og Kravspesifisering
   Kravspesifikasjon kan deles inn i to grupper.
   - /Bruker-krav/. 
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
@@ -456,11 +456,11 @@
    Vanlig tid for  prosessen er 2 til 3 uker.
 
 ** Interessenter(stakeholders) og kravinnsamling  
+
    Krav kommer ofte fra interessentene rundt systemet
    kort fortalt er en interessent en hvilken som helst 
    gruppe/individ som berøres av systemet direkte eller 
    indirekte.
-
    
    eksempler på interessenter:
    - sluttbrukere av systemet(interessert i enklere jobb)
@@ -489,8 +489,19 @@
    ved endringer må endringen dokumenteres, det må gjøres konsekvensanalyse 
    og implementere. Spor gjerne endringene i et verktøy.
 
-   Det kan ofte være lurt å visualisere systemet på forhånd for interessenter, da vet de lettere
-   hva de ønsker/trenger.
+   Til å hjelpe med å finne kravene, kan man se på spesifikasjonen til
+   tidligere, lingnende systemer, gjøre intervjuer med stakeholder, kjøre
+   tester med prototyper. 
+
+   Det kan også ofte være lurt å sette opp scenarioer for brukere og
+   interessenter, slik at det blir lettere for dem å sette seg inn i
+   problemstillingen. Man kan f.eks. skape disse scenarioene ved tekst,
+   prototyper eller skjermbilder. 
+
+   Vi kan også lage *use cases* for å hjelpe oss med kravinnsamlingen,
+   eller benytte *etnografi*, hvor man overvåker bruksmåten, f.eks. på en
+   arbeidsplass, og henter kravinformasjon på den måten. Man får ofte
+   informasjon som man ikke ville fått ellers.
    
    Metoder for kravinnsamling  
    - Intervjuer
@@ -501,25 +512,64 @@
    - idédugnad(brainstorming).
    - Prototyp: Bruk og kast ideer du viser til brukere etc. F.eks. ved Genova.
 
+   flyt
+
    1. Kravinnsamling og -analyse: 
       Identifiser krav, prioriteter, løs konflikter mellom interessenter. 
       Ofte lurt å visualisere på forhånd for interessenter. Da vet de lettere hva de ønsker etc.
+      prioriter krav
    2. Kravspesifikasjon: 
+      Organiser og kategoriser alle kravene.
       Spesifiser presist, f.eks. ved UML. 
    3. Validering av kravspesifkasjon: 
       Forståelighet, konsistens, testbarhet, sporbarhet (hvem er kilden til kravet), 
       endringsevne (konsekvenser av å endre?), kompletthet, 
       nødvendige krav, realistiske krav, for tidlig design.
+   4. Dokumentering av krav, kravdokumenter skrives
+      
+** Krav-validering
+   Krav-validering kontrollerer at kravene som er samlet, faktisk
+   representerer det kunden ønsker. Feil i kravene kan bli dyrt, siden
+   det kan føre til at endringer i systemet må gjøres på et sent
+   tidspunkt. Ting man bør kontrollere er blant annet,
 
-** hvorfor trenger vi veldefinerte krav
+   - Krav ikke kolliderer med hverandre.
+   - Slå sammen og gjøre kompromisser mellom krav.
+   - At kravene definerer alt som er ønsket av systemet.
+   - Muligheten for å implementere kravene.
+   - At kravene er testbare/verifiserbare i ettertid, i forhold til kunden.
 
-   "a camel is a horse designed by a committee"
+   Man bør så ha en *kravgjennomgang* med klient og tilbyder, for å
+   snakke seg gjennom kravene, og avdekke feil og mangler.
+*** hvorfor trenger vi veldefinerte krav
 
-   Vi trenger veldefinerte krav for å ha holdeplasser i virkeligheten
-   når vi utvikler et system, hva skal systemet gjøre og hvordan
-   skal det fungere. Krav er et slags sikkerhetsnett for at man lager et 
-   system som samsvarer med kundens behov. 
+    "a camel is a horse designed by a committee"
 
+    Vi trenger veldefinerte krav for å ha holdeplasser i virkeligheten
+    når vi utvikler et system, hva skal systemet gjøre og hvordan
+    skal det fungere. Krav er et slags sikkerhetsnett for at man lager et 
+    system som samsvarer med kundens behov. 
+*** Krav til krav
+    gode krav bør bestå disse kravene
+    - Er de forsåelige?
+    - Er det konsistens?
+    - Er det kompletthet?
+    - Er de testbare?
+    - Er de verifiserbare?
+    - Er de relevante?
+
+** Kravhåndtering
+   Kravene til et system, spesielt av litt størrelse, vil altids endre på
+   seg, siden man ser problemet og systemet i et nytt lys, etterhvert som
+   det trer frem. Det er derfor viktig å ha en evolusjonær løsning, som
+   lar deg endre på kravene underveis. For store systemer kan det ta
+   flere år å finne kravene, og da kan påvirkende elementer i miljøet
+   rundt allerede ha endret seg. Dette må man også ta hensyn til.
+
+   Man setter gjerne opp en avhengighets-matrise på kravene, for å kunne
+   kontrollere om enkelte endringer av krav, vil påvirke andre deler av
+   systemet. For større systemer setter man opp egne databaser, som kan
+   gjøre dette automatisk.
 ** Funksjonelle og ikke-funksjonelle krav
    Programvare-system-krav klassifiseres ofte i tre kategorier funksjonelle, ikke-funksjonelle eller domene-krav.
 *** Funksjonelle krav 
@@ -591,72 +641,6 @@
    Detaljgraden til dokumentet avhenger litt av utviklingsprosessen. Hvis utviklingen skal outsources 
    til ett eksternt selskap er man nødt til å beskrive kravene mye mer detaljert, så det ikke oppstår feiltolkninger.
 
-* Kapittel 7 - Kravspesifisering
-** Krav til krav
-   gode krav bør bestå disse kravene
-   - Er de forsåelige?
-   - Er det konsistens?
-   - Er det kompletthet?
-   - Er de testbare?
-   - Er de verifiserbare?
-   - Er de relevante?
-
-** Kravinnsamling og analysering
-
-   Jobber med kunder og sluttbrukere for å samle krav. Denne prosessen
-   kan være vanskelig, siden det finnes så mange stakeholder
-   (interessenter) med ulike interesser.
-
-   - Vet kun hva de vil ha i generelle termer. Må tolkes av system utvikler.
-   - Utrykker seg med bakgrunn i sitt domene. Vanskelig å sette seg inn i.
-   - Forskjellige interessenter med forskjellige krav.
-   
-   En måte å samle krav på kan være slik:
-
-   - Snakk med stakeholders og noter deres krav til systemet.
-   - Organiser og kategoriser alle kravene.
-   - Diskuterer konflikter mellom krav og prioriterer krav.
-   - Krav-dokument(er) skrives.
-
-   Til å hjelpe med å finne kravene, kan man se på spesifikasjonen til
-   tidligere, lingnende systemer, gjøre intervjuer med stakeholder, kjøre
-   tester med prototyper. 
-
-   Det kan også ofte være lurt å sette opp scenarioer for brukere og
-   interessenter, slik at det blir lettere for dem å sette seg inn i
-   problemstillingen. Man kan f.eks. skape disse scenarioene ved tekst,
-   prototyper eller skjermbilder. 
-
-   Vi kan også lage *use cases* for å hjelpe oss med kravinnsamlingen,
-   eller benytte *etnografi*, hvor man overvåker bruksmåten, f.eks. på en
-   arbeidsplass, og henter kravinformasjon på den måten. Man får ofte
-   informasjon som man ikke ville fått ellers.
-** Krav-validering
-   Krav-validering kontrollerer at kravene som er samlet, faktisk
-   representerer det kunden ønsker. Feil i kravene kan bli dyrt, siden
-   det kan føre til at endringer i systemet må gjøres på et sent
-   tidspunkt. Ting man bør kontrollere er blant annet,
-
-   - Krav ikke kolliderer med hverandre.
-   - Slå sammen og gjøre kompromisser mellom krav.
-   - At kravene definerer alt som er ønsket av systemet.
-   - Muligheten for å implementere kravene.
-   - At kravene er testbare/verifiserbare i ettertid, i forhold til kunden.
-
-   Man bør så ha en *kravgjennomgang* med klient og tilbyder, for å
-   snakke seg gjennom kravene, og avdekke feil og mangler.
-** Kravhåndtering
-   Kravene til et system, spesielt av litt størrelse, vil altids endre på
-   seg, siden man ser problemet og systemet i et nytt lys, etterhvert som
-   det trer frem. Det er derfor viktig å ha en evolusjonær løsning, som
-   lar deg endre på kravene underveis. For store systemer kan det ta
-   flere år å finne kravene, og da kan påvirkende elementer i miljøet
-   rundt allerede ha endret seg. Dette må man også ta hensyn til.
-
-   Man setter gjerne opp en avhengighets-matrise på kravene, for å kunne
-   kontrollere om enkelte endringer av krav, vil påvirke andre deler av
-   systemet. For større systemer setter man opp egne databaser, som kan
-   gjøre dette automatisk.
 * Kapittel 8 - System-modeller
   En systemmodel representerer systemet på en mer overordnet, abstrakt og helhetlig måte. 
 ** Context models
