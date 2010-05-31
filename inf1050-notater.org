@@ -430,6 +430,32 @@
   - /System-krav/. 
     En mer detaljert beskrivelse av delene til systemet, og nøyaktig hva som skal bli implementert. Kan være en del av kontrakten.
 
+** Interessenter(stakeholders)
+   Krav kommer ofte fra interessentene rundt systemet
+   kort fortalt er en interessent en hvilken som helst 
+   gruppe/individ som berøres av systemet direkte eller 
+   indirekte.
+   
+   eksempler på interessenter:
+   - sluttbrukere av systemet(interessert i enklere jobb)
+   - organisasjonen rundt sluttbrukere(kan bli påvirket av bedre systemer)
+   - kjøper av systemet(vil at det skal være økonomisk lønnsomt)
+   - Leverandør av systemet
+   - Leverandører av lignende systemer
+   - etc
+
+   Hvorfor er det vanskelig å finne og forstå krav fra interessenter (fra boka)
+   1. Interessenter vet ofte ikke hva de vil ha "jeg vet hva jeg vil ha når jeg ser det"
+   2. Interessenter vil ofte beskrive krav ut i fra sin egen implisitte kunnskap, og å
+      forstå hva de faktisk vil ha/trenger kan ofte være en utfordring
+   3. Interessenter kan ha motsigende krav, fordi forskjellige interessenter
+      er interessert i forskjellige mål
+   4. Politiske faktorer kan gi gi innflytelse på systemkravene
+      eks: overvåkning eller logging av bruksmønstre etc (datatilsynet!)
+   5. Organisasjonen kan bli berørt på mange måter av et nytt system, og
+      nye interessenter kan dukke opp midt i utviklingsprosessen, og gi nye krav
+      eller forandre viktigheten av eksisterende krav.
+
 ** hvorfor trenger vi veldefinerte krav
 
    "a camel is a horse designed by a committee"
@@ -485,10 +511,13 @@
       Whitebox og blackbox-testing
 
 ** Bruker-krav
-   Bør skrives, så langt det lar seg gjøre, så enkelt og lett forståelig som mulig. Skal kunne beskrive funksjonelle 
+   Bør skrives, så langt det lar seg gjøre, så enkelt og lett forståelig 
+   som mulig. Skal kunne beskrive funksjonelle 
    og ikke-funksjonelle krav til folk uten særlig teknisk kunskap.
-   Ungå programvare-sjargon. Men man må passe på, for man mister ved dette ofte mye av klarheten og entydigheten.
-   De bør heller ikke være for detaljerte, siden det minsker muligheten til utvikleren for gode og kreative løsninger på problemet.
+   Unngå programvare-sjargon. Men man må passe på, for man mister 
+   ved dette ofte mye av klarheten og entydigheten.
+   De bør heller ikke være for detaljerte, siden det minsker
+   muligheten til utvikleren for gode og kreative løsninger på problemet.
 ** System-krav
    System-krav er en utvidet utgave av bruker-krav. De legger til ett høyere detaljnivå, 
    og brukes som ett startpunkt for systemutviklerene i deres systemdesign.
