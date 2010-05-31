@@ -1,4 +1,4 @@
-% Created 2010-05-31 Mon 17:03
+% Created 2010-05-31 Mon 18:37
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -12,7 +12,7 @@
 \usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 
 \title{inf1050-notater}
-%\author{Sjur Hernes}
+\author{Sjur Hernes og Eivind Lindbåten}
 \date{31 May 2010}
 
 \begin{document}
@@ -528,6 +528,7 @@ Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
 \subsubsection{Prosjekttidestimering og aktivitetsnett}
 \label{sec-5.3.2}
 
+
     Vanskelig jobb. Opdateres gjevnlig etterhvert som mer informasjon kommer inn. 
     En aktivitet bør ta fra 1 til 8-10 uker. Samt må resursser estimeres. Mennesker og eventuelt hardware.
 
@@ -536,11 +537,53 @@ Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
 \item Setter ofte opp en tabell med Task, duration og dependencies. 
       Lager så aktivitetsnettverk, og finner tiden prosjektet tar ved å finne den kritiske veien.
 \end{itemize}
-    For å få oversikt over tidsdisponeringen kan man også bruke Gantt charts. Kan også brukes til ``staff allocation''. Med navn og oppgaver nedover.
+    
+      For å få oversikt over tidsdisponeringen kan man også bruke Gantt charts. 
+    Kan også brukes til ``staff allocation''. Med navn og oppgaver nedover.
+
+    \textbf{HUSK:}
+\begin{itemize}
+\item Estimering er i beste fall kvalifisert gjetning
+\item Krav og forutsetninger endres underveis
+\item Historisk sett har vi uansett lav sansynlighet for å treffe
+\end{itemize}
 \begin{itemize}
 
-\item Eksempel på aktivitetstabell\\
+\item Nettverksdiagram(aktivitetsdiagram)\\
 \label{sec-5.3.2.1}%
+Beskriver mulige gjennomføringer av aktivitetene
+     Nettverksdiagrammet bestemmes ved:
+\begin{itemize}
+\item Hver aktivitet defineres som en enhet i diagrammet
+\item mulige rekkefølger angis som piler mellom to aktiviteter
+\item starttidspunkt og ferdigstilling bestemmer diagrammets mulige veier
+\end{itemize}
+
+     Nettverksdiagrammet gjør at vi enklere kan se om vi er i rute på
+     prosjektet eller ikke.
+     
+\begin{itemize}
+
+\item Kritisk vei\\
+\label{sec-5.3.2.1.1}%
+den veien i nettverksdiagrammet som bruker lengst tid, som dermed er korteste
+      tiden det er mulig å bli ferdig med prosjektet på
+
+\item Slack\\
+\label{sec-5.3.2.1.2}%
+den veien i nettverksdiagrammet man kan ha størst forsinkelser på uten at
+      det den veien blir den kritiske. Slack kan beskrives som der marginene er, 
+      eller der man må vente når man er ferdig, hvis man regner med at alle
+      aktiviteter starter med en gang de kan og går etter planen.
+
+\begin{itemize}
+\item \textbf{Positiv slakk} betyr det er tid å gå på, i forhold til sluttdato.
+\item \textbf{Negativ slakk} betyr at aktiviteten medvirker til at prosjektet ikke blir ferdig tidsnok.
+\end{itemize}
+\end{itemize} % ends low level
+
+\item Eksempel på aktivitetstabell\\
+\label{sec-5.3.2.2}%
 \begin{center}
 \begin{tabular}{lllll}
 \hline
@@ -558,8 +601,13 @@ Veldig rettet mot hvordan gjennomføringsrettet, med programmeringsteknikker
 \end{center}
 
 
-    
-    
+
+    \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./nettdiag.eps}
+    \caption{\label{fig:nettdiag}Eksempel på nettdiagram til en aktivitetstabell}
+    \end{figure}
+
 \end{itemize} % ends low level
 \subsubsection{Risk management}
 \label{sec-5.3.3}
@@ -1116,8 +1164,17 @@ Kommniserer med brukere.
     \includegraphics[width=\textwidth]{./sekvensdiagram.eps}
     \caption{\label{fig:sekvensdiagram}Eksempel på sekvensdiagram}
     \end{figure}
-\subsection{Structured methods}
+\subsection{Delegert vs sentralisert kontrollsti}
 \label{sec-7.5}
+
+Design av ansvar og samarbeid mellom klassene i et system kan 
+gjøres på flere måter, og to av de vanligste fremgangsmåtene for
+dette er delegert kontrollsti og sentralisert kontrollstil. 
+Delegert kontroll vil si at ansvar er fordelt utover flere klasser
+i applikasjonen. Sentralisert kontroll innebærer at applikasjonen har noen få, 
+store kontrollklasser som koordinerer et sett med relativt enkle klasser.
+\subsection{Structured methods}
+\label{sec-7.6}
 
    Karakteristikker:
 
@@ -1133,7 +1190,7 @@ Kommniserer med brukere.
     automatisk generering av kildekode, og brukergrensesnitt-manipulering.
 \end{itemize}
 \subsection{Metode for ansvarsdrevet OO - INF1050-metoden}
-\label{sec-7.6}
+\label{sec-7.7}
 
    Analyse av krav
 \begin{itemize}
@@ -1151,32 +1208,75 @@ Kommniserer med brukere.
 \end{itemize}
 \section{Kapittel 13 - Applikasjons-arkitektur}
 \label{sec-8}
-\subsection{Data-processing systems}
+\subsection{Generiske systemer}
 \label{sec-8.1}
+
+   Som regel vil to systemer av samme type ha veldig mange felles attributter,
+   det finnes i dag mange generiske systemer for en rekke systemtyper
+   \textbf{drupal}, \textbf{wordpres}, \textbf{SAP} og flere er systemer som man utvider med
+   egen funksjonalitet/konfigurasjon. Som en applikasjonsarkitekt kan du
+   bruke disse generiske systemene på en rekke måter:
+
+\begin{enumerate}
+\item Som en grunnplatform å bygge videre på
+\item Som en sjekkliste for å passe på at man har med alt man trenger
+\item Som en måte å organisere arbeid på (man ser på modeller og
+      etterligner etter eget behov)
+\item Evaluere komponenter for gjennbruk
+\item Som en måte å finne krav på/sammenligning
+\end{enumerate}
+\subsection{Data-processing systems}
+\label{sec-8.2}
+
+
+   Uten brukere som bruker systemet men heller info den skriver ut
 
    Får input-data fra database, eller filer, som den utfører en prosess på og sender det 
    ut igjen, enten tilbake i databasen, eller printe ut i ny fil.
 
    Slike prosesser er naturlig å representere i data-flyt-diagram-representasjoner. 
+   
+   For eksempel folding@home og lignende programmer som rett og slett knuser tall
+   og skriver tilbake resultater for forskning
 \subsection{Transaction-processing system}
-\label{sec-8.2}
+\label{sec-8.3}
 
    Programmer som prosesserer spørringer mot databaser, eller oppdateringer av databaser. 
-   Man sørger for at alle handlinger utføres trygt, før det speiles i databasen, slik at ikke databasen blir kurupt eller inkonsistent.
+   Man sørger for at alle handlinger utføres trygt, før det speiles i databasen, 
+   slik at ikke databasen blir kurupt eller inkonsistent.
+   
+   De fleste websider er slik og det kan her være en fordel å skille nøkkelkomponentene
+   i tre lag Modell som integrerer databasen, kontroller som spør databasen og returnerer View
+   denne arkitekturen er mest kjent som MVC
+
+   Tegn opp:
+\begin{itemize}
+\item Web browser <--> Web Server <--> Application Server <--> Database Server
+\end{itemize}
 \subsection{Event-processing system}
-\label{sec-8.3}
+\label{sec-8.4}
+
 
    Programmer som prosesserer hendelser i interfaces, gjort av brukeren, i en tilfeldig rekkefølge. 
    F.eks. Word Processors, bildebehandlingsprogrammer og spill.
 
    En del av disse, f.eks. teksteditorer har behov for svært rask behandling av data, 
    etter spesifikke eventer, og endringen foregår direkte i en buffer i minnet.
+
+   Det eneste disse trenger å tenke på er som regel hvordan reagere på det som skjer da
+   disse systemene som regel er små og lokalt på en datamaskin trenger vi ikke tenke så
+   mye på flere systemer, men heller hvordan metodene funker.
 \subsection{Language-processing system}
-\label{sec-8.4}
+\label{sec-8.5}
+
 
    Tar et naturlig, eller artificial konstruert språk, og generer en annen form 
    for representasjon som output. Vanligste eksemplet er \textbf{compilers}. Denne komponenten kan 
    være hardware (de fleste kompilatorer) eller software (slik Java er). 
+
+   Man kan også argumentere at alle ``what you see is what you get''-teksteditorer som f.eks
+   word er et slags language-processing-system da den mottar klartekst og lagrer det som 
+   xml eller en annen dokumentstandard.
 \section{Kapittel 23 - Software-testing}
 \label{sec-9}
 \subsection{Kvaliteter vi trenger i produktene:}
@@ -1276,6 +1376,82 @@ Kommniserer med brukere.
    statementene blir kjørt. Og simulering i forskjellige varianter. F.eks. bruker-interaksjon.
 
    Testingsfasen er ofte estimert til å være 50\% av utviklingskostnadene.
+
+   Man kjører flere tester, siden de tester forskjellige aspekter ved systemet.
+\subsubsection{Enhets-testing}
+\label{sec-9.3.1}
+
+    Vanligvis en test av spesifikke seksjoner av koden,
+    for eksempel en funksjon. I et objektorientert miljø, 
+    vil dette typisk være på klassenivå. Testene skrives 
+    ofte av utviklerene selv, og er en form for white-box-testing.
+\subsubsection{Integrasjons-testing}
+\label{sec-9.3.2}
+
+    Integrasjons-testing, tester interaksjonen (interfacet) mellom
+    forskjellige komponenter. Det beste er å innføre komponentene
+    på en iterativ måte, og teste fortløpende.
+\subsubsection{System-testing}
+\label{sec-9.3.3}
+
+    Tester systemet i sin helhet, i forhold til kravspesifikasjoner. 
+    Det er en form form black-box-testing, siden det ikke skal kreve
+    noe kunnskap om ``innmaten'' i systemet.
+    
+    \textbf{For eksempel}:
+\begin{itemize}
+\item Testing av GUI.
+\item Testing av sikkerhet, hastighet, veldlikeholdbarhet og andre ikke-funksjonelle krav.
+\end{itemize}
+\subsubsection{Black box testing}
+\label{sec-9.3.4}
+
+\begin{itemize}
+\item Tester systemet, sett fra utsiden, uten kunnskap om koden/system.
+\end{itemize}
+    
+    takes an external perspective of the test object to derive 
+    test cases. These tests can be functional or non-functional, 
+    though usually functional. The test designer selects valid
+    and invalid input and determines the correct output. There
+    is no knowledge of the test object's internal structure.
+
+\begin{itemize}
+\item Vet ikke hvor store deler av koden som faktisk testes.
+\item Kan kontrollere at programmet følger kravspesifikasjoner.
+\item Skalerer godt.
+\item Man vet ikke hvor feilen oppstår, når man får feil output.
+\end{itemize}
+\subsubsection{White box testing}
+\label{sec-9.3.5}
+
+\begin{itemize}
+\item Tester laget av folk med store kunnskaper om koden, 
+      for å teste alle mulige ``veier'' i koden etc.
+\end{itemize}
+    
+    uses an internal perspective of the system to design test
+    cases based on internal structure. It requires programming
+    skills to identify all paths through the software. The tester
+    chooses test case inputs to exercise paths through the code
+    and determines the appropriate outputs. In electrical hardware 
+    testing, every node in a circuit may be probed and measured; 
+    an example is in-circuit testing (ICT).
+
+    Eksempler på hva som testes:
+\begin{itemize}
+\item Control flow testing
+\item Data flow testing
+\item Branch testing
+\item Path testing
+\end{itemize}
+
+    Fordeler ulemper
+\begin{itemize}
+\item Man er sikker på at alle ``kriker'' av koden blir testet.
+\item Skalerer ikke bra. Antall muligheter øker eksponetielt.
+\item Oppdager ikke manglende funksjonalitet.
+\end{itemize}
 \section{Kapittel 26 - Software cost estimation}
 \label{sec-10}
 \subsection{Software productivity}
@@ -1539,19 +1715,30 @@ Laget for å ivareta kunders interesser
 \section{Kapittel 11 (Ikke hoved) - Arkitekturdesign}
 \label{sec-12}
 
-  Valg av arkitektur-rammeverket influerer viktige deler av systemet, som hastighet, sikkerhet og tilgjengelighet. 
 
-  Store systemer deles inn i subsystemer. ARkitekturdesign er å fastsette disse subsystemene, og kommunikasjonen dem imelom.
+  Valg av arkitektur-rammeverket influerer viktige deler av systemet, 
+  som hastighet, sikkerhet og tilgjengelighet. 
+
+  Store systemer deles inn i subsystemer. Arkitekturdesign er å
+  fastsette disse subsystemene, og kommunikasjonen dem imelom.
   
-  Skisse en grunnleggende struktur av systemet, og hovedkomponentenene og kommunikasjonen i mellom.
+  Skisse en grunnleggende struktur av systemet, og hovedkomponentenene
+  og kommunikasjonen i mellom.
 
   Er mer en bestemmelseprosess enn en aktivitet. 
 
-  Finnes to typer dataarkitekturer. Sentral database, eller lokal database, hvor subsystemene sender dataen til og fra hverandre. Fordelen med klient-server-modellen er at den er disitrbuert, og det er lett å oppgradere og fordele belasten.
 
-  \textbf{Layered-modellen} organiserer systemet i lag. Kan endres, så lenge interfacet er det samme. Negative siden er at flere lag kan gjøre at systemet går tregere.
+  Finnes to typer dataarkitekturer. Sentral database, eller lokal database,
+  hvor subsystemene sender dataen til og fra hverandre. Fordelen med 
+  klient-server-modellen er at den er disitrbuert, og det er lett å 
+  oppgradere og fordele belasten.
 
-  Et subsystem skal være uavhengig, og fungere uavhengig av de andre subsystemene. Mens en modul er en litt mindre enhet, som ofte benytter seg av tjenester i andre moduler etc.
+  \textbf{Layered-modellen} organiserer systemet i lag. Kan endres, så lenge interfacet
+  er det samme. Negative siden er at flere lag kan gjøre at systemet går tregere.
+
+  Et subsystem skal være uavhengig, og fungere uavhengig av de andre subsystemene. 
+  Mens en modul er en litt mindre enhet, som ofte benytter seg av tjenester i 
+  andre moduler etc.
 
   Finnes to måter å visualisere systemarkitekturen på.
 
@@ -1559,7 +1746,8 @@ Laget for å ivareta kunders interesser
 \item Objektorientert
      der hvert objekt er ett subsystem. En fordel med dette er at objektene kan gjenbrukes.
 \item Funksjons-orienter 
-     der man har input-data som går gjennom forskjellige funksjoner (subsystemer) og får til slutt en output.
+     der man har input-data som går gjennom forskjellige funksjoner (subsystemer) og får til
+     slutt en output.
 \end{enumerate}
 \section{Kapittel 12 (Ikke hoved) - Distributed system architecture}
 \label{sec-13}
