@@ -812,6 +812,18 @@
     for å hjelpe til med denne prosessen. Det er verktøy som kan alt fra datamodelering, 
     automatisk generering av kildekode, og brukergrensesnitt-manipulering.
 
+** Metode for ansvarsdrevet OO - INF1050-metoden
+   Analyse av krav
+   - Identifiser krav
+   - lag høynivå bruksmønsterdiagram
+   - Spesifiser hvert bruksmønster tekstlig med hovedflyt og alternativ flyt
+
+   Objektdesign, for hvert bruksmønser:
+   - Identifiser objekter, fordel ansvar (CRC)
+   - Lag sekvensdiagram
+   - Lag klassediagram
+   - Lag klassediagram på systemnivå
+
 * Kapittel 13 - Applikasjons-arkitektur
 ** Data-processing systems
    Får input-data fra database, eller filer, som den utfører en prosess på og sender det 
@@ -987,11 +999,6 @@
    Har både interne og eksterne rammebetingelser man må ta hensyn til.
 
 ** prisformer
-   Har tre prisformer: 
-   - Fastpris, knyttet til avtalt omfang. 
-   - Løpende timer, fakurerer timer og annet.  
-   - Målpris, basert på estimater og risikovrderinger. Justeres etterhvert.
-
    PS2000 regulerer iterative eller smidige (agile) prosesser. 
    Kan benyttes både av private og offentlige aktører. Utviklet så begge parter tas vare på.
 
@@ -1006,6 +1013,32 @@
   og desto større nytte-effekt av endring. Dilemma!
 
   Fleksibel og oversiktelig.
+
+*** Fastpris
+    knyttet til avtalt omfang.
+    - Kundeperspektiv
+      - Forutsigbart, men risikerer å få et avkortet produkt dersom
+	leverandøren ikke vil jobbe utover fastpriskostnadene.
+    - Leverandørperspektiv
+      - Også forutsigbart, men risikerer å jobbe gratis etter at 
+	fastpriskostnadene er brukt
+
+*** Løpende timer
+    fakurerer timer og annet.  
+    - Kundeperspektiv:
+      - Lite forutsigbart og risiko for store budsjettoverskridelser.
+	vil dog kunne få levert et fullstendig produkt.
+    - Leverandørperspektiv:
+      - Også lite forutsigbart, men får dekket faktiske utgifter
+
+*** Målpris
+    basert på estimater og risikovrderinger. Justeres med incentiver og
+    saksjoner.
+    - Kundeperspektiv og leverandørperspektiv
+      - Forutsigbart og eksplisitt håndtering av risiko og
+	ansvarsfordeling. Rom for erfaringsbaserte vurderinger. Støtter samarbeid mellom kunde og
+	leverandør. Krever ekstraarbeid for å vurdere risiko og usikkerhet. Krever at begge parter
+	forstår incentiv-modeller.
 
 ** PS2000 vs andre kontrakter
 
@@ -1329,12 +1362,35 @@
    skal regnes som sensitive, er uttømmende definert i § 2 nr 8. Helseopplysninger og
    opplysninger om politisk oppfatning er eksempler på sensitive opplysninger.
 
+* Databaser
+  I en relasjonsdatabase har vi en eller flere tabeller, kalt relasjoner. 
+  Hver rad må kunne entydige identifiseres av f.eks. ett ID-nummer. Hver kolonne
+  har en atributt. Cellene inneholder verdiene til attributtene. Tabellene kan 
+  kobles sammen med primary og foreign keys. 
+
+** Klient-server databaser 
+   Mye brukt språk mot databaser er SQL, med databaser som *mySQL*, *PostgerSQL*
+   men også *ORACLE* er en stor distributør innen databaser. De baserer seg på at
+   programmet som bruker databasen logger seg inn i databasen med brukernavn/passord
+
+** integrerte databaser
+   er ofte sett på som en alternativ måte til å bruke flat filstruktur for et program
+   vil ofte ikke ha like stor concurrency som Klient-serverdatabaser, men funker mer
+   som en integrert lagringsløsning for programmet som minimerer datakorrupsjon og 
+   lignende *SQLite* er en av de større navnene innen dette, spesielt til mobiltelefoner 
+   o.l.
+
 * Appendix - Ordliste
   Under følger noen korte forklaringer på ord og begreper og av og til dets engelske oversettelse.
-  |----------------------+-----------+-------------------------------------------------------------------------------------------|
-  | *Norsk*              | *Engelsk* | *Forklaring*                                                                              |
-  |----------------------+-----------+-------------------------------------------------------------------------------------------|
-  | Domene-kunnsap       |           | Kunnskap innenfor et bestemt omeråde, f.eks. innenfor ett bestemt prosjekt eller produkt. |
-  | Sosio-teknisk system |           | System der også mennesker, med kunnskap om systemet, inngår i prosessen.                  |
-  | Kritiske systemer    |           |                                                                                           |
-  |----------------------+-----------+-------------------------------------------------------------------------------------------|
+
+  |------------------------+-----------+----------------------------------------------------------------------------------------------------------------------------------|
+  | *Norsk*                | *Engelsk* | *Forklaring*                                                                                                                     |
+  |------------------------+-----------+----------------------------------------------------------------------------------------------------------------------------------|
+  | Domene-kunnskap        |           | Kunnskap innenfor et bestemt område, f.eks. innenfor ett bestemt prosjekt eller produkt.                                         |
+  | Sosio-teknisk system   |           | System der også mennesker, med kunnskap om systemet, inngår i prosessen.                                                         |
+  | Kritiske systemer      |           | Hvor feil i systemet vil være svært kritisk. F.eks. flystyring, kontrolltårn etc.                                                |
+  | Domenemodell           |           | Modell (ofte UML) over den delen av virkeligheten vi skal lage system for.                                                       |
+  | Ikke-Funksjonelle krav |           | legger føringer på oppførselen i form av krav til ytelse, sikkerhet, brukervennlighet, kostnader, tidsrammer, interoperabilitet. |
+  | Funksjonelle krav      |           | beskriver oppførselen (funksjonene) til systemet                                                                                 |
+  | Milepæl                | Milestone | Beskriver konkret delmål som skal oppnås                                                                                         |
+  |------------------------+-----------+----------------------------------------------------------------------------------------------------------------------------------|

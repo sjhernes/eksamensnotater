@@ -1,4 +1,4 @@
-% Created 2010-05-31 Mon 16:07
+% Created 2010-05-31 Mon 16:39
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -1132,6 +1132,23 @@ Kommniserer med brukere.
     for å hjelpe til med denne prosessen. Det er verktøy som kan alt fra datamodelering, 
     automatisk generering av kildekode, og brukergrensesnitt-manipulering.
 \end{itemize}
+\subsection{Metode for ansvarsdrevet OO - INF1050-metoden}
+\label{sec-7.6}
+
+   Analyse av krav
+\begin{itemize}
+\item Identifiser krav
+\item lag høynivå bruksmønsterdiagram
+\item Spesifiser hvert bruksmønster tekstlig med hovedflyt og alternativ flyt
+\end{itemize}
+
+   Objektdesign, for hvert bruksmønser:
+\begin{itemize}
+\item Identifiser objekter, fordel ansvar (CRC)
+\item Lag sekvensdiagram
+\item Lag klassediagram
+\item Lag klassediagram på systemnivå
+\end{itemize}
 \section{Kapittel 13 - Applikasjons-arkitektur}
 \label{sec-8}
 \subsection{Data-processing systems}
@@ -1362,13 +1379,6 @@ Kommniserer med brukere.
 \subsection{prisformer}
 \label{sec-11.2}
 
-   Har tre prisformer: 
-\begin{itemize}
-\item Fastpris, knyttet til avtalt omfang.
-\item Løpende timer, fakurerer timer og annet.
-\item Målpris, basert på estimater og risikovrderinger. Justeres etterhvert.
-\end{itemize}
-
    PS2000 regulerer iterative eller smidige (agile) prosesser. 
    Kan benyttes både av private og offentlige aktører. Utviklet så begge parter tas vare på.
 
@@ -1385,6 +1395,61 @@ Kommniserer med brukere.
   og desto større nytte-effekt av endring. Dilemma!
 
   Fleksibel og oversiktelig.
+\subsubsection{Fastpris}
+\label{sec-11.2.1}
+
+    knyttet til avtalt omfang.
+\begin{itemize}
+\item Kundeperspektiv
+
+\begin{itemize}
+\item Forutsigbart, men risikerer å få et avkortet produkt dersom
+        leverandøren ikke vil jobbe utover fastpriskostnadene.
+\end{itemize}
+
+\item Leverandørperspektiv
+
+\begin{itemize}
+\item Også forutsigbart, men risikerer å jobbe gratis etter at 
+        fastpriskostnadene er brukt
+\end{itemize}
+
+\end{itemize}
+\subsubsection{Løpende timer}
+\label{sec-11.2.2}
+
+    fakurerer timer og annet.  
+\begin{itemize}
+\item Kundeperspektiv:
+
+\begin{itemize}
+\item Lite forutsigbart og risiko for store budsjettoverskridelser.
+        vil dog kunne få levert et fullstendig produkt.
+\end{itemize}
+
+\item Leverandørperspektiv:
+
+\begin{itemize}
+\item Også lite forutsigbart, men får dekket faktiske utgifter
+\end{itemize}
+
+\end{itemize}
+\subsubsection{Målpris}
+\label{sec-11.2.3}
+
+    basert på estimater og risikovrderinger. Justeres med incentiver og
+    saksjoner.
+\begin{itemize}
+\item Kundeperspektiv og leverandørperspektiv
+
+\begin{itemize}
+\item Forutsigbart og eksplisitt håndtering av risiko og
+        ansvarsfordeling. Rom for erfaringsbaserte vurderinger. Støtter samarbeid mellom kunde og
+        leverandør. Krever ekstraarbeid for å vurdere risiko og usikkerhet. Krever at begge parter
+        forstår incentiv-modeller.
+\end{itemize}
+
+\end{itemize}
 \subsection{PS2000 vs andre kontrakter}
 \label{sec-11.3}
 
@@ -1860,19 +1925,45 @@ Laget for å ivareta kunders interesser
    må oppfylle de skjerpede krav til rettslig grunnlag i § 9. Hvilke opplysninger som
    skal regnes som sensitive, er uttømmende definert i § 2 nr 8. Helseopplysninger og
    opplysninger om politisk oppfatning er eksempler på sensitive opplysninger.
-\section{Appendix - Ordliste}
+\section{Databaser}
 \label{sec-18}
 
+  I en relasjonsdatabase har vi en eller flere tabeller, kalt relasjoner. 
+  Hver rad må kunne entydige identifiseres av f.eks. ett ID-nummer. Hver kolonne
+  har en atributt. Cellene inneholder verdiene til attributtene. Tabellene kan 
+  kobles sammen med primary og foreign keys. 
+\subsection{Klient-server databaser}
+\label{sec-18.1}
+
+   Mye brukt språk mot databaser er SQL, med databaser som \textbf{mySQL}, \textbf{PostgerSQL}
+   men også \textbf{ORACLE} er en stor distributør innen databaser. De baserer seg på at
+   programmet som bruker databasen logger seg inn i databasen med brukernavn/passord
+\subsection{integrerte databaser}
+\label{sec-18.2}
+
+   er ofte sett på som en alternativ måte til å bruke flat filstruktur for et program
+   vil ofte ikke ha like stor concurrency som Klient-serverdatabaser, men funker mer
+   som en integrert lagringsløsning for programmet som minimerer datakorrupsjon og 
+   lignende \textbf{SQLite} er en av de større navnene innen dette, spesielt til mobiltelefoner 
+   o.l.
+\section{Appendix - Ordliste}
+\label{sec-19}
+
   Under følger noen korte forklaringer på ord og begreper og av og til dets engelske oversettelse.
+
 
 \begin{center}
 \begin{tabular}{lll}
 \hline
- \textbf{Norsk}        &  \textbf{Engelsk}  &  \textbf{Forklaring}                                                                        \\
+ \textbf{Norsk}          &  \textbf{Engelsk}  &  \textbf{Forklaring}                                                                                                               \\
 \hline
- Domene-kunnsap        &                    &  Kunnskap innenfor et bestemt omeråde, f.eks. innenfor ett bestemt prosjekt eller produkt.  \\
- Sosio-teknisk system  &                    &  System der også mennesker, med kunnskap om systemet, inngår i prosessen.                   \\
- Kritiske systemer     &                    &                                                                                             \\
+ Domene-kunnskap         &                    &  Kunnskap innenfor et bestemt område, f.eks. innenfor ett bestemt prosjekt eller produkt.                                          \\
+ Sosio-teknisk system    &                    &  System der også mennesker, med kunnskap om systemet, inngår i prosessen.                                                          \\
+ Kritiske systemer       &                    &  Hvor feil i systemet vil være svært kritisk. F.eks. flystyring, kontrolltårn etc.                                                 \\
+ Domenemodell            &                    &  Modell (ofte UML) over den delen av virkeligheten vi skal lage system for.                                                        \\
+ Ikke-Funksjonelle krav  &                    &  legger føringer på oppførselen i form av krav til ytelse, sikkerhet, brukervennlighet, kostnader, tidsrammer, interoperabilitet.  \\
+ Funksjonelle krav       &                    &  beskriver oppførselen (funksjonene) til systemet                                                                                  \\
+ Milepæl                 &  Milestone         &  Beskriver konkret delmål som skal oppnås                                                                                          \\
 \hline
 \end{tabular}
 \end{center}
