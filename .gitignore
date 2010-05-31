@@ -2,6 +2,6 @@
 *.dvi
 *.log
 *.aux
-*.tex
+geometry.tex
 *.toc
 *.out
