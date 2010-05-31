@@ -34,14 +34,14 @@
 
    En enkel oppdeling og strukturering av prosessen kan se slik ut:
    - Tid (faser): 
-     - /PS2000‐kontraktstandarden: Behovsfase, Løsningsbeskrivelse, Iterativ konstruksjonsfase, Godkjenningsfase./
-     - /Timeboxing/tidsavgrensning./
+     - PS2000-kontraktstandarden: Behovsfase, Løsningsbeskrivelse, Iterativ konstruksjonsfase, Godkjenningsfase.
+     - Timeboxing/tidsavgrensning.
    - Oppgaver (aktiviteter og tilhørende leveranser): 
-     - /Analyse, design, programmering, testing,.../ 
+     - Analyse, design, programmering, testing,...
    - Tekniske aspekter: 
-     - /Kvalitetsaspekter, Funksjonalitet, Moduler, Komponenter./
-   - Modeller på forskjellige abstraksjonsnivåer 
-     - /Kravspesifikasjoner versus Objektorientert analyse versus Detaljert design versus Kode./
+     - Kvalitetsaspekter, Funksjonalitet, Moduler, Komponenter.
+   - Modeller på forskjellige abstraksjonsnivåer 
+     - Kravspesifikasjoner versus Objektorientert analyse versus Detaljert design versus Kode.
 
 * Kapittel 2 - Sosiotekniske systemer
 
@@ -130,68 +130,72 @@
 
 * Kapittel 4 - Systemutviklingsprosess
   Hvordan programvare skal produseres. Organiseringen rundt det å skrive kode etc.
-  - Økt produktivitet og kvalitet.
-** Programvare er en del av samfunnet. 
-   Utfordringer med å levere tilfredsstillende kvalitet.
-   Tidsplan og budsjett overskrides svært ofte.
-   Mange prosjekter feiler.
+  76% av alle prosjekter overskrider budsjett. 19% bruker mindre.
+  Økt produktivitet og kvalitet.
 
-   - Livssyklus: 
-     Fra oppstart av utvikling til nedleggelse.
-   - Utviklingsprosess: 
-     Fasene fra oppstart, utvikling til leveranse.
+*** Faser i en livssyklus
+
+    1. Idefase om et system – foretningsanalyse (lønner det seg) 
+    2. Kravinnsamling og kravanalyse (hva skal systemet gjøre?) 
+    3. Design (hvordan skal det konstrueres?) 
+    4. Programmering (konstruksjon)
+    5. Test (ble det riktig?) 
+    6. Installasjon, integrasjon, driftsetting 
+    7. Vedlikehold (feilretting og videreutvikling)
+
+** Utviklingsmodeller. 
      
    Store kostnader med utvikling av systemer og dermed har man over
    tid fått mange forskjellige utviklingsmodeller som kan hjelpe oss
    å minimere risiko og kostnad for utviklingen.
 
-** Fossefallsmodellen: 
-  1. Requirements analysis and definition: 
-     Tjenester og mål for systemet defineres, etter samtaler med bruker.
-  2. System and software design: 
-     Beskriver system-arkitekturen. 
-  3. Implementation and unit testing: 
-     Sjekker hver komponent om de går sammen etc.
-  4. Integration and unit testing: 
-     Komponenter settes sammen og testes som et system. Krav sjekkes. Leveres!
-  5. Operation and maintanane: 
-     Systemet innstaleres, og eventuelle usette feil rettes,nye krav oppdages og legges til.
+*** Fossefallsmodellen: 
+   1. Requirements analysis and definition: 
+      Tjenester og mål for systemet defineres, etter samtaler med bruker.
+   2. System and software design: 
+      Beskriver system-arkitekturen. 
+   3. Implementation and unit testing: 
+      Sjekker hver komponent om de går sammen etc.
+   4. Integration and unit testing: 
+      Komponenter settes sammen og testes som et system. Krav sjekkes. Leveres!
+   5. Operation and maintanane: 
+      Systemet innstaleres, og eventuelle usette feil rettes,nye krav oppdages og legges til.
 
-  Gjør få iterasjoner. Fasene avsluttes for ny startes. Dyrt med endringer.
-  Kun når kravene er meget godt definert, og man føler seg sikker på prosessen.
+   Gjør få iterasjoner. Fasene avsluttes for ny startes. Dyrt med endringer.
+   Kun når kravene er meget godt definert, og man føler seg sikker på prosessen.
 
-** Evoutionary development:
-   Kommer med raske utkast, viser dem til kunden og får tilbakemeldinger og gjør endringer. Dette gjøres til resultatet er akkseptabelt.
+*** Evoutionary development:
+    Kommer med raske utkast, viser dem til kunden og får tilbakemeldinger og gjør endringer. Dette gjøres til resultatet er akkseptabelt.
 
-   1. Exploratory develpoment: 
-      Vidreutvikler de delene man forstår, har samtaler underveis.
-   2. Throwaway prototyping: 
-      Eksperimenterer med de dårlig forståtte kravene, og kaster det.
+    1. Exploratory develpoment: 
+       Vidreutvikler de delene man forstår, har samtaler underveis.
+    2. Throwaway prototyping: 
+       Eksperimenterer med de dårlig forståtte kravene, og kaster det.
 
-   Problemer: Litt vanskelig for ledere å vite lengde, estimere etc. 
-   Samt at systemet blir dårligere strukturert når man bare legger til og legger til. 
+    Problemer: Litt vanskelig for ledere å vite lengde, estimere etc. 
+    Samt at systemet blir dårligere strukturert når man bare legger til og legger til. 
 
-   En kombinasjon av evolusjonær og fossefall kan være bra. Definere krav med evo. og fossefall på de godt forståtte delene.
+    En kombinasjon av evolusjonær og fossefall kan være bra. Definere krav med evo. og fossefall på de godt forståtte delene.
 
-** Component based software engineering:
-   Tar sikte på å gjenbruke komponenter. 
-   
-   1. Component analysis: 
-      Ser på krav, og leter etter komponenter. Passer ikke alltids nødvendigvis. 
-   2. Requirements modifications: 
-      Ser på kravene igjen i forhold til kompoonenter. 
-      Endrer på kravene hvis det lar seg gjøre. Hvis ikke letes det etter nye komponenter.
-   3. System design with reuse: 
-      Framework settes sammen. Noen komponenter må kanskje designes, hvis det ikke finnes noe å gjenbruke.
-   4. Development and integration: 
-      Noe kode kan måtte skrives her. Systemet settes så sammen. 
+*** Component based software engineering:
+    Tar sikte på å gjenbruke komponenter. 
+    
+    1. Component analysis: 
+       Ser på krav, og leter etter komponenter. Passer ikke alltids nødvendigvis. 
+    2. Requirements modifications: 
+       Ser på kravene igjen i forhold til kompoonenter. 
+       Endrer på kravene hvis det lar seg gjøre. Hvis ikke letes det etter nye komponenter.
+    3. System design with reuse: 
+       Framework settes sammen. Noen komponenter må kanskje designes, hvis det ikke finnes noe å gjenbruke.
+    4. Development and integration: 
+       Noe kode kan måtte skrives her. Systemet settes så sammen. 
 
-   Billigere med gjennbruk, prosessen kan gå raskere, men kompromisser på alltids gjøres i forhold til kravene.
+    Billigere med gjennbruk, prosessen kan gå raskere, men kompromisser på alltids gjøres i forhold til kravene.
 
-** Process iteration:
-   Kravene forandrer seg stort under en prosess. Ny teknologi, press utenfra, forandring i ledelse etc. 
-   Inkrementelle prosesser prøver å ta forbehold om dette.
-   - Systemspesifikasjonene er ikke ferdig før siste inkrement er ferdig.
+*** Process iteration:
+    Kravene forandrer seg stort under en prosess. Ny teknologi, press utenfra, forandring i ledelse etc. 
+    Inkrementelle prosesser prøver å ta forbehold om dette.
+    - Systemspesifikasjonene er ikke ferdig før siste inkrement er ferdig.
 *** Incremental delivery: 
     Skriver generelle outline-krav og struktur. Så skriver man krav til enkeltinkrementer, utvikler dem og leverer deler, og skriver nye krav til nye inkrementer.
     - Fordeler: 
@@ -234,38 +238,38 @@
 **** Software evolution:
      utvikling og vedlikehold knyttes mer og mer sammen, og software-produksjon er en evolusjonær prosess som utvikler seg.
 
-** Prøv-og-feil
-   Dårlig idè, man har ingen forutsetninger for å planlegge eller estimere tid
-** TODO Oblig-metoden. Funker dårlig på større systemer. Vanskelig for samarbeid.
-   Utdype?
-** Prototyping
+*** Prøv-og-feil
+    Dårlig idè, man har ingen forutsetninger for å planlegge eller estimere tid
+*** TODO Oblig-metoden. 
+    Funker dårlig på større systemer. Vanskelig for samarbeid.
+    Utdype?
+*** Prototyping
 
-   Introduser for å avhjelpe problemer ved fossefallsmodellen. Lager protyper som du kan vise frem. 
-   Greit å vise noe visuelt. (Har både kast-prot. og evolusonær-protyp. (bruker siste utkast).
+    Introduser for å avhjelpe problemer ved fossefallsmodellen. Lager protyper som du kan vise frem. 
+    Greit å vise noe visuelt. (Har både kast-prot. og evolusonær-protyp. (bruker siste utkast).
 
-** Evolusjonære modeller
+*** Evolusjonære modeller
 
-   Fossefall forutser forutsigbarhet og repeterbar. Det er det ikke. Evolusjon er ett svar på disse modellene. 
-   Har iterasjoner av Iterasjonsplan, analyse og design, programmering, test. Inkrementerer for hver iterasjon. 
-   - Kravene kan også komme etterhvert. Støtter også endringer under veis.
-   
-   Men mindre formalisme, krever disiplin.
-
-*** RUP 
+    Fossefall forutser forutsigbarhet og repeterbar. Det er det ikke. Evolusjon er ett svar på disse modellene. 
+    Har iterasjoner av Iterasjonsplan, analyse og design, programmering, test. Inkrementerer for hver iterasjon. 
+    - Kravene kan også komme etterhvert. Støtter også endringer under veis.
+    
+    - Men mindre formalisme, krever disiplin
+**** RUP 
 
     Arkitektursentrert, objektorienterte utviklingsprinsipper, UML-modelering er sentralt.
     ModellDrevet utvikling
 
-    Hybrid prosessmodell. Basert på UML.
+    - Hybrid prosessmodell. Basert på UML.
     1. Inception: 
-       Buisness-analyse og eventuelt klarsignal.
+       Buisness-analyse og eventuelt klarsignal
     2. Elaboration: 
        - Forstå problem-området
        - få oversikt over rammeverk-arkitekturen
        - risk-analyse. 
        - Ved slutt har man use case UML.
     3. Construction: 
-       Programmet utvikles og dokumenteres. 
+       Programmet utvikles og dokumenteres
     4. Transition: 
        Fører det over til brukere. 
 
@@ -275,8 +279,8 @@
     Blant annet grafisk system modeller, generere grafisk brukergrensesnitt, programdebugging, oversette programkode fra gammel til ny.
 
     Blant annet Genova. Tegner UML og får generert kode.
-    - Datamodell og klassediagram.
-      Brukerdialoger(skjermbilder) for tilbakemeldinger fra interessenter.
+    Datamodell og klassediagram.
+    Brukerdialoger(skjermbilder) for tilbakemeldinger fra interessenter.
 
 *** Smidige (agile) metoder
 
@@ -307,24 +311,24 @@
    
    For å Planlegge: brukes resursene riktig?. Oppføligng. Og korreksjon (budsjett, leveransedato).
 
-    Styringsgruppen: De økonomiske ineressene. Overordnet styring.
-    Prosjektlederen: Daglig ledelse av prosjektet. Ansvar for fremdrift etc. Skriver rapporter.
+   Styringsgruppen: De økonomiske ineressene. Overordnet styring.
+   Prosjektlederen: Daglig ledelse av prosjektet. Ansvar for fremdrift etc. Skriver rapporter.
 
-    Viktige faktorer
-    1. Kostnadsramme
-    2. Tidsramme
-    3. Personalramme (antall prosjektdeltagere og kompetanse)
-    4. Utstyrsramme (maskiner, programvare, nettverk, etc)
-    5. Krav til leveransene
-    6. Offentlige krav (lover, retningslinjer, etc)
-    7. Produksjonstekniske krav
+   Viktige faktorer
+   1. Kostnadsramme
+   2. Tidsramme
+   3. Personalramme (antall prosjektdeltagere og kompetanse)
+   4. Utstyrsramme (maskiner, programvare, nettverk, etc)
+   5. Krav til leveransene
+   6. Offentlige krav (lover, retningslinjer, etc)
+   7. Produksjonstekniske krav
 
-    Viktige elementer i prosjektplanleggingen
-    1. Identifisere og planlegge mål og delmål. 
-    2. Prioritere oppgaver. 
-    3. Estimere arbeidsomfang. 
-    4. Beslutte start og sluttdato. 
-    5. Holde oversikt over avhengigheter mellom aktiviteter. 
+   Viktige elementer i prosjektplanleggingen
+   1. Identifisere og planlegge mål og delmål. 
+   2. Prioritere oppgaver. 
+   3. Estimere arbeidsomfang. 
+   4. Beslutte start og sluttdato. 
+   5. Holde oversikt over avhengigheter mellom aktiviteter. 
 
    Bruker timeboxing for å holde angitt tid. Starter med høyeste priorierte oppgaver.
 
@@ -1152,6 +1156,132 @@
     Fordeler med distribuerte systermer er selvfølgelig at man har minst like mange backuper
     som kodere, man kan jobbe offline (fordel ved ustabile trådløse nett), og fra hvor som helst
     i verden, å redigere kode lokalt vil også være raskere og sikrere.
+* Jus, etikk og personvern
+  Personopplysningsloven er alltid relevant ved informasjonssystemer som skal behandle personopplysninger. Loven er basert på et EU-direktiv. Under følger en sjekkliste for å kontrollere om du følger POL riktig. (Hentet direkte fra forelesningsfoil).
+** sjekkliste for kontroll av POL
+*** Sjekkliste, trinn 1
+    Gjelder loven for mitt informasjonssystem? 
+    - Hvis jeg er etablert i Norge (hovedregel) 
+    - Hvis PO blir behandlet elektronisk
+      - Behandling = alt du kan gjøre med opplysninger/data 
+      - Helt eller delvis elektronisk behandling 
+      - Uansett tekst, bilde, lyd mv 
+      - Spesielle regler gjelder for fjernsynsovervåking
+*** Sjekkliste, trinn 2
+    Har jeg lovlig adgang til de opplysningene jeg ønsker å behandle (eller kan jeg skaffe slik adgang?)
+    Mulige rettslige grunnlag 
+    - Lovhjemmel 
+    - Samtykke
+      - Frivillig 
+      - Informert (jf § 19) 
+      - Uttrykkelig
+    - Nødvendig (slik det er angitt i pol §§ 8 og 9)
+*** Sjekkliste, trinn 3
+    Hva skal/kan jeg benytte PO til? 
+    - All behandling av PO må skje for ett eller flerebestemte formål
+    - Formålene må være angitt før behandling begynner
+    - Formålet spiller en viktig rolle bl.a i forhold til krav til opplysningskvalitet, 
+      info.sikkerhet og lagringstid
+    - Formålet kan endres, men det er begrensninger
+*** Sjekkliste, trinn 4
+    Har opplysningene den nøvendige /kvalitet/? 
+    - Kvalitetskravene skal alltid bedømmes ut i fra formålet
+    - Kvalitetskrav etter loven:
+      - tilstrekkelige 
+      - relevante 
+      - korrekte 
+      - oppdaterte
+    - Det skal alltid vurderes om det er behov for tiltak for å fremme opplysningskvalitete
+*** Sjekkliste, trinn 5 
+    Er personene tilstrekkelig sikkert identifiserte?
+    - Begrensninger i adgang til å benytte “entydige identifikasjonsmidler”:
+      - fødselsnummer
+      - biometriskeidentifikasjonsmetoder
+    - Må være
+      - saklig behov for og 
+      - nødvendig a benytte slike identifikasjonsmidler
+    Datatilsynet kan gi pålegg om bruk av entydige identifikasjonsmidler
+*** Sjekkliste, trinn 6 
+    Hva er tilfredsstillende sikkerhetstiltak?
+    - Skal sikre 
+      - konfidensialitet
+      - integritet
+      - tilgjengelighet
+    - Skal vurdere behov for å iverksette tiltak
+    - Tiltakene må være
+      - planlagte 
+      - systematiske 
+      - dokumenterte
+    - Tiltakene kan være av et hvilket som helst slag
+*** Sjekkliste, trinn 7 
+    Hva må jeg gjøre for å være sikker på at loven, forskrifter og eventuelle enkeltvedtak blir etterlevet?
+    - Internkontroll må gjennomføres for å sikre etterlevelse av krav i:
+      - lov og forskrift 
+      - konsesjoner og andre enkeltvedtak
+    - Tiltakene må være
+      - planlagte 
+      - systematiske 
+      - dokumenterte
+*** Sjekkliste, trinn 8
+    Kan jeg starte behandlingen?
+    - Melding skal sendes minst 30 dager før hvis meldepliktig
+    - Konsesjon må søkes hvis sensitive PO
+      - Sensitive opplysningstyper er definert i loven
+      - Kan ikke starte behandlingen før konsesjon er gitt og vilkår
+       	som stilles i konsesjonen kan etterleves
+
+** Oppsummering av lovens ni kapittler
+*** Kapittel I
+    Kapittel I. Lovens formål og virkeområde inneholder definisjon av grunnbegreper 
+    som brukes i loven, pluss bestemmelser om hva loven gjelder for og hvor den gjelder. 
+    Dette er nesten alltid nødvendig å ha oversikt over.
+*** Kapittel II
+    Alminnelige regler for behandling av personopplysninger er også viktig fordi
+    i dette kapittelet fastsettes de viktigste vilkårene for at det over hode
+    skal være lov for skolen og andre å behandle opplysninger om elever og lærere.
+    Dette kapittelet inneholder mange viktige plikter for den som er ansvarlig for
+    at loven etterleves, for eksempel den øverste skoleledelsen i en kommune 
+    ("behandlingsansvarlig").
+*** Kapittel III
+    Informasjon om behandling av personopplysninger
+    Personer som det er registrert opplysninger om (elever, lærere mv) har rettigheter
+    etter loven. Kapittel III inneholder bestemmelser om de viktigste rettighetene.
+*** Kapittel IV
+    Enkelte andre rettigheter finnes her. Andre rettigheter for den registrerte,
+    bl.a. rett og plikt til å slette og rette opplysninger.
+*** Kapittel V
+    Overføring av personopplysninger til utlandet får i praksis kun betydning
+    i forhold til overføring av personopplysninger til og fra land utenfor EØS-området. 
+    Bestemmelsene er imidlertid ofte vanskelige å anvende fordi de er basert på situasjonen
+    for mer enn ti år siden og ikke er godt tilpasset moderne bruk av Internett.
+*** Kapittel VI
+    Melde- og konsesjonsplikt Meldeplikt til Datatilsynet gjelder ofte, mens konsesjonsplikt 
+    primært gjelder behandling av personopplysninger som loven definerer som sensitive.
+*** Kapittel VII
+    Fjernsynsovervåking gjelder enhver bruk av kamerateknologi, eventuelt med lyd, men
+    ikke når kameraet brukes på "vanlige", manuelle måter (f.eks. fotografering på 
+    klassetur).
+*** Kapittel VIII
+    Tilsyn og sanksjoner har bestemmelser som gir Datatilsynet og Personvernnemnda
+    myndighet til å bestemme. Særlig viktig når det er konflikt og uenighet om hva 
+    som er lov. Kapittelet har også bestemmelser om straff og erstatning ved brudd
+    på lovens bestemmelser, men dette er kun aktuelt i sjeldne tilfelle.
+*** Kapittel IX
+    Ikraftsetting. Overgangsregler. Endringer i andre lover har i dag neppe betydning.
+** Virkeområde og hovedregler
+   Loven stiller noen grunnkrav til all behandling av personopplysninger:
+   Den behandlingsansvarlige må ha rettslig grunnlag for behandlingen, dvs. enten samtykke fra den registrerte, hjemmel i lov eller behandlingen må være nødvendig av hensyn til et av formålene som er nevnt i § 8.
+   - Opplysningene skal ha tilfredsstillende kvalitet
+   - Opplysningene skal ikke brukes senere til formål som er uforenlig med det
+     opprinnelige formålet med innsamlingen, uten at den registrerte samtykker
+   - Opplysningene skal ikke lagres lengre enn det som er nødvendige for behandlingen
+
+   For sensitive personopplysninger er det enkelte tilleggskrav:
+   behandlingen må som regel ha konsesjon (tillatelse) fra Datatilsynet og behandlingen
+   må oppfylle de skjerpede krav til rettslig grunnlag i § 9. Hvilke opplysninger som
+   skal regnes som sensitive, er uttømmende definert i § 2 nr 8. Helseopplysninger og
+   opplysninger om politisk oppfatning er eksempler på sensitive opplysninger.
+
 * Appendix - Ordliste
   Under følger noen korte forklaringer på ord og begreper og av og til dets engelske oversettelse.
   |----------------------+-----------+-------------------------------------------------------------------------------------------|
