@@ -1,4 +1,4 @@
-% Created 2010-05-31 Mon 15:22
+% Created 2010-05-31 Mon 15:36
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -942,10 +942,17 @@ Whitebox og blackbox-testing
 \section{Kapittel 8 - System-modeller}
 \label{sec-7}
 
+
+  Notasjon som støtter opp under modellbasert systemtvikling.
+\begin{itemize}
+\item Godt utgangspunkt for dokumentasjon.
+\end{itemize}
+  Kan brukes til datamodeliering, arbeidsflyt-modelering eller objektmodelering.
+
   En systemmodel representerer systemet på en mer overordnet, abstrakt og helhetlig måte. 
   Kan ses på den tekniske motvekten til Krav. Da krav skal bli forstått av også
   ikke tekniske mennesker, er det naturlig for utvikleren å lage en mer teknisk
-  modell basert på kravene. 
+  modell basert på kravene. Man baserer ofte modellene sine på UML-standarden
   
 \subsection{Context models}
 \label{sec-7.1}
@@ -973,15 +980,24 @@ Whitebox og blackbox-testing
 \end{itemize}
     Kan bruke struktrert tekstlig spesifikasjon til hver use case.
 
-   \begin{figure}[htb]
-   \centering
-   \includegraphics[width=0.75\textwidth]{./kravogcase.eps}
-   \caption{\label{fig:kravogcase}Eksempel på kravtabell til casediagram}
-   \end{figure}
+    \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./kravogcase.eps}
+    \caption{\label{fig:kravogcase}Eksempel på kravtabell til casediagram}
+    \end{figure}
 \begin{itemize}
 
-\item Hovedflyt\\
+\item \label{extend}extend\\
 \label{sec-7.2.1.1}%
+Utvider funksjonalitet, f.eks. i alteriantiv flyt.
+
+\item \label{include}include\\
+\label{sec-7.2.1.2}%
+F.eks. hvis flere use case utfører samme prosedyre, kan vi lage use case av det, og include.
+
+
+\item Hovedflyt\\
+\label{sec-7.2.1.3}%
 Brukes for å beskrive hvordan systemet skal fungere ut i fra Use case diagrammer
      og gjør det enklere å se hva som kan gå galt, og dermed gi alternative flyt
 
@@ -1008,7 +1024,7 @@ Brukes for å beskrive hvordan systemet skal fungere ut i fra Use case diagramme
 
 
 \item Pre- og postbetingelser\\
-\label{sec-7.2.1.2}%
+\label{sec-7.2.1.4}%
 Use case ``Vurder lånesøknad'':
 
      \textbf{Prebetingelse:}
@@ -1307,28 +1323,10 @@ Kommniserer med brukere.
      Det er da viktig å ikke ta inn for mange arbeidere av gangen, da dette fører til problemer
      og kan senke prosessen. Det bør gjøres gradvis.
 \end{itemize}
-\section{UML}
-\label{sec-11}
-
-  Notasjon som støtter opp under modellbasert systemtvikling.
-\begin{itemize}
-\item Godt utgangspunkt for dokumentasjon.
-\end{itemize}
-  Kan brukes til datamodeliering, arbeidsflyt-modelering eller objektmodelering.
-\subsection{convensjoner}
-\label{sec-11.1}
-\subsubsection{\label{extend}extend}
-\label{sec-11.1.1}
-
-    Utvider funksjonalitet, f.eks. i alteriantiv flyt.
-\subsubsection{\label{include}include}
-\label{sec-11.1.2}
-
-    F.eks. hvis flere use case utfører samme prosedyre, kan vi lage use case av det, og include.
 \section{PS2000}
-\label{sec-12}
+\label{sec-11}
 \subsection{Bruksområde:}
-\label{sec-12.1}
+\label{sec-11.1}
 
 \begin{enumerate}
 \item Drift av IT- løsninger
@@ -1357,7 +1355,7 @@ Kommniserer med brukere.
 
    Har både interne og eksterne rammebetingelser man må ta hensyn til.
 \subsection{prisformer}
-\label{sec-12.2}
+\label{sec-11.2}
 
    Har tre prisformer: 
 \begin{itemize}
@@ -1383,7 +1381,7 @@ Kommniserer med brukere.
 
   Fleksibel og oversiktelig.
 \subsection{PS2000 vs andre kontrakter}
-\label{sec-12.3}
+\label{sec-11.3}
 
 
    Kontraktsstandarden skiller seg vesentlig fra andre standarder i markedet. 
@@ -1412,7 +1410,7 @@ Kommniserer med brukere.
      Alle referanser i de generelle kontraktsbestemmelsene er utdypet i bilagene.
 \end{itemize}
 \subsubsection{Andre kontrakter}
-\label{sec-12.3.1}
+\label{sec-11.3.1}
 
     
     Begge de to andre avtalene som er pressentert på forelesninger er basert
@@ -1421,16 +1419,16 @@ Kommniserer med brukere.
 \begin{itemize}
 
 \item IKT Norge: Standardavtale om systemutvikling og systemutviklingsprosjekt\\
-\label{sec-12.3.1.1}%
+\label{sec-11.3.1.1}%
 Laget for å ivareta leverandørs interesser
 
 \item Statens standardavtaler (DIFI): Programmutviklingsavtalen\\
-\label{sec-12.3.1.2}%
+\label{sec-11.3.1.2}%
 Laget for å ivareta kunders interesser
 
 \end{itemize} % ends low level
 \subsection{Oppbygging av PS2000}
-\label{sec-12.4}
+\label{sec-11.4}
 
    Kontrakten er delt inn i
 
@@ -1438,7 +1436,7 @@ Laget for å ivareta kunders interesser
    Del2: Generelle kontraktsbestemmelser 
    Del3: Kontraktsbilag
 \section{Kapittel 11 (Ikke hoved) - Arkitekturdesign}
-\label{sec-13}
+\label{sec-12}
 
   Valg av arkitektur-rammeverket influerer viktige deler av systemet, som hastighet, sikkerhet og tilgjengelighet. 
 
@@ -1463,7 +1461,7 @@ Laget for å ivareta kunders interesser
      der man har input-data som går gjennom forskjellige funksjoner (subsystemer) og får til slutt en output.
 \end{enumerate}
 \section{Kapittel 12 (Ikke hoved) - Distributed system architecture}
-\label{sec-14}
+\label{sec-13}
 
   Så og si alle større systemer i dag, er distrubert over flere maskiner. Det har en del fordeler, blant annet
 
@@ -1506,9 +1504,9 @@ Laget for å ivareta kunders interesser
   Peer-to-peer er desentralisert, distribuert system, der alle klientene er direkte
   koblet til hverandre i ett nettverk, og beregninger gjøres på flere maskiner/klienter.
 \section{Kapittel 16 (Ikke hoved) - Brukergrensesnitt-design}
-\label{sec-15}
+\label{sec-14}
 \subsection{Et godt grensesnitt er viktig, for god programvare.}
-\label{sec-15.1}
+\label{sec-14.1}
 
    Noen ting å huske på er blant annet,
 
@@ -1530,24 +1528,24 @@ Laget for å ivareta kunders interesser
 
   Feilmeldinger i programvare bør ungå å være negative, bør være lett forståelige og tilby videre hjelp og være smarte.
 \subsection{Prosessen ved GUI-utvikling:}
-\label{sec-15.2}
+\label{sec-14.2}
 
 \begin{itemize}
 \item Start med analyse av brukere og bruken av programmet.
 \item Lag en prototype, test den og utvikle den videre.
 \end{itemize}
 \section{Kapittel 25 (Ikke hoved) - Managing people}
-\label{sec-16}
+\label{sec-15}
 
   En av de viktigste rollene ved prosjektledelse, er håndtering av medarbeidere og holde dem motivert.
 \subsection{valg av arbeidere}
-\label{sec-16.1}
+\label{sec-15.1}
 
   Å velge nye medarbeidere til et prosjekt kan ofte være svært vanskelig, 
   og man er nødt til å analysere hvilke kvaliteter til hvilke stilling man 
   er mest opptatt av. (Teknisk, sosialt, etc.).
 \subsection{Motivering av arbeidere}
-\label{sec-16.2}
+\label{sec-15.2}
 
    Motivasjon er også svært viktig. Uten motivasjon vil arbeidet gå saktere, 
    og arbeiderene vil ikke bidra like konstruktivt til utviklingen eller for 
@@ -1555,7 +1553,7 @@ Laget for å ivareta kunders interesser
    som er utfordrende, men gjennomførbare, sørge for at arbeidere hele tiden 
    lærer etc. Samt sørge for et godt sosial miljø.
 \subsection{Generalisering rundt mennesketyper}
-\label{sec-16.3}
+\label{sec-15.3}
 
    Generelt sett har man tre kategorier mennesker, som verdsetter forskjellige ting:
 
@@ -1568,14 +1566,14 @@ Laget for å ivareta kunders interesser
      Motivert av interaksjon med medarbeidere.
 \end{itemize}
 \subsection{Inndeling i grupper}
-\label{sec-16.4}
+\label{sec-15.4}
 
    Hvis det blir for mange medarbeidere på ett prosjekt, deler man inn i grupper, 
    med maks 8-10 medlemmer. Dette gjør kommunikasjon enklere, og det er mulig å 
    holde ett møte sammen. Det er også mange positive sider, ved å skape en gruppetilhørighet. 
    De jobber bedre sammen, pusher hverandre fremover og jobber ofte mer målrettet.
 \section{Kapittel 29 (Ikke hoved) - Konfigurasjonsstyring (Subversion)}
-\label{sec-17}
+\label{sec-16}
 
   Siden systemkrav forandrer seg under hele utviklingsprosessen er det vikig med versjonskontroll. 
   
@@ -1586,7 +1584,7 @@ Laget for å ivareta kunders interesser
   hierarkisk filstruktur. På større prosjekter har man også en \textbf{konfigurasjonsdatabase}
   der man lagrer relevant informasjon til hver versjon.
 \subsection{Versjoner}
-\label{sec-17.1}
+\label{sec-16.1}
 
 
   Til \textbf{versjonsidentifisering} kan man bruke \emph{versjonnummerering}. Hver system release 
@@ -1595,7 +1593,7 @@ Laget for å ivareta kunders interesser
    
   Det finnes CASE-tools som kan ta hånd om alle disse prosessene og endringhåndtering etc.
 \subsection{Versjonskontroll}
-\label{sec-17.2}
+\label{sec-16.2}
 
    Hvis flere jobber på samme kildefiler, kan det fort bli kluss med forskjellige versjoner av filene. 
    Derfor bruker vi versjonskontrollsystem.
@@ -1603,7 +1601,7 @@ Laget for å ivareta kunders interesser
    som for eksempel \textbf{git}, \textbf{Bazaar} eller \textbf{Subversion} (kan også brukes sentralisert)
    og sentraliserte systemer som \textbf{CVS} (Concurrent Versions System) og \textbf{Subversion}
 \subsubsection{Sentraliserte systemer}
-\label{sec-17.2.1}
+\label{sec-16.2.1}
 
     Subversion løser dette ved å låse tilgang til filen, hvis den allerede blir jobbet med. 
     Man \emph{sjekker inn} og \emph{sjekker ut} filen.
@@ -1621,7 +1619,7 @@ Laget for å ivareta kunders interesser
     må også være kryptert som kan gi ytelsestap i en rekke tilfeller.
     
 \subsubsection{Distribuerte systemer}
-\label{sec-17.2.2}
+\label{sec-16.2.2}
 
     Alle som kobler seg til kildekoden for å redigere laster ned en fullstendig kopi
     av all kode og historie, man får da et stort nettverk av versjoner som utvikles i
@@ -1636,13 +1634,13 @@ Laget for å ivareta kunders interesser
     som kodere, man kan jobbe offline (fordel ved ustabile trådløse nett), og fra hvor som helst
     i verden, å redigere kode lokalt vil også være raskere og sikrere.
 \section{Jus, etikk og personvern}
-\label{sec-18}
+\label{sec-17}
 
   Personopplysningsloven er alltid relevant ved informasjonssystemer som skal behandle personopplysninger. Loven er basert på et EU-direktiv. Under følger en sjekkliste for å kontrollere om du følger POL riktig. (Hentet direkte fra forelesningsfoil).
 \subsection{sjekkliste for kontroll av POL}
-\label{sec-18.1}
+\label{sec-17.1}
 \subsubsection{Sjekkliste, trinn 1}
-\label{sec-18.1.1}
+\label{sec-17.1.1}
 
     Gjelder loven for mitt informasjonssystem? 
 \begin{itemize}
@@ -1658,7 +1656,7 @@ Laget for å ivareta kunders interesser
 
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 2}
-\label{sec-18.1.2}
+\label{sec-17.1.2}
 
     Har jeg lovlig adgang til de opplysningene jeg ønsker å behandle (eller kan jeg skaffe slik adgang?)
     Mulige rettslige grunnlag 
@@ -1675,7 +1673,7 @@ Laget for å ivareta kunders interesser
 \item Nødvendig (slik det er angitt i pol §§ 8 og 9)
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 3}
-\label{sec-18.1.3}
+\label{sec-17.1.3}
 
     Hva skal/kan jeg benytte PO til? 
 \begin{itemize}
@@ -1686,7 +1684,7 @@ Laget for å ivareta kunders interesser
 \item Formålet kan endres, men det er begrensninger
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 4}
-\label{sec-18.1.4}
+\label{sec-17.1.4}
 
     Har opplysningene den nøvendige \emph{kvalitet}? 
 \begin{itemize}
@@ -1703,7 +1701,7 @@ Laget for å ivareta kunders interesser
 \item Det skal alltid vurderes om det er behov for tiltak for å fremme opplysningskvalitete
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 5}
-\label{sec-18.1.5}
+\label{sec-17.1.5}
 
     Er personene tilstrekkelig sikkert identifiserte?
 \begin{itemize}
@@ -1724,7 +1722,7 @@ Laget for å ivareta kunders interesser
 \end{itemize}
     Datatilsynet kan gi pålegg om bruk av entydige identifikasjonsmidler
 \subsubsection{Sjekkliste, trinn 6}
-\label{sec-18.1.6}
+\label{sec-17.1.6}
 
     Hva er tilfredsstillende sikkerhetstiltak?
 \begin{itemize}
@@ -1748,7 +1746,7 @@ Laget for å ivareta kunders interesser
 \item Tiltakene kan være av et hvilket som helst slag
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 7}
-\label{sec-18.1.7}
+\label{sec-17.1.7}
 
     Hva må jeg gjøre for å være sikker på at loven, forskrifter og eventuelle enkeltvedtak blir etterlevet?
 \begin{itemize}
@@ -1769,7 +1767,7 @@ Laget for å ivareta kunders interesser
 
 \end{itemize}
 \subsubsection{Sjekkliste, trinn 8}
-\label{sec-18.1.8}
+\label{sec-17.1.8}
 
     Kan jeg starte behandlingen?
 \begin{itemize}
@@ -1784,15 +1782,15 @@ Laget for å ivareta kunders interesser
 
 \end{itemize}
 \subsection{Oppsummering av lovens ni kapittler}
-\label{sec-18.2}
+\label{sec-17.2}
 \subsubsection{Kapittel I}
-\label{sec-18.2.1}
+\label{sec-17.2.1}
 
     Kapittel I. Lovens formål og virkeområde inneholder definisjon av grunnbegreper 
     som brukes i loven, pluss bestemmelser om hva loven gjelder for og hvor den gjelder. 
     Dette er nesten alltid nødvendig å ha oversikt over.
 \subsubsection{Kapittel II}
-\label{sec-18.2.2}
+\label{sec-17.2.2}
 
     Alminnelige regler for behandling av personopplysninger er også viktig fordi
     i dette kapittelet fastsettes de viktigste vilkårene for at det over hode
@@ -1801,47 +1799,47 @@ Laget for å ivareta kunders interesser
     at loven etterleves, for eksempel den øverste skoleledelsen i en kommune 
     (``behandlingsansvarlig'').
 \subsubsection{Kapittel III}
-\label{sec-18.2.3}
+\label{sec-17.2.3}
 
     Informasjon om behandling av personopplysninger
     Personer som det er registrert opplysninger om (elever, lærere mv) har rettigheter
     etter loven. Kapittel III inneholder bestemmelser om de viktigste rettighetene.
 \subsubsection{Kapittel IV}
-\label{sec-18.2.4}
+\label{sec-17.2.4}
 
     Enkelte andre rettigheter finnes her. Andre rettigheter for den registrerte,
     bl.a. rett og plikt til å slette og rette opplysninger.
 \subsubsection{Kapittel V}
-\label{sec-18.2.5}
+\label{sec-17.2.5}
 
     Overføring av personopplysninger til utlandet får i praksis kun betydning
     i forhold til overføring av personopplysninger til og fra land utenfor EØS-området. 
     Bestemmelsene er imidlertid ofte vanskelige å anvende fordi de er basert på situasjonen
     for mer enn ti år siden og ikke er godt tilpasset moderne bruk av Internett.
 \subsubsection{Kapittel VI}
-\label{sec-18.2.6}
+\label{sec-17.2.6}
 
     Melde- og konsesjonsplikt Meldeplikt til Datatilsynet gjelder ofte, mens konsesjonsplikt 
     primært gjelder behandling av personopplysninger som loven definerer som sensitive.
 \subsubsection{Kapittel VII}
-\label{sec-18.2.7}
+\label{sec-17.2.7}
 
     Fjernsynsovervåking gjelder enhver bruk av kamerateknologi, eventuelt med lyd, men
     ikke når kameraet brukes på ``vanlige'', manuelle måter (f.eks. fotografering på 
     klassetur).
 \subsubsection{Kapittel VIII}
-\label{sec-18.2.8}
+\label{sec-17.2.8}
 
     Tilsyn og sanksjoner har bestemmelser som gir Datatilsynet og Personvernnemnda
     myndighet til å bestemme. Særlig viktig når det er konflikt og uenighet om hva 
     som er lov. Kapittelet har også bestemmelser om straff og erstatning ved brudd
     på lovens bestemmelser, men dette er kun aktuelt i sjeldne tilfelle.
 \subsubsection{Kapittel IX}
-\label{sec-18.2.9}
+\label{sec-17.2.9}
 
     Ikraftsetting. Overgangsregler. Endringer i andre lover har i dag neppe betydning.
 \subsection{Virkeområde og hovedregler}
-\label{sec-18.3}
+\label{sec-17.3}
 
    Loven stiller noen grunnkrav til all behandling av personopplysninger:
    Den behandlingsansvarlige må ha rettslig grunnlag for behandlingen, dvs. enten samtykke fra den registrerte, hjemmel i lov eller behandlingen må være nødvendig av hensyn til et av formålene som er nevnt i § 8.
@@ -1858,7 +1856,7 @@ Laget for å ivareta kunders interesser
    skal regnes som sensitive, er uttømmende definert i § 2 nr 8. Helseopplysninger og
    opplysninger om politisk oppfatning er eksempler på sensitive opplysninger.
 \section{Appendix - Ordliste}
-\label{sec-19}
+\label{sec-18}
 
   Under følger noen korte forklaringer på ord og begreper og av og til dets engelske oversettelse.
 

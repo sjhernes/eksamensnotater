@@ -698,7 +698,7 @@
 
     #+CAPTION: Eksempel på kravtabell til casediagram
     #+LABEL: fig:kravogcase
-    #+ATTR_LaTeX: width=0.75\textwidth
+    #+ATTR_LaTeX: width=0.5\textwidth
     [[./kravogcase.eps]]
 
 **** <<extend>>
