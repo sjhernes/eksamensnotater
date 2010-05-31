@@ -980,6 +980,7 @@
      og kan senke prosessen. Det bør gjøres gradvis.
 
 * PS2000
+  Utviklet av Dataforeningen
 ** Bruksområde:
    1. Drift av IT- løsninger
       - Utstyr 
@@ -1039,6 +1040,16 @@
 	ansvarsfordeling. Rom for erfaringsbaserte vurderinger. Støtter samarbeid mellom kunde og
 	leverandør. Krever ekstraarbeid for å vurdere risiko og usikkerhet. Krever at begge parter
 	forstår incentiv-modeller.
+    - Bruksområder
+      - Systemutvikling basert på relativt godt spesifisert behovsanalyse
+      - Godt nok grunnlag for realistiske estimater
+      - Erkjennelse av at krav og prioriteringer kan endre seg underveis
+    - Fordeler og ulemper
+      - Relativ forutsigbar mht. kostnader
+      - Klare leveranseavtaler mht. omfang og kalendertid
+      - Rom for erfaringsbaserte justeringer i iterasjoner
+      - Støtter integrert samarbeidsmodell
+      - Felles incentiver om å levere kvalitet til avtalt tid og kostnad
 
 ** PS2000 vs andre kontrakter
 
@@ -1068,10 +1079,13 @@
     på å ivareta en interessent sin interesse, og ikke begge, PS2000 er unik der
     og det er derfor vi nesten utelukkende har om PS2000
 
-**** IKT Norge: Standardavtale om systemutvikling og systemutviklingsprosjekt
+**** IKT Norge:
      Laget for å ivareta leverandørs interesser
-**** Statens standardavtaler (DIFI): Programmutviklingsavtalen
+***** Standardavtale om systemutvikling
+***** Standardavtale om systemutviklingsprosjekt
+**** Statens standardavtaler (DIFI):
      Laget for å ivareta kunders interesser
+***** Programmutviklingsavtalen
 
 ** Oppbygging av PS2000
    Kontrakten er delt inn i
@@ -1112,21 +1126,26 @@
   Ulempene er
 
   - Kompleksitet.
-  - Sikkerhet.
-    Traffiken må gå over nettverk, mulighet for eavsdropping.
+  - Sikkerhet pga traffiken må gå over nettverk, mulighet for eavsdropping.
   - Kan være vanselig å drifte store distribuerte systemer.
 
   Generelt sett kan vi si at vi har to typer distribuerte systemer.
 
   - *Klient-server*. Tilbyr tjenester, som klientene spør etter.
-  - *Distribuert objekt-arkitektur*. For objektene er forespørlser fra klient og andre objekter akkurat det samme.
+  - *Distribuert objekt-arkitektur*. For objektene er forespørsler 
+    fra klient og andre objekter akkurat det samme.
 
   Multiprosessor-arkitektur, lar flere prosesser i samme system, kjøre på forskjellige prosessorer.
 
   Klient-server-arkitetur kan ha to former.
 
   1. Tynn-klient.
+     - klienten vil bare mota og sende informasjon, bare ansvarlig for å presentere informasjonen
+     - Serveren gjør all prossessering og datamanagement
+       
   2. Tykk-klient.
+     - Klienten har applikasjonslogikk i tillegg til brukerinteraksjon
+     - Serveren har bare ansvar for datamanagement (serveren brukes som database)
 
   Mobile klienter er ofte en liten mellomting av disse.
 

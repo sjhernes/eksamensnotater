@@ -1,4 +1,4 @@
-% Created 2010-05-31 Mon 16:39
+% Created 2010-05-31 Mon 17:03
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -1347,6 +1347,8 @@ Kommniserer med brukere.
 \end{itemize}
 \section{PS2000}
 \label{sec-11}
+
+  Utviklet av Dataforeningen
 \subsection{Bruksområde:}
 \label{sec-11.1}
 
@@ -1449,6 +1451,24 @@ Kommniserer med brukere.
         forstår incentiv-modeller.
 \end{itemize}
 
+\item Bruksområder
+
+\begin{itemize}
+\item Systemutvikling basert på relativt godt spesifisert behovsanalyse
+\item Godt nok grunnlag for realistiske estimater
+\item Erkjennelse av at krav og prioriteringer kan endre seg underveis
+\end{itemize}
+
+\item Fordeler og ulemper
+
+\begin{itemize}
+\item Relativ forutsigbar mht. kostnader
+\item Klare leveranseavtaler mht. omfang og kalendertid
+\item Rom for erfaringsbaserte justeringer i iterasjoner
+\item Støtter integrert samarbeidsmodell
+\item Felles incentiver om å levere kvalitet til avtalt tid og kostnad
+\end{itemize}
+
 \end{itemize}
 \subsection{PS2000 vs andre kontrakter}
 \label{sec-11.3}
@@ -1488,14 +1508,25 @@ Kommniserer med brukere.
     og det er derfor vi nesten utelukkende har om PS2000
 \begin{itemize}
 
-\item IKT Norge: Standardavtale om systemutvikling og systemutviklingsprosjekt\\
+\item IKT Norge:\\
 \label{sec-11.3.1.1}%
 Laget for å ivareta leverandørs interesser
+\begin{itemize}
 
-\item Statens standardavtaler (DIFI): Programmutviklingsavtalen\\
+\item Standardavtale om systemutvikling\\
+\label{sec-11.3.1.1.1}%
+\item Standardavtale om systemutviklingsprosjekt\\
+\label{sec-11.3.1.1.2}%
+\end{itemize} % ends low level
+
+\item Statens standardavtaler (DIFI):\\
 \label{sec-11.3.1.2}%
 Laget for å ivareta kunders interesser
+\begin{itemize}
 
+\item Programmutviklingsavtalen\\
+\label{sec-11.3.1.2.1}%
+\end{itemize} % ends low level
 \end{itemize} % ends low level
 \subsection{Oppbygging av PS2000}
 \label{sec-11.4}
@@ -1546,8 +1577,7 @@ Laget for å ivareta kunders interesser
 
 \begin{itemize}
 \item Kompleksitet.
-\item Sikkerhet.
-    Traffiken må gå over nettverk, mulighet for eavsdropping.
+\item Sikkerhet pga traffiken må gå over nettverk, mulighet for eavsdropping.
 \item Kan være vanselig å drifte store distribuerte systemer.
 \end{itemize}
 
@@ -1555,7 +1585,8 @@ Laget for å ivareta kunders interesser
 
 \begin{itemize}
 \item \textbf{Klient-server}. Tilbyr tjenester, som klientene spør etter.
-\item \textbf{Distribuert objekt-arkitektur}. For objektene er forespørlser fra klient og andre objekter akkurat det samme.
+\item \textbf{Distribuert objekt-arkitektur}. For objektene er forespørsler 
+    fra klient og andre objekter akkurat det samme.
 \end{itemize}
 
   Multiprosessor-arkitektur, lar flere prosesser i samme system, kjøre på forskjellige prosessorer.
@@ -1564,7 +1595,19 @@ Laget for å ivareta kunders interesser
 
 \begin{enumerate}
 \item Tynn-klient.
+
+\begin{itemize}
+\item klienten vil bare mota og sende informasjon, bare ansvarlig for å presentere informasjonen
+\item Serveren gjør all prossessering og datamanagement
+\end{itemize}
+
 \item Tykk-klient.
+
+\begin{itemize}
+\item Klienten har applikasjonslogikk i tillegg til brukerinteraksjon
+\item Serveren har bare ansvar for datamanagement (serveren brukes som database)
+\end{itemize}
+
 \end{enumerate}
 
   Mobile klienter er ofte en liten mellomting av disse.
