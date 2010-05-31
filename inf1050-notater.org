@@ -10,18 +10,38 @@
      1. Standard konsumer-programvare. 
      2. Kustomisert programvare (spesialdesignet for ett firma etc.)
 
-
   Fem viktige attributter til god programvare: 
   - God, forståelig kode for senere forbedringer. 
   - Stabil 
   - sikker og fortrolig programvare.
   - Effektiv. 
   - Brukervennlig.
+
 ** Hva er systemutvikling?
    - Systematisk og organisert fremgangsmåte. 
      Tar også hensyn til organisatorisk og økonomiske begrensninger i prosessen.
   
    På grunn av stor innvirkning av samfunnet er software engineers nødt til å opptre etisk og tenke konsekvenser. 
+
+   Software engineering er et tverrfaglig foretagende!
+
+   Baserer seg på de systematiske ingeniørprinsippene:
+   - Planlegging og forutsigbarhet 
+   - Oppdeling og strukturering av problemer i mindre komplekse bestanddeler 
+   - Modularitet og gjenbruk 
+   - Abstraksjon og modellering 
+   - Systematisk kvalitetssikring
+
+   En enkel oppdeling og strukturering av prosessen kan se slik ut:
+   - Tid (faser): 
+     - /PS2000‐kontraktstandarden: Behovsfase, Løsningsbeskrivelse, Iterativ konstruksjonsfase, Godkjenningsfase./
+     - /Timeboxing/tidsavgrensning./
+   - Oppgaver (aktiviteter og tilhørende leveranser): 
+     - /Analyse, design, programmering, testing,.../ 
+   - Tekniske aspekter: 
+     - /Kvalitetsaspekter, Funksjonalitet, Moduler, Komponenter./
+   - Modeller på forskjellige abstraksjonsnivåer 
+     - /Kravspesifikasjoner versus Objektorientert analyse versus Detaljert design versus Kode./
 
 * Kapittel 2 - Sosiotekniske systemer
 
@@ -423,7 +443,7 @@
 	- Ansvarlig
 	  begge
 
-* Kapittel 6 og - Kravhåndtering, Programvare-krav og Kravspesifisering
+* Kapittel 6 og 7 - Kravhåndtering, Programvare-krav og Kravspesifisering
   Kravspesifikasjon kan deles inn i to grupper.
   - /Bruker-krav/. 
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
@@ -1132,3 +1152,12 @@
     Fordeler med distribuerte systermer er selvfølgelig at man har minst like mange backuper
     som kodere, man kan jobbe offline (fordel ved ustabile trådløse nett), og fra hvor som helst
     i verden, å redigere kode lokalt vil også være raskere og sikrere.
+* Appendix - Ordliste
+  Under følger noen korte forklaringer på ord og begreper og av og til dets engelske oversettelse.
+  |----------------------+-----------+-------------------------------------------------------------------------------------------|
+  | *Norsk*              | *Engelsk* | *Forklaring*                                                                              |
+  |----------------------+-----------+-------------------------------------------------------------------------------------------|
+  | Domene-kunnsap       |           | Kunnskap innenfor et bestemt omeråde, f.eks. innenfor ett bestemt prosjekt eller produkt. |
+  | Sosio-teknisk system |           | System der også mennesker, med kunnskap om systemet, inngår i prosessen.                  |
+  | Kritiske systemer    |           |                                                                                           |
+  |----------------------+-----------+-------------------------------------------------------------------------------------------|
