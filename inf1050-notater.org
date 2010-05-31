@@ -696,10 +696,14 @@
     - Kan også bruke <<extend>> og <<include>>.
     Kan bruke struktrert tekstlig spesifikasjon til hver use case.
 
-    #+CAPTION: Eksempel på kravtabell til casediagram
-    #+LABEL: fig:kravogcase
-    #+ATTR_LaTeX: width=0.5\textwidth
-    [[./kravogcase.eps]]
+    #+CAPTION: Eksempel på kravtabell til et casediagram
+    #+LABEL: fig:krav
+    #+ATTR_LaTeX: width=0.7\textwidth
+    [[./krav.eps]]
+    #+CAPTION: Eksempel på casediagram fre kravtabellen
+    #+LABEL: fig:case
+    #+ATTR_LaTeX: width=\textwidth
+    [[./case.eps]]
 
 **** <<extend>>
      Utvider funksjonalitet, f.eks. i alteriantiv flyt.
