@@ -428,13 +428,39 @@
   - /Bruker-krav/. 
     Et løst definert krav-dokument, som spesifiserer kravene til systemet på ett overordnet nivå.
   - /System-krav/. 
-    En mer detaljert beskrivelse av delene til systemet, og nøyaktig hva som skal bli implementert. Kan være en del av kontrakten.
+    En mer detaljert beskrivelse av delene til systemet, og nøyaktig 
+    hva som skal bli implementert. Kan være en del av kontrakten.
 
-** Interessenter(stakeholders)
+** Foranalyse
+              
+   Uten en skikkelig foranalyse kan det være vanskelig
+   å vite hvilke risikoer som er involvert, om systemet
+   trengs, eller om det har livets rett økonomisk sett.
+   
+   Forutsigbarheten for prosjektet øker og man vil være
+   bedre i stand til å levere prosjektet til rett tid eller
+   minimere overskridelser av planen
+
+   de første spørsmålene man må stille seg er
+   - er prosjektet gjennomførbart?
+   - teknologisk gjennomførbart?
+   - er det tidsmessig og kostnadsmessig lønnsomt
+   - og samsvarer systemet med målene til selskapet
+   - hvem vil berøres av systemet (interessenter)
+
+   Man finner så informasjon i forhold til disse problemene, og lager en rapport på bakgrunn av dette.
+   Man ser også på om dette vil være en forbedring for organisasjonen, i forhold til gamle systemer, 
+   takler den gammel data fra tidligere som organisisajonen måtte ha.
+   Man spør også alle som måtte ha interesse av systemet om det er
+   gjennomførbart, og om det bør gjennomføres. 
+   Vanlig tid for  prosessen er 2 til 3 uker.
+
+** Interessenter(stakeholders) og kravinnsamling  
    Krav kommer ofte fra interessentene rundt systemet
    kort fortalt er en interessent en hvilken som helst 
    gruppe/individ som berøres av systemet direkte eller 
    indirekte.
+
    
    eksempler på interessenter:
    - sluttbrukere av systemet(interessert i enklere jobb)
@@ -455,6 +481,35 @@
    5. Organisasjonen kan bli berørt på mange måter av et nytt system, og
       nye interessenter kan dukke opp midt i utviklingsprosessen, og gi nye krav
       eller forandre viktigheten av eksisterende krav.
+      
+   Viktig å få de riktige kravene helt fra begynnelsen. Det kan bli 
+   fryktelig mye dyrere å gjøre endringer senere i prosessen, selv om
+   man må huske på at endringer i krav er uungåelig.
+   
+   ved endringer må endringen dokumenteres, det må gjøres konsekvensanalyse 
+   og implementere. Spor gjerne endringene i et verktøy.
+
+   Det kan ofte være lurt å visualisere systemet på forhånd for interessenter, da vet de lettere
+   hva de ønsker/trenger.
+   
+   Metoder for kravinnsamling  
+   - Intervjuer
+   - spørreskjemaer
+   - observasjon
+   - studere dokumenter
+   - eksisterende systemer
+   - idédugnad(brainstorming).
+   - Prototyp: Bruk og kast ideer du viser til brukere etc. F.eks. ved Genova.
+
+   1. Kravinnsamling og -analyse: 
+      Identifiser krav, prioriteter, løs konflikter mellom interessenter. 
+      Ofte lurt å visualisere på forhånd for interessenter. Da vet de lettere hva de ønsker etc.
+   2. Kravspesifikasjon: 
+      Spesifiser presist, f.eks. ved UML. 
+   3. Validering av kravspesifkasjon: 
+      Forståelighet, konsistens, testbarhet, sporbarhet (hvem er kilden til kravet), 
+      endringsevne (konsekvenser av å endre?), kompletthet, 
+      nødvendige krav, realistiske krav, for tidlig design.
 
 ** hvorfor trenger vi veldefinerte krav
 
@@ -535,59 +590,8 @@
    Dokumentet skal rekke ut til mange forskjellige lesere, fra senior management til utviklerene.
    Detaljgraden til dokumentet avhenger litt av utviklingsprosessen. Hvis utviklingen skal outsources 
    til ett eksternt selskap er man nødt til å beskrive kravene mye mer detaljert, så det ikke oppstår feiltolkninger.
-** Fra forelesning
-   Viktig å få de riktige kravene helt fra begynnelsen. Ellers kan det bli fryktelig mye dyrere å gjøre endringer senere i prosessen.
-   
-   Endringer i krav er uungåelig.
-
-   - Interessenter: 
-     Oppdragsgivere, kunder, lovgivere, brukergrupper, systemeiere (Direkte eller indirekte interesse)
-   - Funksjonelle krav: 
-     Beskriver oppførsel/funksjoner.
-   - Ikke-funksjonelle krav: 
-     Ytelse, sikkerhet, brukervennligehet, kostnader, tidsrammer etc.
-
-   Husk også endringer av systemer underveis.
-
-   1. Forstudie/målanalyse 
-      (Nødvendighet, pris, konkurenter, skal vi satse på det?)
-   2. Kravinnsamling og -analyse: 
-      Identifiser krav, priorier, løs konflikter mellom interessenter. 
-      Ofte lurt å visualisere på forhånd for interessenter. Da vet de lettere hva de ønsker etc.
-   3. Kravspesifikasjon: 
-      Spesifiser presist, f.eks. ved UML. 
-   4. Validering av kravspesifkasjon: 
-      Forståelighet, konsistens, testbarhet, sporbarhet (hvem er kilden til kravet), 
-      endringsevne (konsekvenser av å endre?), kompletthet, nødvendige krav, realistiske krav, for tidlig design.
-
-   Metoder for faktainsamling: 
-   - Intervjuer, spørreskjemaer, obesrvasjon, studere dokumenter og eksisterende systemer og idédugnad. 
-   - Prototyp: Bruk og kast ideer du viser til brukere etc. F.eks. ved Genova.
-
-   Må ta stilling til at krav kan endres/slettes. Da må endringen dokumenteres, gjøre konsekvensanalyse og implementere. Sporer gjerne endringene i et verktøy.
 
 * Kapittel 7 - Kravspesifisering
-** Foranalyse - Kravinnsamling og research
-              
-   Uten en skikkelig foranalyse kan det være vanskelig
-   å vite hvilke risikoer som er involvert, om systemet
-   trengs, eller om det har livets rett økonomisk sett.
-   
-   Forutsigbarheten for prosjektet øker og man vil være
-   bedre i stand til å levere prosjektet til rett tid eller
-   minimere overskridelser av planen
-
-   Første spørsmålene man må spørre seg er har dette systemet livets rett?
-   - er prosjektet gjennomførbart?
-   - teknologisk gjennomførbart?
-   - er det tidsmessig og kostnadsmessig lønnsomt
-   - og samsvarer systemet med målene til selskapet
-
-   Man finner så informasjon i forhold til disse problemene, og lager en rapport på bakgrunn av dette.
-   Man ser også på om dette vil være en forbedring for organisasjonen, i forhold til gamle systemer, 
-   takler den gammel data fra tidligere som organisisajonen måtte ha.
-   Man spør også alle som måtte ha interesse av systemet om det er gjennomførbart, og om det bør gjennomføres. 
-   Vanlig tid for  prosessen er 2 til 3 uker.
 ** Krav til krav
    gode krav bør bestå disse kravene
    - Er de forsåelige?
