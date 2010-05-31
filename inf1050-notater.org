@@ -1109,7 +1109,7 @@
   trenger ikke nødvendigvis branche fra siste (1.1), men kan godt branche fra 1.0.
    
   Det finnes CASE-tools som kan ta hånd om alle disse prosessene og endringhåndtering etc.
-** Versionskontroll
+** Versjonskontroll
    Hvis flere jobber på samme kildefiler, kan det fort bli kluss med forskjellige versjoner av filene. 
    Derfor bruker vi versjonskontrollsystem.
    En klar deling mellom disse systemene er for eksempel distribuerte systemer
