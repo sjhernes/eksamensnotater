@@ -1,0 +1,194 @@
+* logikk
+
+  logikk, i form av gyldige logiske argumenter
+  formalisering av metoder, uten en formell måte å utrykke oss på
+  kan vi ikke bygge videre på det. I hvert fall ikke på datamaskiner.
+
+** utsagnslogikk
+     
+     true or false, sant eller ikke
+
+     det er vanskelig å si at noe er helt sant eller ikke
+     "Per er en dannet mann" gir oss noen problemer, oppfattelsen
+     av hva det er å være dannet er en ting, en annen ting er at
+     er Per alltid dannet eller er han bare det som regel?
+
+     Vi skal ikke gå inn på den filosofiske analysen, vi har bare sant og usant
+     og kan ikke drive med filosofi.
+
+     Spørsmål er ikke utsagn, heller ikke utsagnsord, meninger eller ønsker
+
+     enkle predikater er utsagn
+     while true do 
+     er utsagn som lett kan testes og dermed interessante for oss
+
+     algebraiske uttrykk kan betraktes som utsagn
+     x = 7 o.l.
+
+** Predikater
+
+     (7 < 6) ==> false
+
+     if (predikat) {}
+
+     T og F (i fet font) er brukt i boka som sant og usant
+     (true og false) i boka
+     og dermed er det det vi skal bruke på kurset vårt. 
+     men andre varianter dukker opp
+     som topp og bunnsymbolene, tt og ff, og diverse andre.
+     
+** bindeord
+*** OG
+
+   "tak" (\and{}) for & &, AND osv
+   hvordan vi tolker og, antyder det rekkefølge?
+   ikke i datamaskiner, der er det bare en test for å se om begge stemmer.
+   
+*** ELLER
+    
+    To betydninger.
+    enten - eller
+    og - eller
+ 
+**** Inklusiv eller
+
+    | p | q | svar |
+    |---+---+------|
+    | T | T | T    |
+    | T | F | T    |
+    | F | T | T    |
+    | F | F | F    |
+
+    vi bruker og - eller, da det er mest fleksibelt til våre formål.
+
+**** Eksklusiv eller
+
+    eksklusiv "eller" kan også dukke opp - tabell:
+    
+    | p | q | svar |
+    |---+---+------|
+    | T | T | F    |
+    | T | F | T    |
+    | F | T | T    |
+    | F | F | F    |
+
+
+*** IKKE
+    
+    kan skrives f.eks:
+    !, eller $\neg{}$
+*** hvis x, så y
+    | p | q | p $\to{}$ q |
+    | t | t | t         |
+    | t | f | f         |
+    | f | t | t         |
+    | f | f | t         |
+*** Hvis og bare hvis
+** sammensatte utsagn
+
+   vi kan se at x != 0 også kan skrives !(x = 0)
+   når vi abstraherer husk at om r = (uttrykk og utrykk)
+   vil !r være !(utrykk og utykk) ikke !utrykk og utrykk
+
+   vi må huske at vi ikke nødvendigvis alltid skal negere
+   hele utrykk men bare deler av det.
+
+** setninger
+
+   en setning er et predikat uten frie variabler. Dette kalles
+   også ofte for et lukket utsagn.
+
+* Mengder
+** intro
+  - en mengde er en samling objekter hvor det er entydig
+    bestemt hvilke objekter som er med i mengden eller ikke
+  - bruken av mengder gjennomsyrer matematikk og andre teoretiske fag
+  - vi skal lære å bruke mengder slik at vi kan uttrykke oss
+    presist om konstruktjsjoner og begreper av interesse i 
+    informatikk i en vid forstand
+  - mengdelære brukes på mange måter som matematikkens grunnlag, 
+    noe vi ikke skal legge så stor vekt på
+
+Vi bruker klammeparenteser { og } for å beskrive mengder.
+Vi skal illustrere bruken ved eksempler
+
+eksempler:
+   
+   - {0,1} er mengden av digitale verdier en bit kan ha
+   - {T,F} er mengden av sannhetsverdier
+   - {2,3,5,7,11,13,17,19,23,29} er mengden av de 10 minste primtallene
+   - N = {1,2,3,···} er mengden av naturlige tall
+
+vi kan se at vi ikke har 
+
+vi skriver a $\epsilon{}$ A for å si at a er et element i mengden a.
+og a nepsilon A for det motsatte
+
+* Algoritmer
+** Algoritmer
+*** Definisjon
+   En algoritme er en oppskrift som forteller oss hvordan vi skritt
+   for skritt skal kunne oppn et resultat eller løse et problem.
+   eksempler på algoritmer kan være:
+
+****** kakeoppskrifter
+****** Automatisk innsjekking på fly
+****** Beskrivelsen av hvordan man utfører divisjon mellom flersifrede tall
+****** Oppskrift på hvordan man løser opp paranteser
+
+*** kjennetegn
+
+    det skal ikke kreve intelligens eller forståelse for å 
+    følge den
+
+****** du skal ikke kunne kjemi for å bake en kake
+****** du skal kunne sjekke inn på fly uten å kunne programmere
+****** det er ikke nødvendig for å forstå divisjon, bare regnetrening
+****** Skolealgebra er ikke forståelse, men pugging av algoritmer
+
+*** vårt fokus
+
+    vi skal fokusere på algoritmer som:
+
+****** beregner funksjoner
+****** avgjør om et objekt/datamengde har en egenskap eller ikke
+****** organisere data på en ønsket måte (sortering)
+****** utfører oppgaver i tilknytning til matte eller inf
+** Pseudokoder
+
+****** en pseudokode er en måte å beskrive en algoritme på.
+****** Pseudokoden beskriver algoritmen trinn for trinn
+****** Psudokode er en mellomting mellom programering og naturlige språk
+****** vi skal bruke pseudokode på samme måte som i læreboka
+****** som med alle andre språk kan man øve seg til mestring av pk
+*** Eksempel (areal av trekant)
+    
+    1. Input h [h er høyden i trekanten.]
+    2. Input g [g er lengden på grunnlinjen i trekanten.]
+    3. areal <- (h·g)/2
+    4. Output areal
+       
+*** Eksempel alt areal av trekan
+
+    1. Input h
+    2. Input g
+    3. areal <-- h·g
+    4. areal <-- areal/2
+    5. Output areal
+
+*** litt om variabler
+
+    - et viktig aspekt ved pseudokoder er bruk av variabler
+    - variabler er en holder for forskjellige verdie
+    
+    Så langt består en pseudokode av en nummerert liste instruksjoner
+    hvor hver instruksjon har et av følgende tre formater:
+
+    - gi en input-verdi til en variabel
+    - Gi en variabel en ny verdi som en funksjon av eksisterende variabler
+    - gi verdien av en variavel som output
+
+    Vi kan bruke hva vi vil som variable, eksempelvis er h,g og areal
+    variablene i pseudokodene vi har sett på.
+    
+    Hvis vi skal beregne verdien
