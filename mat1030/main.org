@@ -209,10 +209,22 @@
    - Hvis man har et tre og legger til en sti mellom 2 noder, så vil strukturen bli en graf med en sykel i seg.
    - Fjerner man en kant fra et tre, så får man en disconnected graph.
 
-** Teorem
+** Teorem om antall kanter i et tre
    Et vilkårlig tre med n noder har (n-1) kanter.
    Forklaring (tankeeksperiment) : 
    Anta at du har kun en rotnode. Deretter legger du til (n-1) noder.
    Hvis du oppretter en forbindelse fra rotnoden til alle andre noder, så har du nå (n-1) kanter og totalt har du n noder.
    Tenk deg nå at hver av disse (n-1) nodene som du la til, er røtter i egne subtrær. Da vil samme prinsipp gjelde for disse subtrærne. 
    Dette er hovedsaklig en følge av induksjon, hvis man tenker at man trenger kun 1 kant mellom 2 noder hvis man ikke skal ha en sykel mellom dem.
+
+** Vektet graf
+*** Definisjon
+En enkel graf der hver kant har et positivt tall forbundet til det. Dette tallet representerer kantens vekt, eller rettere sagt kostnaden av å opprette en kobling mellom 2 noder.
+Er det for eksempel 2 steg å gå fra rommet ditt til stua, så er det en kantvekt på 2 steg (dvs du må koste på deg 2 steg for å komme fra rommet ditt til stua).
+*** Spenntre
+Et spenntre er en connected graf siden det er et krav at hver node skal ha en sti til alle andre noder (du må fks kunne komme deg til alle steder i huset ditt, uansett hvilket rom du velger som startpunkt).
+I tillegg til kravet over, er det heller ikke lov med sykler. Dette er fordi, en sti som inneholder en sykel er lengre enn hvis man kuttet vekk en av kantene fra sykelen. 
+
+**** Minimal spenntre
+Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskeste måten å ta en rundtur av huset ditt på).
+ 
