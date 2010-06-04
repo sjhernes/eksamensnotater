@@ -1,0 +1,4 @@
+- For å kunne jobbe på dette dokumentet på best mulig måte, er det lurt at alle har samme instillinger:
+  - Pass på å ha innstalert nyeste orgmode og Emacs (23.2).
+  - Linjer skal indenteres. (Dette er satt opp til å skje automatisk med org-filen.).
+  - Og linjer skal automatisk soft-wrappes på 70 (default). For å få til dette bruker du kommandoen M-x og skriver 'auto-fill-mode'.
