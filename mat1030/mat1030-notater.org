@@ -478,5 +478,87 @@ gang. Hvis den starter og sluter i samme punkt sier vi at det er en
 Hammilton curcuit. Grafene kalles for Hammiltonian grafer. De trenger
 ikke å bruke alle edgende.
 * TODO Kapittel 11 - Trær
+** Sykel
+   En sykel er en sti i en graf som har følgende egenskaper :
+   - den har minst en kant
+    - ingen kant blir traversert mer enn en gang
+    - man starter og slutter på samme node, men ingen andre noder er besøkt mer enn en gang
+
+** Definisjon av tre og forest
+   Hvis en graf har ingen sykler og er connected, er dette definert som et tre.
+   Tar man bort kravet om at et tre skal være connected, så står man igjen med en graf som ikke har sykler. Slike grafer kalles for en "forest".
+
+** Viktige egenskaper (tre)
+   - Tar man 2 vilkårlige noder 'A' og 'B' , så finnes det kun en sti mellom dem. Denne stien besøker ikke noen kanter/noder mer enn en gang.
+   - Hvis man har et tre og legger til en sti mellom 2 noder, så vil strukturen bli en graf med en sykel i seg.
+   - Fjerner man en kant fra et tre, så får man en disconnected graph.
+
+** Teorem om antall kanter i et tre
+   Et vilkårlig tre med n noder har (n-1) kanter.
+   Forklaring (tankeeksperiment) : 
+   Anta at du har kun en rotnode. Deretter legger du til (n-1) noder.
+   Hvis du oppretter en forbindelse fra rotnoden til alle andre noder, så har du nå (n-1) kanter og totalt har du n noder.
+   Tenk deg nå at hver av disse (n-1) nodene som du la til, er røtter i egne subtrær. Da vil samme prinsipp gjelde for disse subtrærne. 
+   Dette er hovedsaklig en følge av induksjon, hvis man tenker at man trenger kun 1 kant mellom 2 noder hvis man ikke skal ha en sykel mellom dem.
+
+** Vektet graf
+*** Definisjon
+En enkel graf der hver kant har et positivt tall forbundet til det. Dette tallet representerer kantens vekt, eller rettere sagt kostnaden av å opprette en kobling mellom 2 noder.
+Er det for eksempel 2 steg å gå fra rommet ditt til stua, så er det en kantvekt på 2 steg (dvs du må koste på deg 2 steg for å komme fra rommet ditt til stua).
+*** Spenntre
+Et spenntre er en connected graf siden det er et krav at hver node skal ha en sti til alle andre noder (du må fks kunne komme deg til alle steder i huset ditt, uansett hvilket rom du velger som startpunkt).
+I tillegg til kravet over, er det heller ikke lov med sykler. Dette er fordi, en sti som inneholder en sykel er lengre enn hvis man kuttet vekk en av kantene fra sykelen. 
+
+**** Minimal spenntre
+Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskeste måten å ta en rundtur av huset ditt på).
+ 
 * TODO Kapittel 13 - Algoritmer og utregningskompleksitet
+** Hvor lang tid tar kode å kjøre?
+  Hastigheten til et program er gitt av en rekke faktorer, hastighet
+  på datamaskinen, språket som er brukt, algoritmene, eksterne ting
+  som diskIO, input osv.
+
+  Vi skal bare se på input og algoritmer.
+
+  regner med at folk kan basis til pseudokode
+
+** Dominante operasjoner
+
+  Når vi skal analysere en algoritme må vi først se etter de dominante
+  operasjonene koden kjører. For eksempel i en sorteringsalgoritme
+  vil som regel sammenligningsoperasjonen være dominant, altså den
+  avgjør hvor lang tid koden vil kjøre.
+
+  Hvis koden multipliserer eller deler, er også dette relativt kostbare
+  operasjoner.
+
+  For å gjøre en aproksimering må man se på hvor mange ganger de dominante
+  operasjonene kjører
+
+** Input
+
+  Input er også avgjørende for hvor raskt en kode går, dette er dog en
+  variabel man ikke kan avgjøre på forhånd, det er derfor når man
+  regner på hastighet at man regner effektiviteten ut i fra worst-case
+  scenarioer når det gjelder input.
+
+** Sammenligning av algoritmer
+
+  Når vi skal sammenligne algoritmer er det viktig å først telle antall
+  dominante operasjoner som må gjøres. Og det er viktig å regne med stor
+  input, algoritmer kan skalere ulikt, og vi er alltid interessert i
+  worst-case-scenarioet, små beregninger går raskt uansett, ingen vits
+  i å optimalisere når det ikke er noen kostnad involvert.
+
+** Operasjoner som bygger på hverandre
+ 
+  Hvis to mindre operasjoner bygger på hverandre, og utvider
+  hverandre i kompleksitet kan de tenkes på som en dominant
+  operasjon.
+
+** O-notasjon
+
+  hvis vi ser at kompleksiteten i algoritmen utvikler seg i et
+  mønster
+
 * Kilder

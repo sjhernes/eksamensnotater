@@ -165,8 +165,37 @@
   | while    | i mens test er sann      | while(b)\{\}                |
   | do-while | utfører løkka før testen | do \{\} while(b);           |
 
-  
+** while
+   
+   while-løkker er kanskje den enkleste formen for løkker, den gjør en blokk kode
+   så lenge predikatet i parameteret er sant. 
 
+   Man trenger ikke nødvendigvis å kjøre
+   en kodeblokk, for eksempel hvis man har en boolsk funksjon ("kan()") som parameteret
+   kan man kjøre koden "while(kan());" og dermed si at man skal kjøre helt til "kan()"
+   returnerer false.
+
+** for
+   
+   for-løkker er en naturlig utvidelse av while da man ofte trenger tellere eller ting
+   som skjer for hver gang kodeblokken skal kjøres, for eksempel en teller når man går
+   igjennom et array.
+
+   - for(int i=0;i<array.length;i++;){
+     - System.out.println(array[i])
+   - }
+
+   Men for-løkker kan brukes på andre måter da den har en ganske enkel måte å oppføre 
+   seg på "for(initialiseringskode;predikat;postkode)", eneste som det er strengt hva 
+   man må ha i en for-løkke er predikatet. initialiseringen, kan være å sette en teller
+   til noe, eller når man går igjennom noder i en graf, så kan man f.eks sette 
+   for(Node n = root;n.next!=null;n=n.next)
+
+** while .. do
+   
+   Mindre brukt løkketype, egentlig en while-løkke hvor koden kjøres minst en gang før
+   predikatet blir testet.
+  
 * hasjkart
 
   Hashmaps er en enkel måte å ordne mange objekter med et objekt som
@@ -200,3 +229,4 @@
   
   
 
+* Lenkede lister
