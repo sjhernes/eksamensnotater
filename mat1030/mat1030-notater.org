@@ -1,0 +1,482 @@
+#+TITLE: MAT1030 - Eksamensnotater
+#+AUTHOR: Eivind Lindbråten
+#+STARTUP: indent
+#+BIND: auto-fill-mode
+#+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
+#+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
+#+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
+#+LATEX_HEADER: \usepackage[norsk]{babel} %Norsk språkpakke.
+#+LATEX_HEADER: \usepackage{hyperref} %For lenker i latex-dokument.
+#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} %Farge på lenker.
+#+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
+#+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.
+* Praktisk informasjon
+- Dag Normann (dnormann@math.uio.no)
+- Plenumsregning 12:15 Fredag.
+- Eksamen 7. juni 14:30.
+* DONE Kapittel 1 - Algoritmer og psedokoder
+** Algoritmer
+Algoritmer er en oppskrift på hvordan vi går frem for å løse et
+problem. Hvert steg må være helt forståelig og utførlig. Rekkefølgen
+er klart definert. Garantere at den fullfører etter et endelig
+antall gjennomganger.
+** Pseudokoder
+"Liksomprogram". Bruker variable som kan ha forskjellige verdier og
+Input og Output. Bruker vanlige kontrollstrukturer og løkker.
+* DONE Kapittel 2
+** Tallmengder
+Naturlige tall (N) 1, 2, 3, ...  Hele tall (Z) -3, -2, -1, 0, 1, 2, 3,
+...  Rasjonale tall (Q) p/q Reelle tall (R) "alle tallene", f.eks. Pi.
+Komplekse tall (C) sqrt(-1)
+
+Bruker basesystem. Desimaltall er base10.  I informatikk bruker vi 
+ofte base 2, 8 og 16. Siden stort sett all kommunikasjon og lagring
+på en datamaskin foregår i to tilstander (av/på,
+magnetisert/avmagnetisert). Derfor lett å jobbe med disse basene.
+** Binære tall
+Binære tall har base2 og vi regner med 0 og 1.  Bruker
+posisjonssystemet. Ved desimale tall (ikke riktig å kalle det
+desimale!) blir det negative potenser.  Posisjonsverdienes eksponent
+angir hvilken base det er.
+*** Algoritme for base_10 til base_2
+
+#+BEGIN_SRC
+1. Input n {n must be a natural number}
+2. Repeat 2.1. Output n mod 2 2.2. n = n div 2 until n=0
+#+END_SRC
+
+Skriver det opp slik:
+
+#+BEGIN_SRC
+2 25 12 1 6 0 3 0 1 1 0 1 // Leses oppover.
+#+END_SRC
+
+*** Algoritme for base10 med punkt til base2 med punkt
+
+#+BEGIN_SRC
+Input n, digits //digits for å sette maks antall siffer.  i = 0 Repeat
+i = i+1 m = 2n Output [m] n = frac(m) until n = 0 or i = digits
+#+END_SRC
+
+[m] markerer integer-delen av tallet.  frac(m) markerer brøkdelen av
+tallet.
+
+Skriver det opp slik:
+
+#+BEGIN_SRC
+    32 2 0 64 1 28 0 56 1 12 0 24
+#+END_SRC
+
+Har tallet både integer-del og brøkdel, kombinerer vi bare teknikkene.
+
+For å konvertere fra base10 til octale og hexadecimale tall bruker vi
+samme teknikker for integer- og brøkdel, men henholdsvis 8 og 16 som
+divisor/multiplikator.
+
+Siden teknikkene for å konvertere frem og tilbake til base10, bruker
+vi derfor ofte såkalte relaterte baser. F.eks. base2, 8 og 16.  For
+octal deler vi binærtallet i bolker med tre tall og representerer
+verdien.  For hex gjør vi det samme, bare i bolker med fire tall.
+
+Gange og dele med binærtall foregår på samme måte som med desimaltall.
+
+Horners metode for konvertering av baseX til base10: $6253_8
+=((6×8+2)×8+5)×8+3=3243_10$
+* DONE Kapittel 3 - Digital representasjon av tall og aritmetikk
+Vi må første bestemme: Hvor mange tall ønsker vi å representere?
+Hvilke tall? Og til sist, hvordan representere?
+
+Ved fast lengde bitrepresentasjon gjør det regningen enklere. Men
+flere bits, gjør tregere regning, selv for små tall.  -Datamaskiner
+bruker ofte 4bytes. (32 bits) til representasjon. Ved manuell regning
+bruker vi 4, 8 eller 16 bits for å gjøre det enkelt.
+
+-Eksempel: 1byte, fra -128 til 127. Fortegnsbit 0 (positiv) og 1
+-(negativ).  For negative blir representasjonen n+128, og en ledende
+-ener. Dette gjøres siden aritmetikken blir enklere i ettertid. Legger
+-vi til ett negativt tall og får 1 i overflyt, og ignorerer det, blir
+-det det samme som å trekke fra tallet.  Vi må også passe på at når vi
+-legger sammen tall et vi ikke overstiger verdiområdet vårt. (To
+-positive som f.eks. gir negativt, eller to negative som gir null
+-eller positivt).
+
+Å legge til -n+128 (f.eks) er enklere i binært med toerkomplement.
+
+Toerkomplement: Alle nullere til høyre beholdes, første ener fra høyre
+beholdes. Alle siffer til venstre for første ener flippes.
+
+-Kunne representere med signifikand og desimaltall.
+
+Representerer vi reelle tall med signifikant mellom 0.1 og 1 og en
+base (f.eks. base10) og en eksponent, sier vi at den er normalisert.
+Lagres vanligvis i datmaskiner som 4 eller 8 bytes (double og single
+precision). Antall bits i eksponent angir verdiområde, mens
+signifikantent bestemmer presisijonen. Vanlig i datamaskiner er 8 bits
+til eksponent og 23 til signifant. Første tegn brukes til signbit (0
+for pluss, 1 for minus).  Eksponenten lagres ofte med såkalt bias 2n –
+1 – 1. Aldri negativ eksponent som gjør aritmetikken enklere. Kalles
+for karakteristikk.  -Første tegnet i signifikanden må alltids
+være 1. Derfor er det noen representasjoner (IEEE) som dropper den.
+-Resultatene vi kan få avhenger av hvor stor presisjon vi bruker på
+representasjonen. Rundt null kan vi få underflyt, mens store
+(negative/postitive) tall kan få overflyt.
+
+BCD er et annet representasjonssystem som regner i titallssystemet,
+men med tallene representert som fire bits binærtall.
+* DONE Kapittel 4 - Logikk
+Proposition: Noe som er sant eller usant.  Connectives: Sammenhengende
+sannhetsuttrykk.
+
+Et predikat er en ytring som inneholder en eller flere variable, men
+som vil bli sann eller usann når vi bestemmer hvilke verdier
+variablene skal ha.
+
+Bruker --| (ikke) / \ (og) \ / (eller).
+
+-Setter opp sannhetstabeller for sammensatte uttrykk.
+
+Bruker paranteser i uttrykk for å vise regnerekkefølge.
+
+--> (medfører at/hvis-så).  T-T=T T-F=F F-T=T F-F=T
+
+<--> (hvis og bare hvis). Sann når p og q har samme sannhetsverdi.
+
+p -> q == --q -> --p mens q -> p != --q -> --p
+
+Ekvivialens merkes med = med tre streker.
+
+A predicate P that contains a variable x can be written symbolically
+as P(x).
+
+Har "quantifiers" som vi merker med A (oppned) og E
+(baklengs). Henholdsvis FOR ALL og THERE EXISTS.
+
+converse - Snur fra if a then b til if b, then a.  contrapositive -
+Negasjon av den converse.
+
+Tautologier - Alle er T Kontradiksjoner - Alle er F
+
+Kan bruker "Laws of logic" til å forkorte utsagnene.
+
+Svak normalform når "ikke" ikke står forran samlet uttrykk.*
+* TODO Kapittel 5 - Mengdelære og relasjoner
+Set er en mengde med veldefinerte objekter. Hver enkelt kalles for
+element.  Kan også skrive en mengde på predikatform:
+{x:xisoddand0<x<50}
+
+Ø = {} og kalles null-mengden.
+
+E(med krøller) kalles universiell mengden, og inneholder alle
+elementer i problemet vi jobber med.
+
+SUBSET - Hvis hele mengden B er en delmengde av A.
+
+INTERSECTION - Snitt DISJOINT - INTERSECTION er Ø UNION - INCLUSIVE OR
+COMPLEMENT - STREK OVER BOKSTAV. Omvendt av mengde.
+
+
+|-------------------+--------------+------------------------|
+| *Lover*           |              | *Navn*                 |
+| $\bar{\bar{A}}=A$ |              | Dobbel komplementasjon |
+| $A \cap A=A$      | $A \cup A=A$ | Idempotent-lover       |
+|-------------------+--------------+------------------------|
+
+
+
+Cardinality av ett endelig mengde f.eks. A = {1,2,3}
+skrives |A|=3. Altså antall elementer.  Power set: P({a},{b},{c}) er
+alle kombinasjoner av mengdene, inkludert seg selv og Ø.
+
+Ordered n-tuple er et set hvor rekkefølge spiller en rolle. Skrives
+(x1, x2, x3, ...)
+
+Kan bruke mengdelæresymbolene med binære mengder. Oppfører seg da
+akkurat som AND, OR og NOT.
+
+
+** Kartesisk produkt
+
+La $A = \{x, y\}$ og $B = \{1, 2, 3\}$.  Da vil det kartesiske
+produktet være, $A \times B = \{(x,1), (x,2), (x,3), (y,1), (y,2),
+(y,3)\}$.
+
+
+** TODO TING Å KUNNE
+
+Snitt Union Komplement Universiell mengde Venndiagrammer Ordnet par
+(a, b) -Rekkefølgen på elementene betyr noe.  Kartesisk produkt
+
+** Relasjoner
+
+
+Binary relation. Forhold mellom kun to elementer.  Kan tegne
+relasjons-graf, med dotter og relasjonspiler mellom dem..  Kan også
+tegne det opp som en matrise med T eller F som verdier der relasjonene
+krysser.
+
+Vi har disse forskjellige typer relasjoner:
+
+
+Vi kan se at en relasjon er refleksiv hvis vi har TRUE i diagonalen på
+en matrise-oppstilling.. Og motsatt for irrefleksiv.  Ved symetrisk
+har vi speilsymetri om diagonalen.
+
+A relation that is reflexive, symmetric and transitive is called an
+equivalence relation.  Vi kaller R en ekvivalensrelasjon om R er
+refleksiv, symmetrisk og transitiv.
+
+A relation is a partial order relation if it is reflexive,
+antisymmetric and transitive.
+
+
+------------------------------- NOTATER
+
+Definisjon: La A være en mengde. En relasjon på A er en delmengde R av
+A2. (Binære relasjoner).  -Vi vil skrive a R b, når vi mener (a, b) e
+R.
+
+RELASJONER: refleksiv irrekfleksiv antisymmetrisk symmetrisk transitiv
+* TODO Kapittel 6 - Funksjoner
+Vi tenker på en funksjon som en sort boks der noe går inn, og noe
+annet kommer ut.
+
+Domenet er gyldig input-verdier. Codomain er settet av gyldig
+outputverdier. Settet av images/bilder (mulige outputverdier) er ett
+subset av codomain, og trenger ikke å bruke alle verdier. Kan derfor
+være en ekte delmengde.
+
+A function is onto if its range is equal to its codomain.  One-to-one
+er at to ulike inputs alltid gir forskjellig otput.
+
+Kan tegne grafer for å hjelpe oss med å illustrere grafene om de er
+onto eller one-to-one:
+
+
+
+
+
+Vi kan også ha sammensatte funksjoner, der vi definerer at codomenet
+til første funksjoner er lik domenet til andre funksjon.  Let f : A ®
+B and g: B ® C be functions. The composite function of f and g is the
+function: gof :A->C,(gºf)(x)=g(f(x))
+
+Identitetsfunksjonen er en funksjon som er onto og one-to-one, og gir
+samme output som input. Defineres slik: i : A -> A, i ( x ) = x.
+
+Noen funksjoner kan vi finne den inverse funksjonen. Og merkes med
+f-1. Ikke alle har dette, og det finnes kun en invers funksjon til en
+funksjon.  A function f has an inverse if and only if f is onto and
+one-to-one.
+
+Istedenfor å skrive (a,b) E R skriver vi aRb.
+
+
+
+
+NOTATER
+
+f: X->Y for hver X, gis det kun en Y.
+
+Definisjonsområdet: f: X->Y, da er X definisjonsområdet og Y er
+verdiområdet.  Bildet, eller bildemengden til f er {f(x) : x E X}
+
+-En sannhetsverditabell beskriver egentlig en funksjon på tabellform.
+Kan også beskrive slike funksjoner ved å bruke et pildiagram.
+
+Injektive funksjoner: To forskjellige input, skal output helst ikke
+være like. Hensiktsmessig at det er et 1 til 1 forhold. En output per
+input..
+
+Formell definisjon: f : X -> Y f kalles injektiv hvis vi for alle x og
+y i X har at x != --> f(x) != f(y)
+* TODO Kapittel 7 - Induksjon og rekursjon
+** Rekursjoner og sekvenser
+En /ikke-rekursiv/ sekvens er definert ved for eksempel
+$t(n)=2n$. Disse kan lett bli skrevet om til algoritmer, for eksempel,
+#+BEGIN_SRC
+Input m For n=1 to m do t = 2n Output t
+#+END_SRC
+En matematisk /rekursiv definisjon/, ser slik ut med $t(1)=2$ og
+$t(n)=t(n-1)+2$. Vi får altså n-leddet ved å addere 2 til forrige
+ledd.
+
+
+Starter med en base-case vi vet svaret på, og jobber oss skrittvist
+rekursivt ned mot svaret.
+
+Vi kan løse lineær rekursjon:
+Ahomogeneoussecond-orderlinearrecurrencewithconstantcoefficients
+isarecurrenceoftheformat(n)+bt(n–1)+ct(n–2)=0forn=3,4,5, ..., where a,
+b and c are real number constants.
+
+En rekrsiv definisjon kan se slik ut: t(1)=2 t(n)=t(n–1)+2 (n>1)
+
+Ikke rekursiv er på formen t(n) = n. Rekursiv er på formen t(n) =
+t(n-1)..  Bevis ved induksjon
+
+Vi kan teste med tilfeldige verdier av n om et utrykk er riktig, men
+får ikke bevist for alle tall. Dette bruker vi induksjon til. Kan
+bruke E (sigma) summetegnet for å skrive opp utrtrykket.
+
+For å få til dette må vi gjøre to ting.
+1. Bevise at basistilfellet P(1) er riktig, og
+2. Bevise at hvis P(k) er sant, så er P(k+1) også sant.
+
+* DONE Kapittel 9 - Kombinatorikk
+** Kombinatorikk og utregning
+Kombinatorikk handler om å kalkulere antallet av mulige løsninger i en
+prosess. Dette brukes for eksempel til å finne ut hvor mange ganger en
+algoritme vil kjøre igjennom, eller om man ønsker å finne den mest
+effektive veien i en graf, eller den mest effektive algoritmen.
+** Prinsippene ved inklusjon og eksklusjon
+Formel for antall elementer i unionen av to mengder, kalles også
+/prinsippet ved inklusjon og eksklusjon/.
+\begin{equation}
+|A \cup B|=|A|+|B|-|A \cap B|
+\end{equation} Denne ser slik ut, siden ved $|A|+|B|$ vil elementene i
+$A \cap B$ bli talt dobbelt. Derfor trekker vi snittet i fra.
+
+** Multiplikasjonsprinsippet
+Multiplikasjonsprinsippet sier at kardinalen til det kartesiske
+produktet av to endelige mengder X og Y, er det samme som kardinalen
+til X ganget med kardinalen til Y.
+\begin{equation}
+|X \times Y|=|X| \times |Y|
+\end{equation}
+** Permutasjoner
+Permutasjon omhandler hvor mange forskjellige måter vi kan arrangere
+elementene våres i.  /Mulige permutasjoner for ett sett med n
+elementer er/ $n!$.  I enkelte tilfeller har vi like elementer, som
+gjør at vi får permutasjoner som blir identiske. For eksempel antall
+angrammer til ordet *PEKE* blir $4! \over 2$.  Et mer generelt problem
+er om vi har /n/ elementer, og vil finne ut hvor mange permutasjoner
+vi kan få ved /r/ stykk av dem. Da får vi formelen,
+\begin{equation} {^nP_r}={{n!} \over {(n-r)!}}
+\end{equation}
+** Kombinasjoner
+Om vi ønsker å finne antall kombinasjoner, uten å se på rekkefølgen av
+elementene, må vi dele uttrykket på $r!$, siden vi ikke ønsker å se på
+permutasjonen av de $r$ utvalgte elementene, siden vi ikke bryr oss om
+rekkefølgen av dem.  Vi får følgende formel,
+\begin{equation} {n \choose r}={^nC_r}={n! \over r!(n-r)!}
+\end{equation}
+*** Egenskaper ved binominial koeffisienter
+- ${n \choose r}={n \choose n-r}$ - Gjør at vi kan erstatte $r > {n
+  \over 2}$ med $r < {n \over 2}$.
+- ${n \choose 0}=1$ og ${n \choose n}=1$.
+- ${n \choose r}={n-1 \choose r-1}+{n-1 \choose r} (n \geq 1)$.
+
+* TODO Kapittel 10 - Grafteori
+Punkter kalt verticies på engelsk.  Linjer mellom punkter kalt egdges.
+Trenger ikke henge sammen, men hvis den er det kaller vi den for
+connected.  En graf kan ha paralelle kanter, eller kanter i loop. Hvis
+den ikke har dette, sier vi at den er simpel.  Med piler (sier at a må
+utføres før b) kalles for en directed graf.  Isomorf, da er de
+grunnleggende like, men kanskje kun visuelle forskjeller.  Graden til
+et punkt er antall kanter som er koblet til det.. Noteres deg(a)=4
+f.eks.
+
+Antall grader i en graf er definert ved: In any graph, the sum of the
+degrees of the vertices equals twice the number of edges.  Mer formelt
+kan det skrives:
+
+\begin{equation} 
+\sum_{v \in V} deg(v)=2|E|
+\end{equation}
+
+A simple graph is complete if each vertex of the graph is adjacent to
+every other vertex.
+
+
+Å være adjacent vil si å være "koblet med". F.eks. 'a' kan være
+adjacent med 'b'.
+
+Komplementet til en graf, er en graf med samme verticies(punkter) men,
+to punkter kan kun være adjacent, hvis og bare hvis de ikke er det i
+orginalgrafen.
+
+Kan også representeres med matriser
+
+Hvis vi har n verticies, blir matrisen G = n x n.
+
+\{a,b,c,d,e\} \times \{a,b,c,d,e\} =
+\begin{bmatrix} 0 & 1 & 0 & 1 & 1 \\ 1 & 0 & 1 & 1 & 0 \\ 0 & 1 &0 & 1
+&1 \\ 1 & 1 &1 & 0 &0 \\ 1 & 0 &1 & 0 &0
+\end{bmatrix}
+
+kolonne a rad b, viser om a er adjecent med b. F.eks. slik:
+
+#+CAPTION: Eksempel på graph, uten rettning.
+#+LABEL: fig:graph
+#+ATTR_LaTeX: width=0.5\textwidth
+[[./images/graph.pdf]]
+
+
+
+
+\fcolorbox{Black}{SpringGreen}{
+\begin{minipage}{0.97\textwidth} La G være en koblet path.
+
+1. Hvis alle vertices av G har partall antall grader, er den Eulerian.
+
+2. Hvis akkurat to har gjevn grad, er den semi-Eulerian.
+
+3. Hvis G har fler enn to, er den hverken Eulerian eller
+   semi-Eulerian.
+\end{minipage} }
+
+Siden vi har undirected grafer, vil matrisen alltids være symmetrisk
+om diagonalen. Vi trenger derfor kun å skrive opp f.eks. lower
+triangle matrix.
+
+Isomorfisme av grafer
+
+Den generelle ideen for å sjekke om to grafer er isomorfe, er å matche
+opp de koresponderende punktene.  Hvis vi har graf G og graf H, og
+mengdene med punkter V(G) og V(H), skulle vi kunne assosiere hvert
+element i V(G) til ett i V(H).. Vi har altså en funksjon med domene
+V(G) og kodmene V(H).  f:V(G)->V(H)
+
+f må være one-to-one og onto.  Vi har også att, – if two vertices are
+adjacent in G, then the corresponding vertices must be adjacent in H,
+while if two vertices are not adjacent in G, then the corresponding
+vertices must not be adjacent in H. A function that satisfies all of
+these conditions is called an isomorphism from G to H.
+
+Vi finner så en isomorfisme som passer, og sjekker om det er korrekt.
+
+
+For å finne ut om to grafer IKKE er isomorfe, ser på på forskjellige
+egenskaper ved grafene. F.eks. ulikt antall punkter, kanter eller
+grader..
+
+en path med lengde n er i en graf: v0, e1, v1, e2, v2, ..., en, vn
+
+Lengden til en path er antall edger i pathen.  Circuit starter og
+slutter i samme vertex.
+
+A graph G is connected if, for any pair of vertices u and v of G,
+there is a path from u to v.
+
+
+En Eulersti er en path som inneholder alle kanter, eksakt en gang. En
+Eulerkrets er en eulersti som også er en circuit, altså first og siste
+punkt faller på samme plass.
+
+Hvis en connected graf har en Eulerkrets, kaller vi det for en
+Eulerian graph, og har den kun en Eulersti, kaller vi den for
+semi-Eulerian graph.
+
+Et punkt med et odd antall edger knyttet til seg, må pathen enten
+starte i, eller slutte i. Det kan derfor ikke være mer enn to odda
+antall grader-punkter..  Genrelt har vi at:
+
+
+I det som kalles en Hammilton path, bruker vi også vært punkt kun en
+gang. Hvis den starter og sluter i samme punkt sier vi at det er en
+Hammilton curcuit. Grafene kalles for Hammiltonian grafer. De trenger
+ikke å bruke alle edgende.
+* TODO Kapittel 11 - Trær
+* TODO Kapittel 13 - Algoritmer og utregningskompleksitet
+* Kilder
