@@ -5,84 +5,84 @@
   kan vi ikke bygge videre på det. I hvert fall ikke på datamaskiner.
 
 ** utsagnslogikk
-     
-     true or false, sant eller ikke
 
-     det er vanskelig å si at noe er helt sant eller ikke
-     "Per er en dannet mann" gir oss noen problemer, oppfattelsen
-     av hva det er å være dannet er en ting, en annen ting er at
-     er Per alltid dannet eller er han bare det som regel?
+   true or false, sant eller ikke
 
-     Vi skal ikke gå inn på den filosofiske analysen, vi har bare sant og usant
-     og kan ikke drive med filosofi.
+   det er vanskelig å si at noe er helt sant eller ikke
+   "Per er en dannet mann" gir oss noen problemer, oppfattelsen
+   av hva det er å være dannet er en ting, en annen ting er at
+   er Per alltid dannet eller er han bare det som regel?
 
-     Spørsmål er ikke utsagn, heller ikke utsagnsord, meninger eller ønsker
+   Vi skal ikke gå inn på den filosofiske analysen, vi har bare sant og usant
+   og kan ikke drive med filosofi.
 
-     enkle predikater er utsagn
-     while true do 
-     er utsagn som lett kan testes og dermed interessante for oss
+   Spørsmål er ikke utsagn, heller ikke utsagnsord, meninger eller ønsker
 
-     algebraiske uttrykk kan betraktes som utsagn
-     x = 7 o.l.
+   enkle predikater er utsagn
+   while true do
+   er utsagn som lett kan testes og dermed interessante for oss
+
+   algebraiske uttrykk kan betraktes som utsagn
+   x = 7 o.l.
 
 ** Predikater
 
-     (7 < 6) ==> false
+   (7 < 6) ==> false
 
-     if (predikat) {}
+   if (predikat) {}
 
-     T og F (i fet font) er brukt i boka som sant og usant
-     (true og false) i boka
-     og dermed er det det vi skal bruke på kurset vårt. 
-     men andre varianter dukker opp
-     som topp og bunnsymbolene, tt og ff, og diverse andre.
-     
-** bindeord
+   T og F (i fet font) er brukt i boka som sant og usant
+   (true og false) i boka
+   og dermed er det det vi skal bruke på kurset vårt.
+   men andre varianter dukker opp
+   som topp og bunnsymbolene, tt og ff, og diverse andre.
+
+***** bindeord
 *** OG
 
-   "tak" (\and{}) for & &, AND osv
-   hvordan vi tolker og, antyder det rekkefølge?
-   ikke i datamaskiner, der er det bare en test for å se om begge stemmer.
-   
+    "tak" (\and{}) for & &, AND osv
+    hvordan vi tolker og, antyder det rekkefølge?
+    ikke i datamaskiner, der er det bare en test for å se om begge stemmer.
+
 *** ELLER
-    
+
     To betydninger.
     enten - eller
     og - eller
- 
+
 **** Inklusiv eller
 
-    | p | q | svar |
-    |---+---+------|
-    | T | T | T    |
-    | T | F | T    |
-    | F | T | T    |
-    | F | F | F    |
+     | p | q | svar |
+     |---+---+------|
+     | T | T | T    |
+     | T | F | T    |
+     | F | T | T    |
+     | F | F | F    |
 
-    vi bruker og - eller, da det er mest fleksibelt til våre formål.
+     vi bruker og - eller, da det er mest fleksibelt til våre formål.
 
 **** Eksklusiv eller
 
-    eksklusiv "eller" kan også dukke opp - tabell:
-    
-    | p | q | svar |
-    |---+---+------|
-    | T | T | F    |
-    | T | F | T    |
-    | F | T | T    |
-    | F | F | F    |
+     eksklusiv "eller" kan også dukke opp - tabell:
+
+     | p | q | svar |
+     |---+---+------|
+     | T | T | F    |
+     | T | F | T    |
+     | F | T | T    |
+     | F | F | F    |
 
 
 *** IKKE
-    
+
     kan skrives f.eks:
     !, eller $\neg{}$
 *** hvis x, så y
     | p | q | p $\to{}$ q |
-    | t | t | t         |
-    | t | f | f         |
-    | f | t | t         |
-    | f | f | t         |
+    | t | t | t		|
+    | t | f | f		|
+    | f | t | t		|
+    | f | f | t		|
 *** Hvis og bare hvis
 ** sammensatte utsagn
 
@@ -100,36 +100,36 @@
 
 * Mengder
 ** intro
-  - en mengde er en samling objekter hvor det er entydig
-    bestemt hvilke objekter som er med i mengden eller ikke
+   - en mengde er en samling objekter hvor det er entydig
+     bestemt hvilke objekter som er med i mengden eller ikke
   - bruken av mengder gjennomsyrer matematikk og andre teoretiske fag
   - vi skal lære å bruke mengder slik at vi kan uttrykke oss
-    presist om konstruktjsjoner og begreper av interesse i 
+    presist om konstruktjsjoner og begreper av interesse i
     informatikk i en vid forstand
-  - mengdelære brukes på mange måter som matematikkens grunnlag, 
+  - mengdelære brukes på mange måter som matematikkens grunnlag,
     noe vi ikke skal legge så stor vekt på
 
-Vi bruker klammeparenteser { og } for å beskrive mengder.
-Vi skal illustrere bruken ved eksempler
+    Vi bruker klammeparenteser { og } for å beskrive mengder.
+    Vi skal illustrere bruken ved eksempler
 
-eksempler:
-   
+    eksempler:
+
    - {0,1} er mengden av digitale verdier en bit kan ha
    - {T,F} er mengden av sannhetsverdier
    - {2,3,5,7,11,13,17,19,23,29} er mengden av de 10 minste primtallene
    - N = {1,2,3,···} er mengden av naturlige tall
 
-vi kan se at vi ikke har 
+     vi kan se at vi ikke har
 
-vi skriver a $\epsilon{}$ A for å si at a er et element i mengden a.
-og a nepsilon A for det motsatte
+     vi skriver a $\epsilon{}$ A for å si at a er et element i mengden a.
+     og a nepsilon A for det motsatte
 
 * Algoritmer
 ** Algoritmer
 *** Definisjon
-   En algoritme er en oppskrift som forteller oss hvordan vi skritt
-   for skritt skal kunne oppn et resultat eller løse et problem.
-   eksempler på algoritmer kan være:
+    En algoritme er en oppskrift som forteller oss hvordan vi skritt
+    for skritt skal kunne oppnå et resultat eller løse et problem.
+    eksempler på algoritmer kan være:
 
 ****** kakeoppskrifter
 ****** Automatisk innsjekking på fly
@@ -138,7 +138,7 @@ og a nepsilon A for det motsatte
 
 *** kjennetegn
 
-    det skal ikke kreve intelligens eller forståelse for å 
+    det skal ikke kreve intelligens eller forståelse for å
     følge den
 
 ****** du skal ikke kunne kjemi for å bake en kake
@@ -162,12 +162,12 @@ og a nepsilon A for det motsatte
 ****** vi skal bruke pseudokode på samme måte som i læreboka
 ****** som med alle andre språk kan man øve seg til mestring av pk
 *** Eksempel (areal av trekant)
-    
+
     1. Input h [h er høyden i trekanten.]
     2. Input g [g er lengden på grunnlinjen i trekanten.]
     3. areal <- (h·g)/2
     4. Output areal
-       
+
 *** Eksempel alt areal av trekan
 
     1. Input h
@@ -180,15 +180,38 @@ og a nepsilon A for det motsatte
 
     - et viktig aspekt ved pseudokoder er bruk av variabler
     - variabler er en holder for forskjellige verdie
-    
-    Så langt består en pseudokode av en nummerert liste instruksjoner
-    hvor hver instruksjon har et av følgende tre formater:
+
+      Så langt består en pseudokode av en nummerert liste instruksjoner
+      hvor hver instruksjon har et av følgende tre formater:
 
     - gi en input-verdi til en variabel
     - Gi en variabel en ny verdi som en funksjon av eksisterende variabler
     - gi verdien av en variavel som output
 
-    Vi kan bruke hva vi vil som variable, eksempelvis er h,g og areal
-    variablene i pseudokodene vi har sett på.
-    
-    Hvis vi skal beregne verdien
+      Vi kan bruke hva vi vil som variable, eksempelvis er h,g og areal
+      variablene i pseudokodene vi har sett på.
+
+      Hvis vi skal beregne verdien
+
+* Trær
+** Sykel
+   En sykel er en sti i en graf som har følgende egenskaper :
+   - den har minst en kant
+    - ingen kant blir traversert mer enn en gang
+    - man starter og slutter på samme node, men ingen andre noder er besøkt mer enn en gang
+
+** Definisjon av tre og forest
+   Hvis en graf har ingen sykler og er connected, er dette definert som et tre.
+   Tar man bort kravet om at et tre skal være connected, så står man igjen med en graf som ikke har sykler. Slike grafer kalles for en "forest".
+
+** Viktige egenskaper (tre)
+   - Tar man 2 vilkårlige noder 'A' og 'B' , så finnes det kun en sti mellom dem. Denne stien besøker ikke noen kanter/noder mer enn en gang.
+   - Hvis man har et tre og legger til en sti mellom 2 noder, så vil strukturen bli en graf med en sykel i seg.
+   - Fjerner man en kant fra et tre, så får man en disconnected graph.
+
+** Teorem
+   Et vilkårlig tre med n noder har (n-1) kanter.
+   Forklaring (tankeeksperiment) : 
+   Anta at du har kun en rotnode. Deretter legger du til (n-1) noder.
+   Hvis du oppretter en forbindelse fra rotnoden til alle andre noder, så har du nå (n-1) kanter og totalt har du n noder.
+   Deretter 
