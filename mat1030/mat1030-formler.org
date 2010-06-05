@@ -1,0 +1,11 @@
+* Algoritmer og pseudokoder
+* Baser og tallrepresentasjon
+* Digital representasjon av tall og aritmetikk
+* Logikk
+* Mengdelære og relasjoner
+* Funksjoner
+* Induksjon og rekursjon
+* Kombinatorikk
+* Grafteori
+* Trær
+* Algoritmer og utregningskompleksitet

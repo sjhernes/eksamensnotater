@@ -1,7 +1,6 @@
 #+TITLE: MAT1030 - Eksamensnotater
 #+AUTHOR: Eivind Lindbråten
 #+STARTUP: indent
-#+BIND: auto-fill-mode
 #+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
 #+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
 #+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
@@ -15,7 +14,7 @@
 - Dag Normann (dnormann@math.uio.no)
 - Plenumsregning 12:15 Fredag.
 - Eksamen 7. juni 14:30.
-* DONE Kapittel 1 - Algoritmer og psedokoder
+* Kapittel 1 - Algoritmer og pseudokoder
 ** Algoritmer
 Algoritmer er en oppskrift på hvordan vi går frem for å løse et
 problem. Hvert steg må være helt forståelig og utførlig. Rekkefølgen
@@ -24,7 +23,7 @@ antall gjennomganger.
 ** Pseudokoder
 "Liksomprogram". Bruker variable som kan ha forskjellige verdier og
 Input og Output. Bruker vanlige kontrollstrukturer og løkker.
-* DONE Kapittel 2
+* Kapittel 2 - Baser og tallrepresentasjon
 ** Tallmengder
 Naturlige tall (N) 1, 2, 3, ...  Hele tall (Z) -3, -2, -1, 0, 1, 2, 3,
 ...  Rasjonale tall (Q) p/q Reelle tall (R) "alle tallene", f.eks. Pi.
@@ -83,7 +82,7 @@ Gange og dele med binærtall foregår på samme måte som med desimaltall.
 
 Horners metode for konvertering av baseX til base10: $6253_8
 =((6×8+2)×8+5)×8+3=3243_10$
-* DONE Kapittel 3 - Digital representasjon av tall og aritmetikk
+* Kapittel 3 - Digital representasjon av tall og aritmetikk
 Vi må første bestemme: Hvor mange tall ønsker vi å representere?
 Hvilke tall? Og til sist, hvordan representere?
 
@@ -101,12 +100,12 @@ bruker vi 4, 8 eller 16 bits for å gjøre det enkelt.
 -positive som f.eks. gir negativt, eller to negative som gir null
 -eller positivt).
 
-Å legge til -n+128 (f.eks) er enklere i binært med toerkomplement.
+Å legge til n+128 (f.eks) er enklere i binært med toerkomplement.
 
 Toerkomplement: Alle nullere til høyre beholdes, første ener fra høyre
 beholdes. Alle siffer til venstre for første ener flippes.
 
--Kunne representere med signifikand og desimaltall.
+Kunne representere med signifikand og desimaltall.
 
 Representerer vi reelle tall med signifikant mellom 0.1 og 1 og en
 base (f.eks. base10) og en eksponent, sier vi at den er normalisert.
@@ -124,9 +123,9 @@ representasjonen. Rundt null kan vi få underflyt, mens store
 
 BCD er et annet representasjonssystem som regner i titallssystemet,
 men med tallene representert som fire bits binærtall.
-* DONE Kapittel 4 - Logikk
-Proposition: Noe som er sant eller usant.  Connectives: Sammenhengende
-sannhetsuttrykk.
+* Kapittel 4 - Logikk
+*Proposition*: Noe som er sant eller usant.  
+*Connectives*: Sammenhengende sannhetsuttrykk.
 
 Et predikat er en ytring som inneholder en eller flere variable, men
 som vil bli sann eller usann når vi bestemmer hvilke verdier
@@ -138,7 +137,11 @@ Bruker --| (ikke) / \ (og) \ / (eller).
 
 Bruker paranteser i uttrykk for å vise regnerekkefølge.
 
---> (medfører at/hvis-så).  T-T=T T-F=F F-T=T F-F=T
+--> (medfører at/hvis-så).  
+T-T=T 
+T-F=F 
+F-T=T 
+F-F=T
 
 <--> (hvis og bare hvis). Sann når p og q har samme sannhetsverdi.
 
@@ -160,7 +163,7 @@ Tautologier - Alle er T Kontradiksjoner - Alle er F
 Kan bruker "Laws of logic" til å forkorte utsagnene.
 
 Svak normalform når "ikke" ikke står forran samlet uttrykk.*
-* TODO Kapittel 5 - Mengdelære og relasjoner
+* Kapittel 5 - Mengdelære og relasjoner
 Set er en mengde med veldefinerte objekter. Hver enkelt kalles for
 element.  Kan også skrive en mengde på predikatform:
 {x:xisoddand0<x<50}
@@ -175,16 +178,13 @@ SUBSET - Hvis hele mengden B er en delmengde av A.
 INTERSECTION - Snitt DISJOINT - INTERSECTION er Ø UNION - INCLUSIVE OR
 COMPLEMENT - STREK OVER BOKSTAV. Omvendt av mengde.
 
-
 |-------------------+--------------+------------------------|
 | *Lover*           |              | *Navn*                 |
 | $\bar{\bar{A}}=A$ |              | Dobbel komplementasjon |
 | $A \cap A=A$      | $A \cup A=A$ | Idempotent-lover       |
 |-------------------+--------------+------------------------|
 
-
-
-Cardinality av ett endelig mengde f.eks. A = {1,2,3}
+Cardinality av en endelig mengde f.eks. A = {1,2,3}
 skrives |A|=3. Altså antall elementer.  Power set: P({a},{b},{c}) er
 alle kombinasjoner av mengdene, inkludert seg selv og Ø.
 
@@ -193,7 +193,6 @@ Ordered n-tuple er et set hvor rekkefølge spiller en rolle. Skrives
 
 Kan bruke mengdelæresymbolene med binære mengder. Oppfører seg da
 akkurat som AND, OR og NOT.
-
 
 ** Kartesisk produkt
 
@@ -237,7 +236,7 @@ A2. (Binære relasjoner).  -Vi vil skrive a R b, når vi mener (a, b) e
 R.
 
 RELASJONER: refleksiv irrekfleksiv antisymmetrisk symmetrisk transitiv
-* TODO Kapittel 6 - Funksjoner
+* Kapittel 6 - Funksjoner
 Vi tenker på en funksjon som en sort boks der noe går inn, og noe
 annet kommer ut.
 
@@ -290,7 +289,7 @@ input..
 
 Formell definisjon: f : X -> Y f kalles injektiv hvis vi for alle x og
 y i X har at x != --> f(x) != f(y)
-* TODO Kapittel 7 - Induksjon og rekursjon
+* Kapittel 7 - Induksjon og rekursjon
 ** Rekursjoner og sekvenser
 En /ikke-rekursiv/ sekvens er definert ved for eksempel
 $t(n)=2n$. Disse kan lett bli skrevet om til algoritmer, for eksempel,
@@ -323,7 +322,7 @@ For å få til dette må vi gjøre to ting.
 1. Bevise at basistilfellet P(1) er riktig, og
 2. Bevise at hvis P(k) er sant, så er P(k+1) også sant.
 
-* DONE Kapittel 9 - Kombinatorikk
+* Kapittel 9 - Kombinatorikk
 ** Kombinatorikk og utregning
 Kombinatorikk handler om å kalkulere antallet av mulige løsninger i en
 prosess. Dette brukes for eksempel til å finne ut hvor mange ganger en
@@ -367,14 +366,14 @@ rekkefølgen av dem.  Vi får følgende formel,
 - ${n \choose 0}=1$ og ${n \choose n}=1$.
 - ${n \choose r}={n-1 \choose r-1}+{n-1 \choose r} (n \geq 1)$.
 
-* TODO Kapittel 10 - Grafteori
-Punkter kalt verticies på engelsk.  Linjer mellom punkter kalt egdges.
+* Kapittel 10 - Grafteori
+Noder, kalt verticies på engelsk.  Linjer (kanter) mellom punkter kalt egdges.
 Trenger ikke henge sammen, men hvis den er det kaller vi den for
 connected.  En graf kan ha paralelle kanter, eller kanter i loop. Hvis
 den ikke har dette, sier vi at den er simpel.  Med piler (sier at a må
 utføres før b) kalles for en directed graf.  Isomorf, da er de
 grunnleggende like, men kanskje kun visuelle forskjeller.  Graden til
-et punkt er antall kanter som er koblet til det.. Noteres deg(a)=4
+et punkt er antall kanter som er koblet til det.. Noteres $deg(a)=4$
 f.eks.
 
 Antall grader i en graf er definert ved: In any graph, the sum of the
@@ -387,7 +386,6 @@ kan det skrives:
 
 A simple graph is complete if each vertex of the graph is adjacent to
 every other vertex.
-
 
 Å være adjacent vil si å være "koblet med". F.eks. 'a' kan være
 adjacent med 'b'.
@@ -412,11 +410,9 @@ kolonne a rad b, viser om a er adjecent med b. F.eks. slik:
 #+ATTR_LaTeX: width=0.5\textwidth
 [[./images/graph.pdf]]
 
-
-
-
 \fcolorbox{Black}{SpringGreen}{
-\begin{minipage}{0.97\textwidth} La G være en koblet path.
+\begin{minipage}{0.97\textwidth} 
+La G være en koblet path.
 
 1. Hvis alle vertices av G har partall antall grader, er den Eulerian.
 
@@ -424,7 +420,7 @@ kolonne a rad b, viser om a er adjecent med b. F.eks. slik:
 
 3. Hvis G har fler enn to, er den hverken Eulerian eller
    semi-Eulerian.
-\end{minipage} }
+\end{minipage}}
 
 Siden vi har undirected grafer, vil matrisen alltids være symmetrisk
 om diagonalen. Vi trenger derfor kun å skrive opp f.eks. lower
@@ -446,7 +442,6 @@ these conditions is called an isomorphism from G to H.
 
 Vi finner så en isomorfisme som passer, og sjekker om det er korrekt.
 
-
 For å finne ut om to grafer IKKE er isomorfe, ser på på forskjellige
 egenskaper ved grafene. F.eks. ulikt antall punkter, kanter eller
 grader..
@@ -458,7 +453,6 @@ slutter i samme vertex.
 
 A graph G is connected if, for any pair of vertices u and v of G,
 there is a path from u to v.
-
 
 En Eulersti er en path som inneholder alle kanter, eksakt en gang. En
 Eulerkrets er en eulersti som også er en circuit, altså first og siste
@@ -472,12 +466,11 @@ Et punkt med et odd antall edger knyttet til seg, må pathen enten
 starte i, eller slutte i. Det kan derfor ikke være mer enn to odda
 antall grader-punkter..  Genrelt har vi at:
 
-
 I det som kalles en Hammilton path, bruker vi også vært punkt kun en
 gang. Hvis den starter og sluter i samme punkt sier vi at det er en
 Hammilton curcuit. Grafene kalles for Hammiltonian grafer. De trenger
 ikke å bruke alle edgende.
-* TODO Kapittel 11 - Trær
+* Kapittel 11 - Trær
 ** Sykel
    En sykel er en sti i en graf som har følgende egenskaper :
    - den har minst en kant
@@ -512,7 +505,7 @@ I tillegg til kravet over, er det heller ikke lov med sykler. Dette er fordi, en
 **** Minimal spenntre
 Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskeste måten å ta en rundtur av huset ditt på).
  
-* TODO Kapittel 13 - Algoritmer og utregningskompleksitet
+* Kapittel 13 - Algoritmer og utregningskompleksitet
 ** Hvor lang tid tar kode å kjøre?
   Hastigheten til et program er gitt av en rekke faktorer, hastighet
   på datamaskinen, språket som er brukt, algoritmene, eksterne ting
@@ -532,8 +525,18 @@ Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskes
   Hvis koden multipliserer eller deler, er også dette relativt kostbare
   operasjoner.
 
-  For å gjøre en aproksimering må man se på hvor mange ganger de dominante
-  operasjonene kjører
+  Første tilnærming: *For å gjøre en aproksimering må man se på hvor 
+  mange ganger de dominante operasjonene kjører.*
+
+  Vi teller altså kun de mest tidskrevende prosessene i en algoritme. 
+
+  Tildelelser av variabler etc. går relativt kjapt, mens addisjon og
+  substraksjon tar litt lengere tid og multiplikasjon og divisjon tar
+  lengst tid. Jobber man med floating points vil dette som oftest ta
+  lengere tid enn ved integers.
+
+  Andre tilnærming: *Hvis tiden varierer ved en gitt input-størrelse 
+  ser vi på værste tilfelle mulig.*
 
 ** Input
 
@@ -550,11 +553,16 @@ Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskes
   worst-case-scenarioet, små beregninger går raskt uansett, ingen vits
   i å optimalisere når det ikke er noen kostnad involvert.
 
+  Vi kan også definere kompleksiteten til algoritmene vi ønsker å
+  sammenligne som funksjoner, og sette dem opp mot hverandre, og se på
+  deres domene og kodomene. 
+  \begin{equation}f:N \to N, f(n)=Maksimalt antall
+  dominantoperasjoner, med input-størrelse n.\end{equation}
+  
 ** Operasjoner som bygger på hverandre
  
-  Hvis to mindre operasjoner bygger på hverandre, og utvider
-  hverandre i kompleksitet kan de tenkes på som en dominant
-  operasjon.
+  Fjerde tilnærming: *Ikke skille mellom to tidspunkt kompleksiteten 
+  dersom vekstraten til en er en konstant multiplum av vekstraten til den andre.*
 
 ** O-notasjon
 
@@ -566,6 +574,4 @@ Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskes
   algoritmen har kompleksitet O(n), hvis kompleksiteten er et polynom
   n^k har algoritmen kompleksitet O(n^k)
   
-** 
-
 * Kilder
