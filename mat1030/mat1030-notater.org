@@ -559,6 +559,13 @@ Dette er et spenntre som har minst total kantvekt av alle sammen (dvs den raskes
 ** O-notasjon
 
   hvis vi ser at kompleksiteten i algoritmen utvikler seg i et
-  mønster
+  mønster basert på input, så beskriver man gjerne tiden programmet
+  kjører som en formel. Hvis kompleksiteten i en graf er lineær
+  (eg det er en økning i dominante operasjoner som bare er en økning
+  med en konstant for hver økning av input) sier man gjerne at
+  algoritmen har kompleksitet O(n), hvis kompleksiteten er et polynom
+  n^k har algoritmen kompleksitet O(n^k)
+  
+** 
 
 * Kilder
