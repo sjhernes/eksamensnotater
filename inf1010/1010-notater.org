@@ -1,3 +1,15 @@
+#+TITLE: MAT1030 - Eksamensnotater
+#+AUTHOR: Sjur Hernes & Eivind Lindbråten
+#+STARTUP: indent
+#+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
+#+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
+#+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
+#+LATEX_HEADER: \usepackage[norsk]{babel} %Norsk språkpakke.
+#+LATEX_HEADER: \usepackage{hyperref} %For lenker i latex-dokument.
+#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} %Farge på lenker.
+#+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
+#+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.
 * Tall
 
   |--------+---------------------------------------|
@@ -151,10 +163,11 @@
 * Arrayer
 
   Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
-  størelsen når man lager objektet.\\
-  String[ ] a = new string[3 ];\\
-  man kan nå finne lengden på arrayet og bruke det som en int\\
-  a.length;
+  størelsen når man lager objektet.
+  #+BEGIN_SRC Java
+  String[ ] a = new string[3];
+  #+END_SRC
+man kan nå finne lengden på arrayet og bruke det som en int a.length;
 
 * løkker
 
@@ -228,5 +241,208 @@
   |-----------------------+---------------------------------------------|
   
   
-
 * Lenkede lister
+
+* UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
+* Usorterte notater fra Eivind
+INF1010
+
+-Lenket liste. Trenger ikke ta stilling til antall fra start.
+-Alle objekter er lenket til hverandre, eget objekt som peker på
+-første objektet.
+-Må søke i listen forfra for å finne objekter.
+
+-printf-funksjon også i java.
+
+-Øve på sortering til eksamen.
+if (condition) {
+    return x;
+}
+return y;
+should be written as
+return (condition ? x : y);
+
+finalize() er en metode du kan definere i klasser, som automatisk
+kjøres før objekter blir tatt av garbage collectoren og
+slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
+
+LIFO - Last in, last out, stack.
+FIFO - First in first out, Queue. 
+
+
+extends (Subklasser)
+Generic
+Objectklassen
+InstanceOf
+
+ArrayList har ikke fast lengde. Men ikke basal konstruksjon slik array
+er..
+
+abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
+av ikke abstrakte subklasser. For å gi en mer virelighetslik
+objektmodell.
+abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
+kode.. Kun subklassemetodene.
+Klasser kan kun arve fra en superklasse.
+
+Bruker interface på en klasse hvis vi ønsker egenskaper som flere
+forskjellige klasser skal arve. Metoder må skrives på nytt for hver
+gang. Implementeres med implements ClassName.
+
+Kan ha indre, nestede klasser.
+
+Alle klasser er subklasser av klassen Object.
+
+-Primitive typer vil ikke endre verdi når de blir sendt til en metode
+ og maniplert. Men det blir objekter, siden de er kun pekere, som
+ peker på objektet som blir sendt som argument.
+
+* Gruppetime 24.02.2010
+
+** Accessmodifiers
+public - Tilgejngelig fra hvor som helst.
+ingenting - TIlgang til i samme pakke.
+protected - samme som ingenting, samt subklasser.
+private - Kun i samme klasse.
+
+Må være i AKKURAT samme pakke for at tilgang skal fungere..
+
+Maven-mappestruktur.
+
+Alle filene ligger i assignment.. Totalt 7 filer..
+
+package inf1010.assignment;
+
+* PRINSIPPER FOR STØRRE PROGRAMMER
+    -KISS
+    -Moduler
+        -Små
+            -Definert av grensesnitt
+            -Kun en funksjonalitet
+                -F.eks. LinkedList
+    -Dokumentasjon
+    -Testing
+    -Konvensjoner
+        -Hvordan kode ser ut
+        -Hvordan kode struktureres
+
+Ca over 40 linjer i en metode, på tide å splitte.
+
+* Rekursjon
+
+Kaller seg selv.
+Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
+return statement går man "baklengs" tilbake i call stacken og metoden
+fortsetter etter der den kalte seg selv.
+
+* Brukergrensesnitt
+
+import javax.swing.*; 
+import java.awt.*;
+
+class RammeDemo2 extends JFrame { 
+    RammeDemo2() {
+        // En annen måte å sette tittel på rammen:
+        super(”Første vindu");                     
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setSize(300,200);        
+        setVisible(true);
+    } 
+    public static void main(String[] args) {
+        new RammeDemo2();
+    }
+}
+
+
+Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
+til en metode.
+
+Bruk repaint()-metoden for å tegne vindu på nytt..
+
+* Tråder - Threads
+
+Kan implemenere Runnable eller extende Thread classs.
+* UML
+
+Diagrammer av programmene våres.
+Tegner selve strukturen til programmet.
+
+-Objekdiagrammer. (UML-bokser med ev. var. og arr.)
+-Klassediagrammer. (bare koblingene etc.)
+
+Tegner selve arkitekturen til programmet våres. 
+
+** Navneklassen
+
++public
+-private
+#protected
+~package
+
+Vi lager en modell av problemområdet vårt (også kalt domenemodell).
+-Modell av probleme (og modell av databasen).
+
+-Tegner streker mellom klassene. Og navn på forbindelsen.
+
+Vi tegner hvor mange objekter det maksimalt kan være.
+
+Vi har forskjellige skrivemåter for verdier:
+1 - en
+ * -  null, en eller flere
+1..* - minst en
+3,4,5 - tre fire eller fem
+
+Tegner koblinger mellom de klassene du tenker programmet skal snakke
+med.
+
+Vi angir kun de mest sentrale dataene i UML-boksene.. F.eks. viktige
+variabler og arrayer.
+F.eks. :klasenavn [atributt-fekt (kan være tomt)].
+
+-Pekere - piler
+
+Tegner flere ved å legge en UML-boks som "skygge" bak.. En
+representasjon for N antall.
+
+* Switch
+switch (<utrrykk>) {
+    case verdi1: <settninger>; break;
+    etc..
+    default: <kjøres ved ingen treff ved <uttrykk> >;
+} 
+* Hashmaps
+Hashmaps
+import java.util.*;
+
+HashMap hashmapnavn = new HashMap();
+hashmapnavn.put(nøkkel, verdi);
+
+Hente: Bil b = (Bil) register.get(nøkkel);
+
+Hente alle verdiene:
+Iterator it = register.values().iterator();
+while (it.hasNext()) {
+    Bil b = (Bil) it.next();
+}
+
+
+containsKey(nøkkel) sjekker om objekt med nøkkelen finnes. Gir
+true/false.
+containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
+size() antall nøkler.
+
+* Emner gått igjennom på forelesning
+** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
+** Lister, trær, FIFO, LIFO, Lenket liste
+** Subklasser polyformi
+** Generiske typer
+** Abstrakte klasser og interface
+** Binære søketrær
+** Untak (Exceptions)
+** Grafisk bruekrgrensesnitt
+** REkursjon
+** Tråder
+** Hanois tårn
+** Sortering (Quicksort etc)
+** Sortering med tråder
+** Software life cycle and software testing
