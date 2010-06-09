@@ -1,0 +1,449 @@
+* Tall
+
+  |--------+---------------------------------------|
+  | *Type* | *Lovlige verdier*                     |
+  |--------+---------------------------------------|
+  | byte   | \pm{}127                              |
+  |--------+---------------------------------------|
+  | short  | \pm{}32 767                           |
+  |--------+---------------------------------------|
+  | int    | \pm{}2 147 483 647                    |
+  |--------+---------------------------------------|
+  | long   | \pm{}9 223 372 036 854 775 807L       |
+  |--------+---------------------------------------|
+  | float  | \pm{}3.402 823 47 E+38F               |
+  |--------+---------------------------------------|
+  | double | \pm{}1.797 693 134 862 315 70 E+308   |
+  |--------+---------------------------------------|
+
+  negative tall er har alltid en større range 
+
+** Integere
+
+   Integere er heltall, og lite annet.\\
+   \newline
+   Hvis vi vil konvertere en streng til en int sier vi:\\
+   int x = Integer.parseInt("123");\\
+   \newline
+   Hvis vi vil konvertere et annet tall til int skriver vi:\\
+   int x = (int) 3.14\\
+   \newline 
+
+   |----------------+---------------------+---------------------|
+   | Operasjon      | Beskrivelse         | Eksempel            |
+   |----------------+---------------------+---------------------|
+   | +, -, *, /     | De fire regneartene | 1+1                 |
+   |----------------+---------------------+---------------------|
+   | ++             | legge til 1         | i++                 |
+   |----------------+---------------------+---------------------|
+   | --             | trekke fra 1        | i--                 |
+   |----------------+---------------------+---------------------|
+   | %              | modulo(rest)        | 5%2 -> 1            |
+   |----------------+---------------------+---------------------|
+   | Math.sqrt(...) | Kvadratrot          | Math.sqrt(4) -> 2   |
+   |----------------+---------------------+---------------------|
+   | Math.pow(x, y) | Potens (x^y)        | Math.pow(2, 3) -> 8 |
+   |----------------+---------------------+---------------------|
+  
+   
+   - Metodekall
+     - ++ og --
+     - * og /
+     - + og -
+     - -(som negativt fortegn)
+
+   husk at:\\
+   int x, y=1;\\
+   x = y++ + y + ++y;\\
+   nå er x = 6, fordi stykket blir 1 + 2 + 3. først er y = 1, og 
+   så øker den slik at neste gang y brukes er den 2. 
+   når vi skriver ++y så vil y være 3 før vi legger det til.
+
+** desimaltall
+
+   Jeg velger å bare leke med floats, men reglene er ca det samme som for int.\\
+
+   konvertering fra heltall til desimaltall:\\
+   float x = (3 + 0.0) / 2;\\
+
+   altså vi bare legger til 0.0 som det som skjer først, slik at ett av tallene er
+   et desimaltall, ellers vil vi få heltallsdivisjon. Enkelt og greit,
+   utenom det gjelder de samme operatorene og de samme presidensreglene.
+
+* Sannhetsverdier - boolean
+
+
+
+  - &&
+    - Og 
+    - true && true
+   - || 
+     - Eller
+     - true || false
+   -'!'
+     - ikke
+       b = !false
+   - < og > 
+     - mindre enn, større enn
+     - b = x<y
+   - <= og >= 
+     - mindre eller lik       
+     - b = x<=y
+   - ==       
+     - er lik
+     - b = x==y
+   - !=
+     - er ikke lik
+     - b = x!=y
+
+** presidensregler
+
+   - Metodekall
+     - !
+     - <, <=, >=, >
+     - ==, !=
+     - \&\&
+     - ||
+
+* Tekst - strenger og char
+
+  vi har strengen s = "kake"
+  
+  |-----------------+--------------------------------+------------------------|
+  | Navn            | Forklaring                     | Eksempel               |
+  |-----------------+--------------------------------+------------------------|
+  | charAt(...)     | tegnet i gitt posisjon(fra 0)  | s.charAt(2)=='k'       |
+  |-----------------+--------------------------------+------------------------|
+  | length()        | gir lengden på teksten         | s.length()==4          |
+  |-----------------+--------------------------------+------------------------|
+  | substring(...)  | delteksten fra- og tilposisjon | s.substring(1,3)=="ak" |
+  |                 | gir indeksen og ut             | s.substring(1)=="ake"  |
+  |-----------------+--------------------------------+------------------------|
+  | equals(...)     | tester likhet mellom strenger  | s.equals("kake")       |
+  |-----------------+--------------------------------+------------------------|
+  | indexOf(...)    | posisjonen til tegnet/tekst    | s.indexOf('a')==1      |
+  |-----------------+--------------------------------+------------------------|
+  | startsWith(...) | starter teksten med ...        | s.startsWith("ka")     |
+  |-----------------+--------------------------------+------------------------|
+  | endsWith(...)   | ender teksten med ...          | s.endsWith("ke")       |
+  |-----------------+--------------------------------+------------------------|
+  | compaireTo(...) | sammenligning av tekster       | s.compaireTo("bake")<0 |
+  |-----------------+--------------------------------+------------------------|
+
+
+** char
+
+   en char-verdi er rett og slett en bokstav, den kan sammenlignes ('a' < 'b') 
+   og vil da sammenlignes ut
+   i fra ascii-verdier (alle store bokstaver er mindre enn de små bokstavene).
+
+** String
+
+   En string er en rekke med char-verdier, altså ord. Man kan legge ord
+   sammen med pluss-opperatoren 
+   ("heisann" + " " + navn), man kan konvertere tall til strenger på denne måten\\
+   String s = "" + 42;\\
+   og verdien til s vil være "42".
+
+   Strenger kan også deles opp i arrayer ved hjelp av en split-funksjon. eks:\\
+   string[ ] t = s.split(" ");
+
+* Arrayer
+
+  Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
+  størelsen når man lager objektet.
+  #+BEGIN_SRC Java
+  String[ ] a = new string[3];
+  #+END_SRC
+man kan nå finne lengden på arrayet og bruke det som en int a.length;
+
+* løkker
+
+  | navn     | beskrivelse              | eksempel                    |
+  | for      | bestemt antall ganger    | for(int i=0;i<3;i++)\{\}    |
+  |          | alle objekter i array    | for(String s : a)\{\}       |
+  |          | alle objekter i hash     | for(String s : hm.values()) |
+  | while    | i mens test er sann      | while(b)\{\}                |
+  | do-while | utfører løkka før testen | do \{\} while(b);           |
+
+** while
+   
+   while-løkker er kanskje den enkleste formen for løkker, den gjør en blokk kode
+   så lenge predikatet i parameteret er sant. 
+
+   Man trenger ikke nødvendigvis å kjøre
+   en kodeblokk, for eksempel hvis man har en boolsk funksjon ("kan()") som parameteret
+   kan man kjøre koden "while(kan());" og dermed si at man skal kjøre helt til "kan()"
+   returnerer false.
+
+** for
+   
+   for-løkker er en naturlig utvidelse av while da man ofte trenger tellere eller ting
+   som skjer for hver gang kodeblokken skal kjøres, for eksempel en teller når man går
+   igjennom et array.
+
+   - for(int i=0;i<array.length;i++;){
+     - System.out.println(array[i])
+   - }
+
+   Men for-løkker kan brukes på andre måter da den har en ganske enkel måte å oppføre 
+   seg på "for(initialiseringskode;predikat;postkode)", eneste som det er strengt hva 
+   man må ha i en for-løkke er predikatet. initialiseringen, kan være å sette en teller
+   til noe, eller når man går igjennom noder i en graf, så kan man f.eks sette 
+   for(Node n = root;n.next!=null;n=n.next)
+
+** while .. do
+   
+   Mindre brukt løkketype, egentlig en while-løkke hvor koden kjøres minst en gang før
+   predikatet blir testet.
+  
+* hasjkart
+
+  Hashmaps er en enkel måte å ordne mange objekter med et objekt som
+  indeks.\\
+  import java.util.*\\
+  HashMap<string,Person> personregister = new HashMap<String,Person>();\\
+  
+  |-----------------------+---------------------------------------------|
+  | Metode                | beskrivelse                                 |
+  |-----------------------+---------------------------------------------|
+  | put(nøkkel, peker)    | legge til objekt i HM                       |
+  |-----------------------+---------------------------------------------|
+  | get(nøkkel)           | hente peker til objekt                      |
+  |-----------------------+---------------------------------------------|
+  | remove(nøkkel)        | fjerne nøkkel fra HM                        |
+  |-----------------------+---------------------------------------------|
+  | containsKey(nøkkel)   | bool om nøkkelen er der                     |
+  |-----------------------+---------------------------------------------|
+  | containsValue(objekt) | bool om objektet er der                     |
+  |-----------------------+---------------------------------------------|
+  | values()              | lager en mengde av alle verdiene i HM,      |
+  |                       | brukes til itterering                       |
+  |-----------------------+---------------------------------------------|
+  | keySet()              | brukes til å lage en mengde av alle nøklene |
+  |                       | brukes til iterering                        |
+  |-----------------------+---------------------------------------------|
+  | isEmpty()             | returnerer true hvis tabellen er tom.       |
+  |-----------------------+---------------------------------------------|
+  | size()                | Metoden returnerer antall nøkler i tabellen |
+  |-----------------------+---------------------------------------------|
+  
+
+
+#+TITLE: MAT1030 - Eksamensnotater
+#+AUTHOR: Sjur Hernes & Eivind Lindbråten
+#+STARTUP: indent
+#+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
+#+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
+#+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
+#+LATEX_HEADER: \usepackage[norsk]{babel} %Norsk språkpakke.
+#+LATEX_HEADER: \usepackage{hyperref} %For lenker i latex-dokument.
+#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} %Farge på lenker.
+#+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
+#+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.  
+* Lenkede lister
+
+* UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
+* Usorterte notater fra Eivind
+INF1010
+
+-Lenket liste. Trenger ikke ta stilling til antall fra start.
+-Alle objekter er lenket til hverandre, eget objekt som peker på
+-første objektet.
+-Må søke i listen forfra for å finne objekter.
+
+-printf-funksjon også i java.
+
+-Øve på sortering til eksamen.
+if (condition) {
+    return x;
+}
+return y;
+should be written as
+return (condition ? x : y);
+
+finalize() er en metode du kan definere i klasser, som automatisk
+kjøres før objekter blir tatt av garbage collectoren og
+slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
+
+LIFO - Last in, last out, stack.
+FIFO - First in first out, Queue. 
+
+
+extends (Subklasser)
+Generic
+Objectklassen
+InstanceOf
+
+ArrayList har ikke fast lengde. Men ikke basal konstruksjon slik array
+er..
+
+abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
+av ikke abstrakte subklasser. For å gi en mer virelighetslik
+objektmodell.
+abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
+kode.. Kun subklassemetodene.
+Klasser kan kun arve fra en superklasse.
+
+Bruker interface på en klasse hvis vi ønsker egenskaper som flere
+forskjellige klasser skal arve. Metoder må skrives på nytt for hver
+gang. Implementeres med implements ClassName.
+
+Kan ha indre, nestede klasser.
+
+Alle klasser er subklasser av klassen Object.
+
+-Primitive typer vil ikke endre verdi når de blir sendt til en metode
+ og maniplert. Men det blir objekter, siden de er kun pekere, som
+ peker på objektet som blir sendt som argument.
+
+* Gruppetime 24.02.2010
+
+** Accessmodifiers
+public - Tilgejngelig fra hvor som helst.
+ingenting - TIlgang til i samme pakke.
+protected - samme som ingenting, samt subklasser.
+private - Kun i samme klasse.
+
+Må være i AKKURAT samme pakke for at tilgang skal fungere..
+
+Maven-mappestruktur.
+
+Alle filene ligger i assignment.. Totalt 7 filer..
+
+package inf1010.assignment;
+
+* PRINSIPPER FOR STØRRE PROGRAMMER
+    -KISS
+    -Moduler
+        -Små
+            -Definert av grensesnitt
+            -Kun en funksjonalitet
+                -F.eks. LinkedList
+    -Dokumentasjon
+    -Testing
+    -Konvensjoner
+        -Hvordan kode ser ut
+        -Hvordan kode struktureres
+
+Ca over 40 linjer i en metode, på tide å splitte.
+
+* Rekursjon
+
+Kaller seg selv.
+Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
+return statement går man "baklengs" tilbake i call stacken og metoden
+fortsetter etter der den kalte seg selv.
+
+* Brukergrensesnitt
+
+import javax.swing.*; 
+import java.awt.*;
+
+class RammeDemo2 extends JFrame { 
+    RammeDemo2() {
+        // En annen måte å sette tittel på rammen:
+        super(”Første vindu");                     
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setSize(300,200);        
+        setVisible(true);
+    } 
+    public static void main(String[] args) {
+        new RammeDemo2();
+    }
+}
+
+
+Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
+til en metode.
+
+Bruk repaint()-metoden for å tegne vindu på nytt..
+
+* Tråder - Threads
+
+Kan implemenere Runnable eller extende Thread classs.
+* UML
+
+Diagrammer av programmene våres.
+Tegner selve strukturen til programmet.
+
+-Objekdiagrammer. (UML-bokser med ev. var. og arr.)
+-Klassediagrammer. (bare koblingene etc.)
+
+Tegner selve arkitekturen til programmet våres. 
+
+** Navneklassen
+
++public
+-private
+#protected
+~package
+
+Vi lager en modell av problemområdet vårt (også kalt domenemodell).
+-Modell av probleme (og modell av databasen).
+
+-Tegner streker mellom klassene. Og navn på forbindelsen.
+
+Vi tegner hvor mange objekter det maksimalt kan være.
+
+Vi har forskjellige skrivemåter for verdier:
+1 - en
+ * -  null, en eller flere
+1..* - minst en
+3,4,5 - tre fire eller fem
+
+Tegner koblinger mellom de klassene du tenker programmet skal snakke
+med.
+
+Vi angir kun de mest sentrale dataene i UML-boksene.. F.eks. viktige
+variabler og arrayer.
+F.eks. :klasenavn [atributt-fekt (kan være tomt)].
+
+-Pekere - piler
+
+Tegner flere ved å legge en UML-boks som "skygge" bak.. En
+representasjon for N antall.
+
+* Switch
+switch (<utrrykk>) {
+    case verdi1: <settninger>; break;
+    etc..
+    default: <kjøres ved ingen treff ved <uttrykk> >;
+} 
+* Hashmaps
+Hashmaps
+import java.util.*;
+
+HashMap hashmapnavn = new HashMap();
+hashmapnavn.put(nøkkel, verdi);
+
+Hente: Bil b = (Bil) register.get(nøkkel);
+
+Hente alle verdiene:
+Iterator it = register.values().iterator();
+while (it.hasNext()) {
+    Bil b = (Bil) it.next();
+}
+
+
+containsKey(nøkkel) sjekker om objekt med nøkkelen finnes. Gir
+true/false.
+containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
+size() antall nøkler.
+
+* Emner gått igjennom på forelesning
+** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
+** Lister, trær, FIFO, LIFO, Lenket liste
+** Subklasser polyformi
+** Generiske typer
+** Abstrakte klasser og interface
+** Binære søketrær
+** Untak (Exceptions)
+** Grafisk bruekrgrensesnitt
+** REkursjon
+** Tråder
+** Hanois tårn
+** Sortering (Quicksort etc)
+** Sortering med tråder
+** Software life cycle and software testing
