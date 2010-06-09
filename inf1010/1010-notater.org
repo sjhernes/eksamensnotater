@@ -1,3 +1,15 @@
+#+TITLE: MAT1030 - Eksamensnotater
+#+AUTHOR: Eivind Lindbråten
+#+STARTUP: indent
+#+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
+#+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
+#+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
+#+LATEX_HEADER: \usepackage[norsk]{babel} %Norsk språkpakke.
+#+LATEX_HEADER: \usepackage{hyperref} %For lenker i latex-dokument.
+#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} %Farge på lenker.
+#+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
+#+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.
 * Tall
 
   |--------+---------------------------------------|
