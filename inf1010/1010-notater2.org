@@ -400,6 +400,13 @@ Bruk repaint()-metoden for å tegne vindu på nytt..
 * Tråder - Threads
 
 Kan implemenere Runnable eller extende Thread classs.
+Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
+Å bruke flere prosesser/tråder for å løse en oppgave kalles paralellprogrammering.
+
+Eksempel på en enkel tråd:
+
+#+INCLUDE: "programeksemplertradeksempel.java" src java
+
 * UML
 
 Diagrammer av programmene våres.
