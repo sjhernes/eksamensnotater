@@ -169,14 +169,15 @@
   #+END_SRC
 man kan nå finne lengden på arrayet og bruke det som en int a.length;
 
-* løkker
+* Løkker og kontrollstrukturer
 
-  | navn     | beskrivelse              | eksempel                    |
-  | for      | bestemt antall ganger    | for(int i=0;i<3;i++)\{\}    |
-  |          | alle objekter i array    | for(String s : a)\{\}       |
-  |          | alle objekter i hash     | for(String s : hm.values()) |
-  | while    | i mens test er sann      | while(b)\{\}                |
-  | do-while | utfører løkka før testen | do \{\} while(b);           |
+  | *Navn*   | *Beskrivelse*                       | *Eksempel*                                     |
+  | for      | bestemt antall ganger               | for(int i=0;i<3;i++)\{\}                       |
+  |          | alle objekter i array               | for(String s : a)\{\}                          |
+  |          | alle objekter i hash                | for(String s : hm.values())                    |
+  | while    | i mens test er sann                 | while(b)\{\}                                   |
+  | do-while | utfører løkka før testen            | do \{\} while(b);                              |
+  | switch   | Hopper mellom kodeblokker ved input | switch(c){case a: <>; break; default: <>;}     |
 
 ** while
    
@@ -194,22 +195,37 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
    som skjer for hver gang kodeblokken skal kjøres, for eksempel en teller når man går
    igjennom et array.
 
-   - for(int i=0;i<array.length;i++;){
-     - System.out.println(array[i])
-   - }
+   #+BEGIN_SRC Java
+   for(int i=0;i<array.length;i++;){
+     System.out.println(array[i])
+   }
+   #+END_SRC
 
    Men for-løkker kan brukes på andre måter da den har en ganske enkel måte å oppføre 
    seg på "for(initialiseringskode;predikat;postkode)", eneste som det er strengt hva 
    man må ha i en for-løkke er predikatet. initialiseringen, kan være å sette en teller
    til noe, eller når man går igjennom noder i en graf, så kan man f.eks sette 
-   for(Node n = root;n.next!=null;n=n.next)
+   src_java{for(Node n = root;n.next!=null;n=n.next)}
 
 ** while .. do
    
    Mindre brukt løkketype, egentlig en while-løkke hvor koden kjøres minst en gang før
    predikatet blir testet.
   
-* hasjkart
+** switch
+
+Ved bruk av if-setning kan man velge en av to muligheter ved at
+setningen som evalueres er /true/ eller /false/. Med /switch/ kan man
+velge mellom mange inputpåstander som er /integers/, /chars/ eller /enums/. 
+
+#+BEGIN_SRC Java
+switch (<utrrykk>) {
+    case verdi1: <settninger>; break;
+    etc..
+    default: <kjøres ved ingen treff ved <uttrykk> >;
+}
+#+END_SRC
+* Hasshmaps
 
   Hashmaps er en enkel måte å ordne mange objekter med et objekt som
   indeks.\\
@@ -260,110 +276,6 @@ true/false.
 containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
 size() antall nøkler.
 
-* Lenkede lister
-** Hva er en lenket liste?
-En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
-
--Lenket liste. Trenger ikke ta stilling til antall fra start.
--Alle objekter er lenket til hverandre, eget objekt som peker på
--første objektet.
--Må søke i listen forfra for å finne objekter.
-
-
-#+INCLUDE: "programeksempler/lenketeksempel.java" src java
-
-Hvilke operasjoner trenger vi?
-- Sette inn ny person
-- Finne en person
-- fjerne en person
-...
-
-#+INCLUDE: "programeksempler/lenketeksempel2.java" src java
-
-** Innsettingsmetoder
-*** LIFO
-Innsetting først (LIFO):
-
-#+INCLUDE: "programeksempler/lenketeksempel3.java" src java
-*** FIFO
-Innsetting sist (FIFO):
-
-#+INCLUDE: "programeksempler/lenkeeksempel4.java" src java
-
-*** Innsetting etter et bestemt objekt
-
-#+INCLUDE: "programeksempler/lenkeeksempel5.java" src java
-
-** Skrive ut en lenket liste
-
-#+INCLUDE: "programeksempler/lenkeeksempel6.java" src java
-* Packages og accessmodifiers
-
-** Accessmodifiers
-public - Tilgejngelig fra hvor som helst.
-ingenting - TIlgang til i samme pakke.
-protected - samme som ingenting, samt subklasser.
-private - Kun i samme klasse.
-
-** Packages
-
-Må være i AKKURAT samme pakke for at tilgang skal fungere..
-
-Lurt å bruke Maven-mappestruktur til prosjekter, da den er veletablert
-og godt strukturert.
-
-Eksempel på inkludering av pakke.
-#+BEGIN_SRC Java
-package inf1010.assignment;
-#+END_SRC
-* Rekursjon
-
-Kaller seg selv.
-Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
-return statement går man "baklengs" tilbake i call stacken og metoden
-fortsetter etter der den kalte seg selv.
-
-Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
-
-#+INCLUDE: "programeksempler/rekurseksempel.java" src java
-
-Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
-Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
-
-* Brukergrensesnitt
-
-import javax.swing.*; 
-import java.awt.*;
-
-class RammeDemo2 extends JFrame { 
-    RammeDemo2() {
-        // En annen måte å sette tittel på rammen:
-        super(”Første vindu");                     
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(300,200);        
-        setVisible(true);
-    } 
-    public static void main(String[] args) {
-        new RammeDemo2();
-    }
-}
-
-
-Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
-til en metode.
-
-Bruk repaint()-metoden for å tegne vindu på nytt..
-
-* Tråder - Threads
-
-Kan implemenere Runnable eller extende Thread classs.
-Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
-Å bruke flere prosesser/tråder for å løse en oppgave kalles paralellprogrammering.
-
-Eksempel på en enkel tråd:
-
-#+INCLUDE: "programeksemplertradeksempel.java" src java
-
 * UML
 
 Diagrammer av programmene vårt.
@@ -405,56 +317,60 @@ F.eks. :klasenavn [atributt-fekt (kan være tomt)].
 
 Tegner flere ved å legge en UML-boks som "skygge" bak.. En
 representasjon for N antall.
-* Switch
-switch (<utrrykk>) {
-    case verdi1: <settninger>; break;
-    etc..
-    default: <kjøres ved ingen treff ved <uttrykk> >;
-} 
-* generiske typer(Uferdig test)
-Generiske typer: 
-Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
-kan derfor brukes på hva som helst. 
-#+INCLUDE: "generics.java" src java
 
-*** Forklaring
-**** class Node
-Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
-**** class Person
-Her lager jeg klassen som skal holde rede på person objektene
-**** class tester
-Denne klassen setter inn to person objekter inn i den generiske typen E.
-Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
-men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
-dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "generics2.java" src java
-dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
-feks  "tmp.data.navn"
-**** Mangler eksempel på hvordan dette kan samkjøres med Comarable!
-* Sortering
-  Det er ofte en fordel å sortere store mengder data for å gjøre
-  søking i i data effektivt om i det hele tatt mulig.
+* Lenkede lister
+** Hva er en lenket liste?
+En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
-  Vi har gjennomgått flere forskjellige måter å sortere data på
-  jeg vil her fokusere på følgende
-  - innstikksortering
-  - quicksort
+-Lenket liste. Trenger ikke ta stilling til antall fra start.
+-Alle objekter er lenket til hverandre, eget objekt som peker på
+-første objektet.
+-Må søke i listen forfra for å finne objekter.
 
-** Innstikksortering
-   veldig simpel sorteringsalgoritme som er effektiv på små mengder (i forhold til andre
-   sorteringsalgoritmer), men taper mye når det er større mengder data som skal sorteres
-   baserer seg på at man starter først i mengden og sorterer mens man itererer over mengden
 
-#+INCLUDE: "instikksort.java" src java
+#+INCLUDE: "code/lenketeksempel.java" src java
 
-** Quicksort
+Hvilke operasjoner trenger vi?
+- Sette inn ny person
+- Finne en person
+- fjerne en person
+...
 
-   Mer populær for mellomstore til store datamengder, den tar et objekt fra mengden og
-   forterer listen etter hva som er større og mindre enn det objektet, deretter begynner
-   den å sortere de to delene på samme måte rekursivt (dermed lettere å implementere
-   tråder)
+#+INCLUDE: "code/lenketeksempel2.java" src java
 
-#+INCLUDE: "QSort.java" src java
+** Innsettingsmetoder
+*** LIFO
+Innsetting først (LIFO):
+
+#+INCLUDE: "code/lenketeksempel3.java" src java
+*** FIFO
+Innsetting sist (FIFO):
+
+#+INCLUDE: "code/lenkeeksempel4.java" src java
+
+*** Innsetting etter et bestemt objekt
+
+#+INCLUDE: "code/lenkeeksempel5.java" src java
+
+** Skrive ut en lenket liste
+
+#+INCLUDE: "code/lenkeeksempel6.java" src java
+* Rekursjon
+
+Kaller seg selv.
+Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
+return statement går man "baklengs" tilbake i call stacken og metoden
+fortsetter etter der den kalte seg selv.
+
+Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
+
+#+INCLUDE: "programeksempler/rekurseksempel.java" src java
+
+Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
+Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
+** Hanois tårn
+* Trær
+* Binære søketrær
 * Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
@@ -494,19 +410,69 @@ feks  "tmp.data.navn"
 ** Eksempel på søking i usortert mengde med tråder
 
 #+INCLUDE: "code/FinnMinst.java" src java                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-* Prinsipper for større programmer
-* Shorthands
-if (condition) {
-    return x;
-}
-return y;
-should be written as
-return (condition ? x : y);
-* Finalize, garbagecollector etc
-finalize() er en metode du kan definere i klasser, som automatisk
-kjøres før objekter blir tatt av garbage collectoren og
-slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
+* Sortering
+  Det er ofte en fordel å sortere store mengder data for å gjøre
+  søking i i data effektivt om i det hele tatt mulig.
 
+  Vi har gjennomgått flere forskjellige måter å sortere data på
+  jeg vil her fokusere på følgende
+  - innstikksortering
+  - quicksort
+
+** Innstikksortering
+   veldig simpel sorteringsalgoritme som er effektiv på små mengder (i forhold til andre
+   sorteringsalgoritmer), men taper mye når det er større mengder data som skal sorteres
+   baserer seg på at man starter først i mengden og sorterer mens man itererer over mengden
+
+#+INCLUDE: "instikksort.java" src java
+
+** Quicksort
+
+   Mer populær for mellomstore til store datamengder, den tar et objekt fra mengden og
+   forterer listen etter hva som er større og mindre enn det objektet, deretter begynner
+   den å sortere de to delene på samme måte rekursivt (dermed lettere å implementere
+   tråder)
+
+#+INCLUDE: "QSort.java" src java
+** Sortering med tråder
+* Packages
+
+Må være i AKKURAT samme pakke for at tilgang skal fungere..
+
+Lurt å bruke Maven-mappestruktur til prosjekter, da den er veletablert
+og godt strukturert.
+
+Eksempel på inkludering av pakke.
+#+BEGIN_SRC Java
+package inf1010.assignment;
+#+END_SRC
+* Access modifiers
+** Tilgangsnivåer
+| *Modifier*    | *Class* | *Package* | *Subclass* | *World* |
+| /public/      | Y       | Y         | Y          | Y       |
+| /protected/   | Y       | Y         | Y          | N       |
+| /no modifier/ | Y       | Y         | N          | N       |
+| /private/     | Y       | N         | N          | N       |
+* generiske typer
+Generiske typer: 
+Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
+kan derfor brukes på hva som helst. 
+#+INCLUDE: "code/generics.java" src java
+
+*** Forklaring
+**** class Node
+Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
+**** class Person
+Her lager jeg klassen som skal holde rede på person objektene
+**** class tester
+Denne klassen setter inn to person objekter inn i den generiske typen E.
+Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
+men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
+dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
+#+INCLUDE: "generics2.java" src java
+dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
+feks  "tmp.data.navn"
+**** Mangler eksempel på hvordan dette kan samkjøres med Comarable!
 * Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
 av ikke abstrakte subklasser. For å gi en mer virelighetslik
@@ -519,19 +485,65 @@ Klasser kan kun arve fra en superklasse.
 Bruker interface på en klasse hvis vi ønsker egenskaper som flere
 forskjellige klasser skal arve. Metoder må skrives på nytt for hver
 gang. Implementeres med implements ClassName.
+* Subklasser og polyformi
+* Untak (Exceptions)
+* Finalize, garbagecollector etc
+finalize() er en metode du kan definere i klasser, som automatisk
+kjøres før objekter blir tatt av garbage collectoren og
+slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 
-* Emner gått igjennom på forelesning som bør skrives om
-** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
-** Lister, trær, FIFO, LIFO, Lenket liste
-** Subklasser polyformi
-** Generiske typer
-** Abstrakte klasser og interface
-** Binære søketrær
-** Untak (Exceptions)
-** Grafisk bruekrgrensesnitt
-** REkursjon
-** Tråder
-** Hanois tårn
-** Sortering (Quicksort etc)
-** Sortering med tråder
-** Software life cycle and software testing
+* Tråder - Threads
+
+Kan implemenere Runnable eller extende Thread classs.
+Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
+Å bruke flere prosesser/tråder for å løse en oppgave kalles paralellprogrammering.
+
+Eksempel på en enkel tråd:
+
+#+INCLUDE: "programeksemplertradeksempel.java" src java
+
+* Brukergrensesnitt
+
+import javax.swing.*; 
+import java.awt.*;
+
+class RammeDemo2 extends JFrame { 
+    RammeDemo2() {
+        // En annen måte å sette tittel på rammen:
+        super(”Første vindu");                     
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setSize(300,200);        
+        setVisible(true);
+    } 
+    public static void main(String[] args) {
+        new RammeDemo2();
+    }
+}
+
+
+Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
+til en metode.
+
+Bruk repaint()-metoden for å tegne vindu på nytt..
+* Shorthands
+if (condition) {
+    return x;
+}
+return y;
+should be written as
+return (condition ? x : y);
+* Prinsipper for større programmer
+    -KISS
+    -Moduler
+        -Små
+            -Definert av grensesnitt
+            -Kun en funksjonalitet
+                -F.eks. LinkedList
+    -Dokumentasjon
+    -Testing
+    -Konvensjoner
+        -Hvordan kode ser ut
+        -Hvordan kode struktureres
+
+Ca over 40 linjer i en metode, på tide å splitte.
+* Software life cycle and software testing
