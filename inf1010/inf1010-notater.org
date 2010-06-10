@@ -1,5 +1,5 @@
-#+TITLE: MAT1030 - Eksamensnotater
-#+AUTHOR: Eivind Lindbråten
+#+TITLE: INF1010 - Eksamensnotater
+#+AUTHOR: Eivind, Sjur, Anabelle & Martin
 #+STARTUP: indent
 #+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
 #+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
