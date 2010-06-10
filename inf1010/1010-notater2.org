@@ -491,7 +491,7 @@ size() antall nøkler.
 ** Sortering (Quicksort etc)
 ** Sortering med tråder
 ** Software life cycle and software testing
-* generiske typer(Uferdig test)
+* generiske typer(Uferdig)
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
@@ -510,4 +510,4 @@ dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne 
 #+INCLUDE: "generics2.java" src java
 dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
 feks  "tmp.data.navn"
-**** Mangler eksempel på hvordan dette kan samkjøres med Comarable!
+**** Trenger eksempel på comparable.
