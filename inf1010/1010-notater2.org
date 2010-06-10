@@ -243,6 +243,36 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
 #+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
 #+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.  
 * Lenkede lister
+** Hva er en lenket liste?
+En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
+
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel.java" src java
+
+Hvilke operasjoner trenger vi?
+- Sette inn ny person
+- Finne en person
+- fjerne en person
+...
+
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel2.java" src java
+
+** Innsettingsmetoder
+*** LIFO
+Innsetting først (LIFO):
+
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel3.java" src java
+*** FIFO
+Innsetting sist (FIFO)
+:
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel4.java" src java
+
+*** Innsetting etter et bestemt objekt
+
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel5.java" src java
+
+** Skrive ut en lenket liste
+
+#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel6.java" src java
 
 * UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
 * Usorterte notater fra Eivind
