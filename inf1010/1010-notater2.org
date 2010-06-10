@@ -477,7 +477,7 @@ size() antall nøkler.
 ** Sortering (Quicksort etc)
 ** Sortering med tråder
 ** Software life cycle and software testing
-* martiben generiske typer(Uferdig test)
+* generiske typer(Uferdig test)
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
