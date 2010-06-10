@@ -246,7 +246,7 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
-#+INCLUDE: "programeksempler/lenkeeksempel.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel.java" src java
 
 Hvilke operasjoner trenger vi?
 - Sette inn ny person
@@ -254,16 +254,16 @@ Hvilke operasjoner trenger vi?
 - fjerne en person
 ...
 
-#+INCLUDE: "programeksempler/lenkeeksempel2.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel2.java" src java
 
 ** Innsettingsmetoder
 *** LIFO
 Innsetting først (LIFO):
 
-#+INCLUDE: "programeksempler/lenkeeksempel3.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel3.java" src java
 *** FIFO
-Innsetting sist (FIFO)
-:
+Innsetting sist (FIFO):
+
 #+INCLUDE: "programeksempler/lenkeeksempel4.java" src java
 
 *** Innsetting etter et bestemt objekt
