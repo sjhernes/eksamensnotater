@@ -511,3 +511,106 @@ dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne 
 dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
 feks  "tmp.data.navn"
 **** Mangler eksempel på hvordan dette kan samkjøres med Comarable!
+* Sortering
+  Det er ofte en fordel å sortere store mengder data for å gjøre
+  søking i i data effektivt om i det hele tatt mulig.
+
+  Vi har gjennomgått flere forskjellige måter å sortere data på
+  jeg vil her fokusere på følgende
+  - innstikksortering
+  - quicksort
+
+** Innstikksortering
+   veldig simpel sorteringsalgoritme som er effektiv på små mengder (i forhold til andre
+   sorteringsalgoritmer), men taper mye når det er større mengder data som skal sorteres
+   baserer seg på at man starter først i mengden og sorterer mens man itererer over mengden
+
+#+INCLUDE: "instikksort.java" src java
+
+** Quicksort
+
+   Mer populær for mellomstore til store datamengder, den tar et objekt fra mengden og
+   forterer listen etter hva som er større og mindre enn det objektet, deretter begynner
+   den å sortere de to delene på samme måte rekursivt (dermed lettere å implementere
+   tråder)
+
+#+INCLUDE: "QSort.java" src java
+* søk
+  hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
+  å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
+  fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
+  og man har 10 gjetteforsøk, hvor man får vite om man gjettet for stort eller
+  for lite, vil man alltid kunne finne tallet ved at man hele tiden halverer.
+
+  eks: vi skal finne tallet (769)
+  |-------------+-------+-----------------+--------| 
+  | mulige tall | gjett | større / mindre | forsøk | 
+  |-------------+-------+-----------------+--------| 
+  |        1024 |   512 | større          |      1 | 
+  |-------------+-------+-----------------+--------| 
+  |         512 |   768 | større          |      2 | 
+  |-------------+-------+-----------------+--------| 
+  |         256 |   896 | mindre          |      3 | 
+  |-------------+-------+-----------------+--------| 
+  |         128 |   832 | mindre          |      4 | 
+  |-------------+-------+-----------------+--------| 
+  |          64 |   800 | mindre          |      5 | 
+  |-------------+-------+-----------------+--------| 
+  |          32 |   784 | mindre          |      6 | 
+  |-------------+-------+-----------------+--------| 
+  |          16 |   776 | mindre          |      7 | 
+  |-------------+-------+-----------------+--------| 
+  |           8 |   772 | mindre          |      8 | 
+  |-------------+-------+-----------------+--------| 
+  |           4 |   770 | mindre          |      9 | 
+  |-------------+-------+-----------------+--------| 
+  |           2 |   769 | riktig!         |     10 | 
+  |-------------+-------+-----------------+--------| 
+
+  ved usorterte mengder er det vanskeligere å gjøre strukturerte søk og det kan ofte
+  være lurt å enten sortere det først, eller dele opp mengden i delmengder og søke hver
+  del for seg selv.
+
+** eksempel på søking i usortert mengde med tråder
+
+#+INCLUDE: "programeksempler/FinnMinst.java" src java
+* søk
+  hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
+  å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
+  fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
+  og man har 10 gjetteforsøk, hvor man får vite om man gjettet for stort eller
+  for lite, vil man alltid kunne finne tallet ved at man hele tiden halverer.
+
+  eks: vi skal finne tallet (769)
+  |-------------+-------+-----------------+--------| 
+  | mulige tall | gjett | større / mindre | forsøk | 
+  |-------------+-------+-----------------+--------| 
+  |        1024 |   512 | større          |      1 | 
+  |-------------+-------+-----------------+--------| 
+  |         512 |   768 | større          |      2 | 
+  |-------------+-------+-----------------+--------| 
+  |         256 |   896 | mindre          |      3 | 
+  |-------------+-------+-----------------+--------| 
+  |         128 |   832 | mindre          |      4 | 
+  |-------------+-------+-----------------+--------| 
+  |          64 |   800 | mindre          |      5 | 
+  |-------------+-------+-----------------+--------| 
+  |          32 |   784 | mindre          |      6 | 
+  |-------------+-------+-----------------+--------| 
+  |          16 |   776 | mindre          |      7 | 
+  |-------------+-------+-----------------+--------| 
+  |           8 |   772 | mindre          |      8 | 
+  |-------------+-------+-----------------+--------| 
+  |           4 |   770 | mindre          |      9 | 
+  |-------------+-------+-----------------+--------| 
+  |           2 |   769 | riktig!         |     10 | 
+  |-------------+-------+-----------------+--------| 
+
+  ved usorterte mengder er det vanskeligere å gjøre strukturerte søk og det kan ofte
+  være lurt å enten sortere det først, eller dele opp mengden i delmengder og søke hver
+  del for seg selv.
+
+** eksempel på søking i usortert mengde med tråder
+
+#+INCLUDE: "programeksempler/FinnMinst.java" src java
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
