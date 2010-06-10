@@ -1,5 +1,5 @@
 #+TITLE: INF1010 - Eksamensnotater
-#+AUTHOR: Eivind, Sjur, Anabelle & Martin
+#+AUTHOR: Eivind, Sjur, Annabelle & Martin
 #+STARTUP: indent
 #+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
 #+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
@@ -239,24 +239,36 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
   |-----------------------+---------------------------------------------|
   | size()                | Metoden returnerer antall nøkler i tabellen |
   |-----------------------+---------------------------------------------|
-  
+
+Hashmaps
+import java.util.*;
+
+HashMap hashmapnavn = new HashMap();
+hashmapnavn.put(nøkkel, verdi);
+
+Hente: Bil b = (Bil) register.get(nøkkel);
+
+Hente alle verdiene:
+Iterator it = register.values().iterator();
+while (it.hasNext()) {
+    Bil b = (Bil) it.next();
+}
 
 
-#+TITLE: MAT1030 - Eksamensnotater
-#+AUTHOR: Sjur Hernes & Eivind Lindbråten
-#+STARTUP: indent
-#+LATEX_HEADER: \documentclass[a4paper,norsk,10pt]{article}
-#+LATEX_HEADER: \usepackage{fullpage} %Utnytter større del av arket.
-#+LATEX_HEADER: \usepackage[sc,osf]{mathpazo} %Pen font.
-#+LATEX_HEADER: \usepackage[norsk]{babel} %Norsk språkpakke.
-#+LATEX_HEADER: \usepackage{hyperref} %For lenker i latex-dokument.
-#+LATEX_HEADER: \hypersetup{colorlinks=true,linkcolor=black} %Farge på lenker.
-#+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
-#+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
-#+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.  
+containsKey(nøkkel) sjekker om objekt med nøkkelen finnes. Gir
+true/false.
+containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
+size() antall nøkler.
+
 * Lenkede lister
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
+
+-Lenket liste. Trenger ikke ta stilling til antall fra start.
+-Alle objekter er lenket til hverandre, eget objekt som peker på
+-første objektet.
+-Må søke i listen forfra for å finne objekter.
+
 
 #+INCLUDE: "programeksempler/lenketeksempel.java" src java
 
@@ -285,62 +297,7 @@ Innsetting sist (FIFO):
 ** Skrive ut en lenket liste
 
 #+INCLUDE: "programeksempler/lenkeeksempel6.java" src java
-
-* UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
-* Usorterte notater fra Eivind
-INF1010
-
--Lenket liste. Trenger ikke ta stilling til antall fra start.
--Alle objekter er lenket til hverandre, eget objekt som peker på
--første objektet.
--Må søke i listen forfra for å finne objekter.
-
--printf-funksjon også i java.
-
--Øve på sortering til eksamen.
-if (condition) {
-    return x;
-}
-return y;
-should be written as
-return (condition ? x : y);
-
-finalize() er en metode du kan definere i klasser, som automatisk
-kjøres før objekter blir tatt av garbage collectoren og
-slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
-
-LIFO - Last in, last out, stack.
-FIFO - First in first out, Queue. 
-
-
-extends (Subklasser)
-Generic
-Objectklassen
-InstanceOf
-
-ArrayList har ikke fast lengde. Men ikke basal konstruksjon slik array
-er..
-
-abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
-av ikke abstrakte subklasser. For å gi en mer virelighetslik
-objektmodell.
-abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
-kode.. Kun subklassemetodene.
-Klasser kan kun arve fra en superklasse.
-
-Bruker interface på en klasse hvis vi ønsker egenskaper som flere
-forskjellige klasser skal arve. Metoder må skrives på nytt for hver
-gang. Implementeres med implements ClassName.
-
-Kan ha indre, nestede klasser.
-
-Alle klasser er subklasser av klassen Object.
-
--Primitive typer vil ikke endre verdi når de blir sendt til en metode
- og maniplert. Men det blir objekter, siden de er kun pekere, som
- peker på objektet som blir sendt som argument.
-
-* Gruppetime 24.02.2010
+* Packages og accessmodifiers
 
 ** Accessmodifiers
 public - Tilgejngelig fra hvor som helst.
@@ -348,29 +305,17 @@ ingenting - TIlgang til i samme pakke.
 protected - samme som ingenting, samt subklasser.
 private - Kun i samme klasse.
 
+** Packages
+
 Må være i AKKURAT samme pakke for at tilgang skal fungere..
 
-Maven-mappestruktur.
+Lurt å bruke Maven-mappestruktur til prosjekter, da den er veletablert
+og godt strukturert.
 
-Alle filene ligger i assignment.. Totalt 7 filer..
-
+Eksempel på inkludering av pakke.
+#+BEGIN_SRC Java
 package inf1010.assignment;
-
-* PRINSIPPER FOR STØRRE PROGRAMMER
-    -KISS
-    -Moduler
-        -Små
-            -Definert av grensesnitt
-            -Kun en funksjonalitet
-                -F.eks. LinkedList
-    -Dokumentasjon
-    -Testing
-    -Konvensjoner
-        -Hvordan kode ser ut
-        -Hvordan kode struktureres
-
-Ca over 40 linjer i en metode, på tide å splitte.
-
+#+END_SRC
 * Rekursjon
 
 Kaller seg selv.
@@ -421,13 +366,13 @@ Eksempel på en enkel tråd:
 
 * UML
 
-Diagrammer av programmene våres.
+Diagrammer av programmene vårt.
 Tegner selve strukturen til programmet.
 
--Objekdiagrammer. (UML-bokser med ev. var. og arr.)
+-Objekdiagrammer. (UML-bokser med ev. variabler og argumenter etc.)
 -Klassediagrammer. (bare koblingene etc.)
 
-Tegner selve arkitekturen til programmet våres. 
+Tegner selve arkitekturen til programmet vårt. 
 
 ** Navneklassen
 
@@ -460,49 +405,12 @@ F.eks. :klasenavn [atributt-fekt (kan være tomt)].
 
 Tegner flere ved å legge en UML-boks som "skygge" bak.. En
 representasjon for N antall.
-
 * Switch
 switch (<utrrykk>) {
     case verdi1: <settninger>; break;
     etc..
     default: <kjøres ved ingen treff ved <uttrykk> >;
 } 
-* Hashmaps
-Hashmaps
-import java.util.*;
-
-HashMap hashmapnavn = new HashMap();
-hashmapnavn.put(nøkkel, verdi);
-
-Hente: Bil b = (Bil) register.get(nøkkel);
-
-Hente alle verdiene:
-Iterator it = register.values().iterator();
-while (it.hasNext()) {
-    Bil b = (Bil) it.next();
-}
-
-
-containsKey(nøkkel) sjekker om objekt med nøkkelen finnes. Gir
-true/false.
-containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
-size() antall nøkler.
-
-* Emner gått igjennom på forelesning
-** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
-** Lister, trær, FIFO, LIFO, Lenket liste
-** Subklasser polyformi
-** Generiske typer
-** Abstrakte klasser og interface
-** Binære søketrær
-** Untak (Exceptions)
-** Grafisk bruekrgrensesnitt
-** REkursjon
-** Tråder
-** Hanois tårn
-** Sortering (Quicksort etc)
-** Sortering med tråder
-** Software life cycle and software testing
 * generiske typer(Uferdig test)
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
@@ -547,7 +455,7 @@ feks  "tmp.data.navn"
    tråder)
 
 #+INCLUDE: "QSort.java" src java
-* søk
+* Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
   fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
@@ -583,46 +491,47 @@ feks  "tmp.data.navn"
   være lurt å enten sortere det først, eller dele opp mengden i delmengder og søke hver
   del for seg selv.
 
-** eksempel på søking i usortert mengde med tråder
+** Eksempel på søking i usortert mengde med tråder
 
-#+INCLUDE: "programeksempler/FinnMinst.java" src java
-* søk
-  hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
-  å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
-  fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
-  og man har 10 gjetteforsøk, hvor man får vite om man gjettet for stort eller
-  for lite, vil man alltid kunne finne tallet ved at man hele tiden halverer.
+#+INCLUDE: "code/FinnMinst.java" src java                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+* Prinsipper for større programmer
+* Shorthands
+if (condition) {
+    return x;
+}
+return y;
+should be written as
+return (condition ? x : y);
+* Finalize, garbagecollector etc
+finalize() er en metode du kan definere i klasser, som automatisk
+kjøres før objekter blir tatt av garbage collectoren og
+slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 
-  eks: vi skal finne tallet (769)
-  |-------------+-------+-----------------+--------| 
-  | mulige tall | gjett | større / mindre | forsøk | 
-  |-------------+-------+-----------------+--------| 
-  |        1024 |   512 | større          |      1 | 
-  |-------------+-------+-----------------+--------| 
-  |         512 |   768 | større          |      2 | 
-  |-------------+-------+-----------------+--------| 
-  |         256 |   896 | mindre          |      3 | 
-  |-------------+-------+-----------------+--------| 
-  |         128 |   832 | mindre          |      4 | 
-  |-------------+-------+-----------------+--------| 
-  |          64 |   800 | mindre          |      5 | 
-  |-------------+-------+-----------------+--------| 
-  |          32 |   784 | mindre          |      6 | 
-  |-------------+-------+-----------------+--------| 
-  |          16 |   776 | mindre          |      7 | 
-  |-------------+-------+-----------------+--------| 
-  |           8 |   772 | mindre          |      8 | 
-  |-------------+-------+-----------------+--------| 
-  |           4 |   770 | mindre          |      9 | 
-  |-------------+-------+-----------------+--------| 
-  |           2 |   769 | riktig!         |     10 | 
-  |-------------+-------+-----------------+--------| 
+* Abstract
+abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
+av ikke abstrakte subklasser. For å gi en mer virelighetslik
+objektmodell.
+abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
+kode.. Kun subklassemetodene.
+Klasser kan kun arve fra en superklasse.
 
-  ved usorterte mengder er det vanskeligere å gjøre strukturerte søk og det kan ofte
-  være lurt å enten sortere det først, eller dele opp mengden i delmengder og søke hver
-  del for seg selv.
+* Interface
+Bruker interface på en klasse hvis vi ønsker egenskaper som flere
+forskjellige klasser skal arve. Metoder må skrives på nytt for hver
+gang. Implementeres med implements ClassName.
 
-** eksempel på søking i usortert mengde med tråder
-
-#+INCLUDE: "programeksempler/FinnMinst.java" src java
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+* Emner gått igjennom på forelesning som bør skrives om
+** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
+** Lister, trær, FIFO, LIFO, Lenket liste
+** Subklasser polyformi
+** Generiske typer
+** Abstrakte klasser og interface
+** Binære søketrær
+** Untak (Exceptions)
+** Grafisk bruekrgrensesnitt
+** REkursjon
+** Tråder
+** Hanois tårn
+** Sortering (Quicksort etc)
+** Sortering med tråder
+** Software life cycle and software testing
