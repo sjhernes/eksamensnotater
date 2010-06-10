@@ -246,7 +246,7 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel.java" src java
 
 Hvilke operasjoner trenger vi?
 - Sette inn ny person
@@ -254,25 +254,25 @@ Hvilke operasjoner trenger vi?
 - fjerne en person
 ...
 
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel2.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel2.java" src java
 
 ** Innsettingsmetoder
 *** LIFO
 Innsetting først (LIFO):
 
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel3.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler//lenkeeksempel3.java" src java
 *** FIFO
 Innsetting sist (FIFO)
 :
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel4.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler//lenkeeksempel4.java" src java
 
 *** Innsetting etter et bestemt objekt
 
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel5.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel5.java" src java
 
 ** Skrive ut en lenket liste
 
-#+INCLUDE: "/home/pixie/giteksempler/lenkeeksempel6.java" src java
+#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel6.java" src java
 
 * UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
 * Usorterte notater fra Eivind
@@ -477,7 +477,7 @@ size() antall nøkler.
 ** Sortering (Quicksort etc)
 ** Sortering med tråder
 ** Software life cycle and software testing
-* martiben generiske typer(Uferdig test)
+* generiske typer(Uferdig test)
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
