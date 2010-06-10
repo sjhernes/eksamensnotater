@@ -1,21 +1,23 @@
-import java.util.*;
-class Node <E> {
-    E data;
-    Node<E> next;
-    
-    Node(E e) { data = e; }    
-}
-
-class Person {
-    String navn;
-    Person (String navn) { this.navn = navn; }
-}
-class tester {
+class List<E>{
     Node root;
-    tester() {
-	Person a = new Person("Olav");
-	Person b = new Person("Lisa");
-	root = new Node(a);
-	root.next = new Node(b);
+    class Node{
+	Node(E ee){e=ee}
+	E e;
+	Node next;
+    }
+
+    void put(E e){
+	Node n=new Node(e)
+	if(root==null) root=n;
+	else{ 
+	    n.next = root; 
+	    root = n;
+	}
+    }
+
+    E pop(){
+	E tmp = root.e;
+	root = root.next;
+	return tmp;
     }
 }
