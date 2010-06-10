@@ -1,4 +1,21 @@
 * Algoritmer og pseudokoder
+  #+BEGIN_SRC
+  Input c_{1}c_{2}\dots{}c_{n} - input av en streng til programmet
+
+  variabel \gets verdi - tilordning av variabler
+
+  for i = 1 to n do - for-løkke
+
+    if (logisk uttrykk) then - if
+      ...
+    else if (logisk uttrykk) - skjer bare hvis første if ikke skjer
+      ...
+    else - skjer om intet annet skjer
+      ...
+  while (predikat) do - enkel løkke
+
+  #+END_SRC 
+  
 * Baser og tallrepresentasjon
 * Digital representasjon av tall og aritmetikk
 * Logikk
@@ -7,5 +24,14 @@
 * Induksjon og rekursjon
 * Kombinatorikk
 * Grafteori
+** eulersti (halv-euler)
+   en vei mellom alle nodene som bare bruker hver kan bare en gang
+** eulerkrets (euler)
+** hamiltonsti
+   en sti som besøker alle nodene bare en gang
+** enkle grafer
+   en graf uten løkker eller parallelle kanter
+** komplette krafer
+   
 * Trær
 * Algoritmer og utregningskompleksitet

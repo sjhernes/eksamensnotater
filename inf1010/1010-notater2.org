@@ -246,7 +246,7 @@ man kan nå finne lengden på arrayet og bruke det som en int a.length;
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel.java" src java
 
 Hvilke operasjoner trenger vi?
 - Sette inn ny person
@@ -254,25 +254,25 @@ Hvilke operasjoner trenger vi?
 - fjerne en person
 ...
 
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel2.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel2.java" src java
 
 ** Innsettingsmetoder
 *** LIFO
 Innsetting først (LIFO):
 
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler//lenkeeksempel3.java" src java
+#+INCLUDE: "programeksempler/lenketeksempel3.java" src java
 *** FIFO
-Innsetting sist (FIFO)
-:
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler//lenkeeksempel4.java" src java
+Innsetting sist (FIFO):
+
+#+INCLUDE: "programeksempler/lenkeeksempel4.java" src java
 
 *** Innsetting etter et bestemt objekt
 
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel5.java" src java
+#+INCLUDE: "programeksempler/lenkeeksempel5.java" src java
 
 ** Skrive ut en lenket liste
 
-#+INCLUDE: "/github1010/eksamensnotater/inf1010/giteksempler/lenkeeksempel6.java" src java
+#+INCLUDE: "programeksempler/lenkeeksempel6.java" src java
 
 * UNDER FØLGER MINE RANDOM NOTATER. Må gås igjennom og struktureres, slettes etc.
 * Usorterte notater fra Eivind
@@ -366,6 +366,13 @@ Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
 return statement går man "baklengs" tilbake i call stacken og metoden
 fortsetter etter der den kalte seg selv.
 
+Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
+
+#+INCLUDE: "programeksempler/rekurseksempel.java" src java
+
+Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
+Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
+
 * Brukergrensesnitt
 
 import javax.swing.*; 
@@ -393,6 +400,13 @@ Bruk repaint()-metoden for å tegne vindu på nytt..
 * Tråder - Threads
 
 Kan implemenere Runnable eller extende Thread classs.
+Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
+Å bruke flere prosesser/tråder for å løse en oppgave kalles paralellprogrammering.
+
+Eksempel på en enkel tråd:
+
+#+INCLUDE: "programeksemplertradeksempel.java" src java
+
 * UML
 
 Diagrammer av programmene våres.
