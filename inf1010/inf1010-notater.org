@@ -460,19 +460,10 @@ kan derfor brukes på hva som helst.
 #+INCLUDE: "code/generics.java" src java
 
 *** Forklaring
-**** class Node
-Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
-**** class Person
-Her lager jeg klassen som skal holde rede på person objektene
-**** class tester
-Denne klassen setter inn to person objekter inn i den generiske typen E.
-Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
-men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
-dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "generics2.java" src java
-dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
-feks  "tmp.data.navn"
-**** Mangler eksempel på hvordan dette kan samkjøres med Comarable!
+Dette er en særdeles enkel utgave av en stack (FIFO-liste) som ikke
+forutsetter at objektet i lista er av en spesiell type, Nodeclassen
+er lagt inn som et nøstet objekt for å naturlig arve den generiske 
+egenskapen.
 * Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
 av ikke abstrakte subklasser. For å gi en mer virelighetslik
@@ -545,5 +536,49 @@ return (condition ? x : y);
         -Hvordan kode ser ut
         -Hvordan kode struktureres
 
+<<<<<<< HEAD:inf1010/1010-notater2.org
+
+containsKey(nøkkel) sjekker om objekt med nøkkelen finnes. Gir
+true/false.
+containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
+size() antall nøkler.
+
+* Emner gått igjennom på forelesning
+** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
+** Lister, trær, FIFO, LIFO, Lenket liste
+** Subklasser polyformi
+** Generiske typer
+** Abstrakte klasser og interface
+** Binære søketrær
+** Untak (Exceptions)
+** Grafisk bruekrgrensesnitt
+** REkursjon
+** Tråder
+** Hanois tårn
+** Sortering (Quicksort etc)
+** Sortering med tråder
+** Software life cycle and software testing
+* generiske typer(Uferdig)
+Generiske typer: 
+Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
+kan derfor brukes på hva som helst. 
+#+INCLUDE: "generics.java" src java
+
+*** Forklaring
+**** class Node
+Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
+**** class Person
+Her lager jeg klassen som skal holde rede på person objektene
+**** class tester
+Denne klassen setter inn to person objekter inn i den generiske typen E.
+Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
+men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
+dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
+#+INCLUDE: "generics2.java" src java
+dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
+feks  "tmp.data.navn"
+**** Trenger eksempel på comparable.
+=======
 Ca over 40 linjer i en metode, på tide å splitte.
 * Software life cycle and software testing
+>>>>>>> ab874124698c81943f438323bd42e644708e0b39:inf1010/inf1010-notater.org
