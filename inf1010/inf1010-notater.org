@@ -575,6 +575,8 @@ abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
 kode.. Kun subklassemetodene.
 Klasser kan kun arve fra en superklasse.
 
+* Interface
+Et interface har kun metodenavn med parametere, ikke kode. Den bestemmer hva metoden skal gjøre, men ikke hvordan. Andre klasser må definere hvordan metoden skal løses, men må følge rollen som interface har gitt.
 * Subklasser og polyformi
 * Untak (Exceptions)
 * Finalize, garbagecollector etc
