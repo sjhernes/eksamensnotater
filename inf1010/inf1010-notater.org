@@ -499,28 +499,9 @@ Dette er en særdeles enkel utgave av en stack (FIFO-liste) som ikke
 forutsetter at objektet i lista er av en spesiell type, Nodeclassen
 er lagt inn som et nøstet objekt for å naturlig arve den generiske 
 egenskapen.
-* generiske typer(Uferdig)
-Generiske typer: 
-Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
-kan derfor brukes på hva som helst. 
-#+INCLUDE: "generics.java" src java
-
-*** Forklaring
-**** class Node
-Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
-**** class Person
-Her lager jeg klassen som skal holde rede på person objektene
-**** class tester
-Denne klassen setter inn to person objekter inn i den generiske typen E.
-Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
-men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
-dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "generics2.java" src java
-dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
-feks  "tmp.data.navn"
-**** Trenger eksempel på comparable.
-=======
-Ca over 40 linjer i en metode, på tide å splitte.
+* comparable
+comparable er et interface i java api'en som brukes til å sammenligne objekter, og er ofte brukt i sorteringsalgoritmer.
+#+INCLUDE: "code/comparable.java" src java
 * Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
 av ikke abstrakte subklasser. For å gi en mer virelighetslik
