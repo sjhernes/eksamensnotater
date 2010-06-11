@@ -488,7 +488,7 @@ gang. Implementeres med implements ClassName.
 | /protected/   | Y       | Y         | Y          | N       |
 | /no modifier/ | Y       | Y         | N          | N       |
 | /private/     | Y       | N         | N          | N       |
-* generiske typer
+* Generiske typer
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
@@ -499,8 +499,8 @@ Dette er en særdeles enkel utgave av en stack (FIFO-liste) som ikke
 forutsetter at objektet i lista er av en spesiell type, Nodeclassen
 er lagt inn som et nøstet objekt for å naturlig arve den generiske 
 egenskapen.
-* comparable
-comparable er et interface i java api'en som brukes til å sammenligne objekter, og er ofte brukt i sorteringsalgoritmer.
+* Comparable
+Comparable er et interface i java api'en, som brukes til å sammenligne objekter, og er ofte brukt i sorteringsalgoritmer.
 #+INCLUDE: "code/comparable.java" src java
 * Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
