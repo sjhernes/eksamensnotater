@@ -11,19 +11,19 @@ public class QSort {
 	    //vi velger et tall som vi skal
             char pivot = a[til];
 	    boolean ikkeFerdig = true;
-	    int i = fra;
-	    int j = til - 1;
+	    int forst = fra;     // der vi midlertidig pivoterer rundt, 
+	    int sist = til - 1;  // snevrer oss mot et punkt
 	    while (ikkeFerdig) {
-		while (a[i] < pivot) { i++ ;}// vi finner stedet
-		while (a[j] > pivot) { j--;}// der vi vil bytte
-		if (i < j) { // hvis vi ikke har funnet midten
-		    bytt(a, i, j);
-		    i++; j--;
-		} else ikkeFerdig = false; // 
+		while (a[forst] < pivot) { forst++ ;}// vi finner stedet
+		while (a[sist] > pivot) { sist--;}// der vi vil bytte
+		if (forst < sist) { // hvis vi ikke har funnet midten
+		    bytt(a, forst, sist);
+		    forst++; sist--;
+		} else ikkeFerdig = false; 
 	    }
-            bytt(a, i, til);
-            quicksort(a, fra, i-1);
-            quicksort(a, i+1, til);
+            bytt(a, forst, til);
+            quicksort(a, fra, forst-1);
+            quicksort(a, forst+1, til);
 	}
     }
     static void bytt (char[] a, int fra, int til) {
