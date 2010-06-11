@@ -435,17 +435,52 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
 
 #+INCLUDE: "QSort.java" src java
 ** Sortering med tråder
-* Packages
+* Packages og interaces
+** Packages
+Pakker er grupper med relaterte klasser, som hjelper deg med å 
+organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
+via pakkenavnet. Med pakker har man også muligheten til å gjøre
+klasser kun tilgjengelige fra innsiden av pakken, noe som kan gi økt
+kontroll og sikkerhet. 
 
-Må være i AKKURAT samme pakke for at tilgang skal fungere..
+En annen stor fordel med pakker er at når du navngir en pakke,
+opretter du et nytt /namespace/. Dette får man veldig bruk for når man
+jobber på større prosjekter. To klasser i Java kan ikke ha samme navn,
+for da får vi navnkollisjon. Men med namespaces løses dette. Det gjør
+at vi kan ha to klasser med samme navn, men som ligger i forskjellige
+pakker, eller namespaces, slik: /package01.CommonName.java/ og
+/package02.CommonName.java/. 
 
-Lurt å bruke Maven-mappestruktur til prosjekter, da den er veletablert
-og godt strukturert.
+Alle klasser i Java hører til en pakke, men når ingen blir spesifisert
+blir default (global package) benyttet. Denne pakken har heller ikke
+noe navn.
 
-Eksempel på inkludering av pakke.
+*** Opprette en pakke
+For å oprette en pakke bruker vi følgende syntax:
+
 #+BEGIN_SRC Java
-package inf1010.assignment;
+package MyPackage01;
 #+END_SRC
+
+Selve filene i pakken må da legges i en mappe med nøyaktig samme navn,
+/\/MyPackage01\//. Man kan også ha et hierarki av pakker, f.eks. 
+
+#+BEGIN_SRC Java
+package MyPackage01.MyPackage02...
+#+END_SRC
+
+Og vi definerer mappestrukturen deretter. Det kan være lurt å følge
+Maven-mappestrukturen, da det er en godt organisert og veletablert
+standard. 
+
+For at Java skal finne pakkenne må de enten ligge i samme mappe som du
+allerede jobber i, eller så kan man manuelt sett *CLASSPATH* som Java
+leter etter.
+
+** Interfaces
+Bruker interface på en klasse hvis vi ønsker egenskaper som flere
+forskjellige klasser skal arve. Metoder må skrives på nytt for hver
+gang. Implementeres med implements ClassName.
 * Access modifiers
 ** Tilgangsnivåer
 | *Modifier*    | *Class* | *Package* | *Subclass* | *World* |
@@ -494,10 +529,6 @@ abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
 kode.. Kun subklassemetodene.
 Klasser kan kun arve fra en superklasse.
 
-* Interface
-Bruker interface på en klasse hvis vi ønsker egenskaper som flere
-forskjellige klasser skal arve. Metoder må skrives på nytt for hver
-gang. Implementeres med implements ClassName.
 * Subklasser og polyformi
 * Untak (Exceptions)
 * Finalize, garbagecollector etc
