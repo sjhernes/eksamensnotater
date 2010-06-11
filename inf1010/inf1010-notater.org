@@ -364,7 +364,7 @@ fortsetter etter der den kalte seg selv.
 
 Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
 
-#+INCLUDE: "programeksempler/rekurseksempel.java" src java
+#+INCLUDE: "code/rekurseksempel.java" src java
 
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
