@@ -160,6 +160,7 @@
    Strenger kan også deles opp i arrayer ved hjelp av en split-funksjon. eks:\\
    string[ ] t = s.split(" ");
 
+** Innlesing av tekst
 * Arrayer
 
   Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
@@ -424,7 +425,7 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
    sorteringsalgoritmer), men taper mye når det er større mengder data som skal sorteres
    baserer seg på at man starter først i mengden og sorterer mens man itererer over mengden
 
-#+INCLUDE: "instikksort.java" src java
+#+INCLUDE: "code/instikksort.java" src java
 
 ** Quicksort
 
@@ -433,9 +434,9 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
    den å sortere de to delene på samme måte rekursivt (dermed lettere å implementere
    tråder)
 
-#+INCLUDE: "QSort.java" src java
+#+INCLUDE: "code/QSort.java" src java
 ** Sortering med tråder
-* Packages og interaces
+* Packages, interfaces og tilgangsnivåer
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
 organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
@@ -477,17 +478,64 @@ For at Java skal finne pakkenne må de enten ligge i samme mappe som du
 allerede jobber i, eller så kan man manuelt sett *CLASSPATH* som Java
 leter etter.
 
+*** Importering av pakker
+Istedenfor å extende hver klasse i en pakke, for å kunne benytte
+klassene kan man bruke /import/, med eller uten wildcard, slik:
+
+#+BEGIN_SRC Java
+import Package.Class // Importerer spesifikk klasse.
+import Package.* // Importerer alle klasser i pakken.
+#+END_SRC
+
+Hele Java API'et er definert i pakker og importeres på samme måte. Det
+eneste er /java.lang/, som automatisk importeres, som blant annet
+inneholder /System/-klassen og /println()/.
 ** Interfaces
 Bruker interface på en klasse hvis vi ønsker egenskaper som flere
-forskjellige klasser skal arve. Metoder må skrives på nytt for hver
-gang. Implementeres med implements ClassName.
-* Access modifiers
+forskjellige klasser skal arve. Vi beskrivker kun ønsket oppførsel, og
+ikke hvordan det skal gjøres. Metoder må skrives på nytt for hver
+gang det implementeres. 
+
+Et inteface defineres slik:
+
+#+BEGIN_SRC Java
+access interface InterfaceName {
+    returntype methodName(parameter);
+    type varName = value;
+}
+#+END_SRC
+
+Og implementeres med, 
+
+#+BEGIN_SRC Java
+class ClassName implements InterfaceName{ }
+#+END_SRC
+
+Vi kan implementere så mange interfaces vi ønsker, og separerer dem
+med komma.
+
+*** Variabler i et interface
+
+Variabler i et interface vil implisitt være /public/, /static/ og
+/final/. Det gjør det veldig lett å dele variabler over flere klasser
+i et program, ved å implementere dette interfacet.
+
+*** Interfaces kan extende
+
+Vi kan også la et interface extende et annet interface, og hvis en
+klasse implementerer det ene interfacet, må den også implementere alle
+metoder som er arvet fra det andre interfacet.
+
 ** Tilgangsnivåer
 | *Modifier*    | *Class* | *Package* | *Subclass* | *World* |
 | /public/      | Y       | Y         | Y          | Y       |
 | /protected/   | Y       | Y         | Y          | N       |
 | /no modifier/ | Y       | Y         | N          | N       |
 | /private/     | Y       | N         | N          | N       |
+
+Så for å kunne bruke /protected/ utenfor en pakke må det være en
+subklasse av klassen, f.eks. /class Class01 extends Package01.Class02/.
+
 * generiske typer
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
@@ -503,7 +551,7 @@ egenskapen.
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
-#+INCLUDE: "generics.java" src java
+#+INCLUDE: "code/generics.java" src java
 
 *** Forklaring
 **** class Node
@@ -515,12 +563,10 @@ Denne klassen setter inn to person objekter inn i den generiske typen E.
 Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
 men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
 dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "generics2.java" src java
+#+INCLUDE: "code/generics2.java" src java
 dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
 feks  "tmp.data.navn"
 **** Trenger eksempel på comparable.
-=======
-Ca over 40 linjer i en metode, på tide å splitte.
 * Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
 av ikke abstrakte subklasser. For å gi en mer virelighetslik
@@ -593,19 +639,5 @@ return (condition ? x : y);
         -Hvordan kode ser ut
         -Hvordan kode struktureres
 
-* Emner gått igjennom på forelesning
-** Om datastrukturer: Klasser, objekter, variabler, hva skjer?
-** Lister, trær, FIFO, LIFO, Lenket liste
-** Subklasser polyformi
-** Generiske typer
-** Abstrakte klasser og interface
-** Binære søketrær
-** Untak (Exceptions)
-** Grafisk bruekrgrensesnitt
-** REkursjon
-** Tråder
-** Hanois tårn
-** Sortering (Quicksort etc)
-** Sortering med tråder
-** Software life cycle and software testing
+Ca over 40 linjer i en metode, på tide å splitte.
 * Software life cycle and software testing
