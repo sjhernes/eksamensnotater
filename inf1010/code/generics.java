@@ -2,7 +2,7 @@ class List<E>{
     Node root;
     
     class Node{
-	Node(E e) lagretObjekt = e; 
+	Node(E e){ lagretObjekt = e; } 
 	E lagretObjekt;
 	Node next;
     }    
@@ -15,7 +15,7 @@ class List<E>{
 	}
     }    
     E pop(){
-	E tmp = root.e;
+	E tmp = root.lagretObjekt;
 	root = root.next;
 	return tmp;
     }
