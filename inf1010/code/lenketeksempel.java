@@ -5,7 +5,7 @@
 class Person {
     String navn;
     Person nestePerson ;
-    // andre at tributter
+    // andre attributter
 }
 
 class Personer {

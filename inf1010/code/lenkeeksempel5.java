@@ -1,7 +1,7 @@
-/** Set ter personobjektet i inn et ter personobjektet e
-* Hverken i el ler e er NULL.
+/** Setter personobjektet i inn etter personobjektet e
+* Hverken i eller e er NULL.
 * @param e Personobjektet som skal ha i som neste
-* @param i Personobjektet som skal inn et ter i
+* @param i Personobjektet som skal inn etter i
 */
 
 void settInnPersonEtter ( Person e , Person i ) {
