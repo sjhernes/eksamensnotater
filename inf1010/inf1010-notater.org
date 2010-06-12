@@ -369,6 +369,53 @@ Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den return
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 ** Hanois tårn
 * TODO Trær
+* TODO Binære trær
+** Sett inn i binærtre
+Under følger et eksempel på en sett-inn-metode for binære
+trær. Metoden ligger i klassen /BinaryTreeNode/, og vi antar at vi har
+en metode som sammenligner verdiene til nodene, kalt /compareNodes/.
+
+#+BEGIN_SRC java
+void addNodeToBinaryTree(Node node) {
+    if(compareNodes(node) <= 0) {
+        if(right == null) {
+            right = node;
+        } else {
+            right.addNodeToBinaryTree(node);
+        }
+    } else {
+        if(right == null) {
+            left = node;
+        } else {
+            left.addNodeToBinaryTree(node);
+        } 
+    }
+}
+#+END_SRC
+
+** Traversering av treet
+*** Preorder
+
+*** Inorder
+Hvis vi ønsker å traverse binærtreet i synkende rekkefølge bruker vi
+/inorder traversal/.
+
+#+BEGIN_SRC java
+void printNodes() {
+   if(left != null) {
+       left.printNodes();
+   }
+   System.out.print(node.value);
+   if (right != null) {
+       right.printNodes();
+   }
+}
+#+END_SRC
+
+
+
+*** Postorder
+
 * TODO Binære søketrær
 * TODO Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
