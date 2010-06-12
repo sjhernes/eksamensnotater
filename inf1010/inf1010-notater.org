@@ -428,8 +428,6 @@ void printNodes() {
 }
 #+END_SRC
 
-
-
 *** Postorder
 
 * TODO Binære søketrær
@@ -706,7 +704,27 @@ som kan referere til alle typer klasser.
 
 Object definerer ett sett med metoder man kan benytte, blant annet
 /Object clone()/, som kloner objektet til et nytt, selvstendig objekt.
-* TODO Untak (Exceptions)
+* TODO Unntak (Exceptions)
+** Definer eget unntak
+Vi kan definere våres egene unntak, hvis vi ikke finner et passende
+unntak i Java sin /Exception/-klasse. Det gjøres slik:
+
+#+BEGIN_SRC java
+class EgendefinertException extends Exception {}
+#+END_SRC
+
+Vi kan så la en klasse eller en metode bruke dette, slik:
+
+#+BEGIN_SRC java
+void myMethod() throws EgendefinertException {
+    if(a != true) {
+        throw new EgendefinertException();
+    }
+}
+#+END_SRC
+
+Unntaket må så kastes vidre til main, eller fanges og behandles. 
+
 * TODO Finalize, garbagecollector etc
 finalize() er en metode du kan definere i klasser, som automatisk
 kjøres før objekter blir tatt av garbage collectoren og
