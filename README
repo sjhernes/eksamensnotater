@@ -3,4 +3,6 @@ Basert på Eivind Lindbråtens notater, og vil alltid være oppdatert med hans.
 INF1010
 	- Alle kodefiler skal i mappen code/.
 	- Gi beskrivende filnavn. lenkeeksempel[1-6].java er ikke veldig beskrivende.
-
+	- Husk å pulle før man begynner å skrive, så vi slipper så mange merge-konflikter.
+	- Når du føler du er helt ferdig med et emne, merk det som DONE ved kommandoen Ctrl-c-t (C-c-t).
+	  Det gjør det lettere å se hva som er igjen.
