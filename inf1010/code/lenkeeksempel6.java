@@ -1,10 +1,10 @@
 // I klassen Personer :
-void skrivAl le ( ) {
-Person p = personliste ;
-while (p != null ) {
-p. skriv ( ) ;
-p = p. nestePerson ;
-}
+void skrivAlle() {
+    Person p = personliste ;
+    while (p != null ) {
+	p.skrivUt() ;
+	p = p. nestePerson ;
+    }
 }
 // I klassen Person :
 void skriv ( ) {
