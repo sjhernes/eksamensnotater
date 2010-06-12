@@ -10,7 +10,7 @@
 #+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
 #+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
 #+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.
-* Tall
+* TODO Tall
 
   |--------+---------------------------------------|
   | *Type* | *Lovlige verdier*                     |
@@ -82,9 +82,7 @@
    et desimaltall, ellers vil vi få heltallsdivisjon. Enkelt og greit,
    utenom det gjelder de samme operatorene og de samme presidensreglene.
 
-* Sannhetsverdier - boolean
-
-
+* TODO Sannhetsverdier (boolean)
 
   - &&
     - Og 
@@ -117,7 +115,7 @@
      - \&\&
      - ||
 
-* Tekst - strenger og char
+* TODO Tekst - Strenger og char
 
   vi har strengen s = "kake"
   
@@ -161,7 +159,7 @@
    string[ ] t = s.split(" ");
 
 ** Innlesing av tekst
-* Arrayer
+* TODO Arrayer
 
   Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
   størelsen når man lager objektet.
@@ -170,7 +168,7 @@
   #+END_SRC
 man kan nå finne lengden på arrayet og bruke det som en int a.length;
 
-* Løkker og kontrollstrukturer
+* TODO Løkker og kontrollstrukturer
 
   | *Navn*   | *Beskrivelse*                       | *Eksempel*                                     |
   | for      | bestemt antall ganger               | for(int i=0;i<3;i++)\{\}                       |
@@ -226,7 +224,7 @@ switch (<utrrykk>) {
     default: <kjøres ved ingen treff ved <uttrykk> >;
 }
 #+END_SRC
-* Hasshmaps
+* TODO Hashmaps
 
   Hashmaps er en enkel måte å ordne mange objekter med et objekt som
   indeks.\\
@@ -277,7 +275,7 @@ true/false.
 containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
 size() antall nøkler.
 
-* UML
+* TODO UML
 
 Diagrammer av programmene vårt.
 Tegner selve strukturen til programmet.
@@ -319,7 +317,7 @@ F.eks. :klasenavn [atributt-fekt (kan være tomt)].
 Tegner flere ved å legge en UML-boks som "skygge" bak.. En
 representasjon for N antall.
 
-* Lenkede lister
+* TODO Lenkede lister
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
@@ -356,7 +354,7 @@ Innsetting sist (FIFO):
 ** Skrive ut en lenket liste
 
 #+INCLUDE: "code/lenkeeksempel6.java" src java
-* Rekursjon
+* TODO Rekursjon
 
 Kaller seg selv.
 Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
@@ -370,9 +368,9 @@ Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 ** Hanois tårn
-* Trær
-* Binære søketrær
-* Søk
+* TODO Trær
+* TODO Binære søketrær
+* TODO Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
   fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
@@ -411,7 +409,7 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
 ** Eksempel på søking i usortert mengde med tråder
 
 #+INCLUDE: "code/FinnMinst.java" src java                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-* Sortering
+* TODO Sortering
   Det er ofte en fordel å sortere store mengder data for å gjøre
   søking i i data effektivt om i det hele tatt mulig.
 
@@ -436,7 +434,7 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
 
 #+INCLUDE: "code/QSort.java" src java
 ** Sortering med tråder
-* Packages, interfaces og tilgangsnivåer
+* DONE Packages, interfaces og tilgangsnivåer
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
 organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
@@ -536,18 +534,7 @@ metoder som er arvet fra det andre interfacet.
 Så for å kunne bruke /protected/ utenfor en pakke må det være en
 subklasse av klassen, f.eks. /class Class01 extends Package01.Class02/.
 
-* generiske typer
-Generiske typer: 
-Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
-kan derfor brukes på hva som helst. 
-#+INCLUDE: "code/generics.java" src java
-
-*** Forklaring
-Dette er en særdeles enkel utgave av en stack (FIFO-liste) som ikke
-forutsetter at objektet i lista er av en spesiell type, Nodeclassen
-er lagt inn som et nøstet objekt for å naturlig arve den generiske 
-egenskapen.
-* generiske typer(Uferdig)
+* TODO Generiske typer
 Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
@@ -567,7 +554,7 @@ dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne 
 dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
 feks  "tmp.data.navn"
 **** Trenger eksempel på comparable.
-* Abstract
+* TODO Abstract
 abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
 av ikke abstrakte subklasser. For å gi en mer virelighetslik
 objektmodell.
@@ -575,16 +562,14 @@ abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
 kode.. Kun subklassemetodene.
 Klasser kan kun arve fra en superklasse.
 
-* Interface
-Et interface har kun metodenavn med parametere, ikke kode. Den bestemmer hva metoden skal gjøre, men ikke hvordan. Andre klasser må definere hvordan metoden skal løses, men må følge rollen som interface har gitt.
-* Subklasser og polyformi
-* Untak (Exceptions)
-* Finalize, garbagecollector etc
+* TODO Subklasser og polyformi
+* TODO Untak (Exceptions)
+* TODO Finalize, garbagecollector etc
 finalize() er en metode du kan definere i klasser, som automatisk
 kjøres før objekter blir tatt av garbage collectoren og
 slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 
-* Tråder - Threads
+* TODO Tråder (Threads)
 
 Kan implemenere Runnable eller extende Thread classs.
 Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
@@ -592,10 +577,11 @@ Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en
 
 Eksempel på en enkel tråd:
 
-#+INCLUDE: "programeksemplertradeksempel.java" src java
+#+INCLUDE: "code/programeksemplertradeksempel.java" src java
 
-* Brukergrensesnitt
+* TODO Brukergrensesnitt
 
+#+BEGIN_SRC Java
 import javax.swing.*; 
 import java.awt.*;
 
@@ -611,25 +597,30 @@ class RammeDemo2 extends JFrame {
         new RammeDemo2();
     }
 }
-
+#+END_SRC
 
 Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
 til en metode.
 
-Bruk repaint()-metoden for å tegne vindu på nytt..
-* Shorthands
+Bruk /repaint()/-metoden for å tegne vindu på nytt..
+* DONE Shorthands
+** If-shorthand
+
 #+BEGIN_SRC Java
 if (condition) {
     return x;
 }
 return y;
 #+END_SRC
+
 Burde isteden skrives slik:
+
 #+BEGIN_SRC Java
 return (condition ? x : y);
 #+END_SRC
-* Prinsipper for større programmer
-    -KISS
+* TODO Prinsipper for større programmer
+#+BEGIN_SRC
+-KISS
     -Moduler
         -Små
             -Definert av grensesnitt
@@ -637,9 +628,11 @@ return (condition ? x : y);
                 -F.eks. LinkedList
     -Dokumentasjon
     -Testing
+    -Versjonkontroll
     -Konvensjoner
         -Hvordan kode ser ut
         -Hvordan kode struktureres
+#+END_SRC
 
 Ca over 40 linjer i en metode, på tide å splitte.
-* Software life cycle and software testing
+* TODO Software life cycle and software testing
