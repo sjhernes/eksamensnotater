@@ -434,7 +434,7 @@ Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i s
 
 #+INCLUDE: "code/QSort.java" src java
 ** Sortering med tråder
-* DONE Packages, interfaces og tilgangsnivåer
+* DONE Packages, interfaces, tilgangsnivåer og abstract
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
 organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
@@ -533,11 +533,40 @@ metoder som er arvet fra det andre interfacet.
 
 Så for å kunne bruke /protected/ utenfor en pakke må det være en
 subklasse av klassen, f.eks. /class Class01 extends Package01.Class02/.
+** Abstract
 
+Vi kan ha abstrakte metoder. Hvis en subklasse arver fra en
+superklasse med en abstrakt metode, er den nødt til å implementere
+denne metoden. Gjøres slik:
+
+#+BEGIN_SRC Java
+abstract type methodName(parameter);
+#+END_SRC
+
+Klassen de abstrakte metodene ligger i må da også defineres som
+abstrakte, slik:
+
+#+BEGIN_SRC
+abstract class ClassName{ }
+#+END_SRC
+
+Det vil ikke være mulig å lage objekter av abstrakte klasser, men kun
+av subklasser som extender og implementerer alle de abstrakte
+metodene. 
+
+Abstrakte klasser gjør at vi i objektorientert programmering kan lage
+en mer virkelighetslik objektmodell.
+
+*** Bruk av final
+
+Hvis vi ønsker at en metode ikke skal kunne overskrives ved arv, kan
+vi bruke *final* foran metoden. Det samme gjelder om vi ønsker en
+klasse som ikke skal kunne arves, eller variabler vi ikke vil skal
+kunne endres. 
 * TODO Generiske typer
-Generiske typer: 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
+
 #+INCLUDE: "code/generics.java" src java
 
 *** Forklaring
@@ -554,15 +583,66 @@ dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne 
 dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
 feks  "tmp.data.navn"
 **** Trenger eksempel på comparable.
-* TODO Abstract
-abstract forran klasse gjør at du ikke kan lage objekt av klassen. Kun
-av ikke abstrakte subklasser. For å gi en mer virelighetslik
-objektmodell.
-abstracte metoder kan kun være i abstrakte klasser. Kan ikke inneholde
-kode.. Kun subklassemetodene.
-Klasser kan kun arve fra en superklasse.
+* DONE Subklasser og polyformi
+** Arv
+Vi kan arve fra en klasse i java, ved å bruke /extends/. Da vil
+klassen som arver bli kalt /subklassen/ og klassen det arves fra bli
+kalt /superklassen/.
 
-* TODO Subklasser og polyformi
+Vi definerer først superklassen, som en vanlig klasse
+
+#+BEGIN_SRC Java
+class ClassName {
+    int someVar = 10;
+}
+#+END_SRC
+
+Så kan vi la det som blir subklassen extende denne klassen, og arve
+fra superklassen, slik:
+
+#+BEGIN_SRC Java
+class SubClass {
+    System.out.print(someVar); // Vil printe ut 10, fra superklassen.
+}
+#+END_SRC
+
+I Java kan man kun spesifisere en superklasse, men man kan godt ha et
+hierarki av arv og subklasser.
+
+Det som arv oftest benyttes til er å beskrive ett generelt objekt og
+la subklasser utvide dette, så kan de igjen spesifisere de elementene
+som gjør dem spesielle. F.eks. kan man tenke at man lager en
+superklasse som definerer et /kjøretøy/, også har du subklasser som
+utvider dette, f.eks. til /varebil/ og /personbil/.
+
+** Tilgangskontroll og arv
+
+Selv om du arver metoder og variabler fra en klasse, får du ikke
+tilgang til elementer som er definert som *private*.
+
+** Arv og konstruktører
+
+Ved kjøring av en subklasse, vil både konstruktøren til subklassen og
+til superklassen kjøre. Vi kan kalle på konstruktøren til superklassen
+ved metoden *super(parameter)*.
+
+Vi kan også bruke /super/ til å få tilgang til medlemmer av
+superklassen, f.eks. /super.varName/ eller /super.methodName()/.
+
+Konstruktøren til superklassen vil altid eksekveres først, også går
+det nedover i hierarkiet. Kaller man på super() må dette gjøres øverst
+i konstruktøren.
+** Polymorfi
+Vi kan overskrive metoder i subklassene. Java bestemmer hvilken av
+metodene som kjøres, ved run-time, ved å se på hvilke objekter som
+refereres til, selv om selve pekeren er av typen Superklasse. 
+** Object-klassen
+Java definerer en Object-klasse, som er en superklasse til alle
+klasser. Det gjør at man kan ha en referansevariabel av typen Object
+som kan referere til alle typer klasser.
+
+Object definerer ett sett med metoder man kan benytte, blant annet
+/Object clone()/, som kloner objektet til et nytt, selvstendig objekt.
 * TODO Untak (Exceptions)
 * TODO Finalize, garbagecollector etc
 finalize() er en metode du kan definere i klasser, som automatisk
@@ -618,7 +698,7 @@ Burde isteden skrives slik:
 #+BEGIN_SRC Java
 return (condition ? x : y);
 #+END_SRC
-* TODO Prinsipper for større programmer
+* DONE Prinsipper for større programmer
 #+BEGIN_SRC
 -KISS
     -Moduler
