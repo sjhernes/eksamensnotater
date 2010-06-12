@@ -28,18 +28,19 @@
   | double | \pm{}1.797 693 134 862 315 70 E+308   |
   |--------+---------------------------------------|
 
-  negative tall er har alltid en større range 
+  negative tall er har alltid èn større range pga 0. 
 
 ** Integere
 
-   Integere er heltall, og lite annet.\\
-   \newline
-   Hvis vi vil konvertere en streng til en int sier vi:\\
-   int x = Integer.parseInt("123");\\
-   \newline
-   Hvis vi vil konvertere et annet tall til int skriver vi:\\
-   int x = (int) 3.14\\
-   \newline 
+   Integere er heltall, og lite annet.
+   Hvis vi vil konvertere en streng til en int sier vi:
+   #+BEGIN_SRC java
+     int x = Integer.parseInt("123");
+   #+END_SRC
+   Hvis vi vil konvertere(caste) et annet tall til int skriver vi:
+   #+BEGIN_SRC java
+   int x = (int) 3.14
+   #+END_SRC
 
    |----------------+---------------------+---------------------|
    | Operasjon      | Beskrivelse         | Eksempel            |
@@ -64,19 +65,23 @@
      - + og -
      - -(som negativt fortegn)
 
-   husk at:\\
-   int x, y=1;\\
-   x = y++ + y + ++y;\\
+   husk at:
+   #+BEGIN_SRC java
+   int x, y=1;
+   x = y++ + y + ++y;
+   #+END_SRC
    nå er x = 6, fordi stykket blir 1 + 2 + 3. først er y = 1, og 
    så øker den slik at neste gang y brukes er den 2. 
    når vi skriver ++y så vil y være 3 før vi legger det til.
 
 ** desimaltall
 
-   Jeg velger å bare leke med floats, men reglene er ca det samme som for int.\\
+   Jeg velger å bare leke med floats, men reglene er ca det samme som for int.
 
-   konvertering fra heltall til desimaltall:\\
-   float x = (3 + 0.0) / 2;\\
+   konvertering fra heltall til desimaltall:
+   #+BEGIN_SRC java
+   float x = (3 + 0.0) / 2;
+   #+END_SRC
 
    altså vi bare legger til 0.0 som det som skjer først, slik at ett av tallene er
    et desimaltall, ellers vil vi få heltallsdivisjon. Enkelt og greit,
@@ -130,14 +135,18 @@
   |                 | gir indeksen og ut             | s.substring(1)=="ake"  |
   |-----------------+--------------------------------+------------------------|
   | equals(...)     | tester likhet mellom strenger  | s.equals("kake")       |
+  |                 | (boolean)                      |                        |
   |-----------------+--------------------------------+------------------------|
   | indexOf(...)    | posisjonen til tegnet/tekst    | s.indexOf('a')==1      |
   |-----------------+--------------------------------+------------------------|
-  | startsWith(...) | starter teksten med ...        | s.startsWith("ka")     |
+  | startsWith(...) | starter teksten med ... (bool) | s.startsWith("ka")     |
   |-----------------+--------------------------------+------------------------|
-  | endsWith(...)   | ender teksten med ...          | s.endsWith("ke")       |
+  | endsWith(...)   | ender teksten med ... (bool)   | s.endsWith("ke")       |
   |-----------------+--------------------------------+------------------------|
-  | compaireTo(...) | sammenligning av tekster       | s.compaireTo("bake")<0 |
+  | compareTo(...)  | sammenligning av tekster       | s.compareTo("bake")<0  |
+  |-----------------+--------------------------------+------------------------|
+  | toCharArray()   | gjør om strengen til et array  | s.toCharArray()        |
+  |                 | av chars                       |                        |
   |-----------------+--------------------------------+------------------------|
 
 
@@ -146,27 +155,34 @@
    en char-verdi er rett og slett en bokstav, den kan sammenlignes ('a' < 'b') 
    og vil da sammenlignes ut
    i fra ascii-verdier (alle store bokstaver er mindre enn de små bokstavene).
-
+   og kan dermed i mange sammenhenger tenkes på som tall.
 ** String
 
    En string er en rekke med char-verdier, altså ord. Man kan legge ord
    sammen med pluss-opperatoren 
-   ("heisann" + " " + navn), man kan konvertere tall til strenger på denne måten\\
-   String s = "" + 42;\\
+   ("heisann" + " " + navn), man kan konvertere tall til strenger på denne måten
+   #+BEGIN_SRC java
+   String s = "" + 42;
+   #+END_SRC
    og verdien til s vil være "42".
 
-   Strenger kan også deles opp i arrayer ved hjelp av en split-funksjon. eks:\\
+   Strenger kan også deles opp i arrayer ved hjelp av en split-funksjon. eks:
+   #+BEGIN_SRC java
    string[ ] t = s.split(" ");
-
+   #+END_SRC
 ** Innlesing av tekst
+
+
 * TODO Arrayer
 
   Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
   størelsen når man lager objektet.
   #+BEGIN_SRC java
-  String[ ] a = new string[3];
+  String[] a = new string[3];
   #+END_SRC
-man kan nå finne lengden på arrayet og bruke det som en int a.length;
+  man kan nå finne lengden på arrayet og bruke det som en int a.length;
+
+  Man kan lage arrayer av alle mulige objekter.
 
 * TODO Løkker og kontrollstrukturer
 
