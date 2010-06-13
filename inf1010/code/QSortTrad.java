@@ -20,17 +20,15 @@ public class QSortTrad {
 	public void run() {
 	    if (!(til-fra < 1)){
 		char pivot = a[til];
-		boolean ikkeFerdig = true;
-		int forst = fra; 
-		int sist = til - 1;
+		int forst = fra, sist = til - 1;
 
-		while (ikkeFerdig) {
-		    while (a[forst] < pivot && forst<a.length-1) { forst++ ;}
-		    while (a[sist] > pivot && sist>0) { sist--;}
+		for(;;) {
+		    while (a[forst] < pivot && forst < a.length-1) { forst++; }
+		    while (a[sist] > pivot && sist > 0) { sist--; }
 		    if (forst < sist) { 
 			bytt(a, forst, sist);
 			forst++; sist--;
-		    } else ikkeFerdig = false; 
+		    } else break;
 		}
 	
 		bytt(a, forst, til);
@@ -38,9 +36,7 @@ public class QSortTrad {
 		new Qtrad(fra, forst-1).start();
 		fra = forst+1;
 		run();
-	    } else { 
-		ferdige++;
-	    }
+	    } else { ferdige++; }
 	}
 	void bytt (char[] a, int fra, int til) {
 	    char temp = a[til];
