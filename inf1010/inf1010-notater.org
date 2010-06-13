@@ -679,6 +679,9 @@ Her lager vi en klasse som vi sier at inneholder til den generiske typen E.
 **** class Node
 En intern klasse som ved å være intern overtar egenskapene til E
 
+*** implementering av Comparable
+#+INCLUDE: "code/comparable.java" src java
+#+INCLUDE: "code/generics3.java" src java
 * Subklasser og polyformi
 ** Arv
 Vi kan arve fra en klasse i java, ved å bruke /extends/. Da vil
