@@ -424,7 +424,6 @@ Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 ** Hanois tårn
-* TODO Trær
 * TODO Binære trær
 ** Sett inn i binærtre
 Under følger et eksempel på en sett-inn-metode for binære
@@ -470,7 +469,6 @@ void printNodes() {
 
 *** Postorder
 
-* TODO Binære søketrær
 * TODO Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
@@ -699,7 +697,7 @@ Så kan vi la det som blir subklassen extende denne klassen, og arve
 fra superklassen, slik:
 
 #+BEGIN_SRC java
-class SubClass {
+class SubClass extends Classname {
     System.out.print(someVar); // Vil printe ut 10, fra superklassen.
 }
 #+END_SRC
@@ -788,7 +786,7 @@ class RammeDemo2 extends JFrame {
         // En annen måte å sette tittel på rammen:
         super("Første vindu");                     
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(300,200);        
+        setSize(300,200);        
         setVisible(true);
     } 
     public static void main(String[] args) {
@@ -831,4 +829,4 @@ return (condition ? x : y);
     - Hvordan kode struktureres
 
 Ved over ca 40 linjer i en metode, på tide å splitte.
-* TODO Software life cycle and software testing
+
