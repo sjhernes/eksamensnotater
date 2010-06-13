@@ -4,7 +4,9 @@ public class QSort {
     public static void main(String[] args) {
 	char [] tegn = "åøæzywvutsrqponmlkjihgfedcba".toCharArray();
 	quicksort(tegn,0,tegn.length-1);
-	for(int i=0;i<tegn.length;i++){System.out.print(tegn[i]+" "); }
+	for(int i = 0;i < tegn.length; i++){
+	    System.out.print(tegn[i]+" "); 
+	}
     }
     static void quicksort(char[] a, int fra, int til) {
 	//man kan ikke sortere bare en ting
