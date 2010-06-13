@@ -10,7 +10,7 @@
 #+LATEX_HEADER: \usepackage{amsmath} %Større matematikkpakke.
 #+LATEX_HEADER: \usepackage[usenames,dvipsnames]{color} %Flere farger.
 #+LATEX_HEADER: \usepackage{parskip} %Norsk type linjeskift.
-* TODO Tall
+* Tall
 
   |--------+---------------------------------------|
   | *Type* | *Lovlige verdier*                     |
@@ -87,7 +87,7 @@
    et desimaltall, ellers vil vi få heltallsdivisjon. Enkelt og greit,
    utenom det gjelder de samme operatorene og de samme presidensreglene.
 
-* TODO Sannhetsverdier (boolean)
+* Sannhetsverdier (boolean)
 
   - &&
     - Og 
@@ -120,7 +120,7 @@
      - \&\&
      - ||
 
-* TODO Tekst - Strenger og char
+* Tekst - Strenger og char
 
   vi har strengen s = "kake"
   
@@ -198,7 +198,7 @@ while (f.hasNextLine()){
 }
 #+END_SRC
 
-* TODO Arrayer
+* Arrayer
 
   Arrayer er en indeksert(fra 0) gruppe av objekter. Man må definere
   størelsen når man lager objektet.
@@ -224,7 +224,7 @@ Arrays er en klasse i java.util som kan sortere for oss "raskt og gæli"
 bruker antagelig quicksort under panseret og funker med de fleste tall og 
 chars.
 
-* TODO Løkker og kontrollstrukturer
+* Løkker og kontrollstrukturer
 
   | *Navn*   | *Beskrivelse*                       | *Eksempel*                                     |
   | for      | bestemt antall ganger               | for(int i=0;i<3;i++)\{\}                       |
@@ -280,7 +280,7 @@ switch (<utrrykk>) {
     default: <kjøres ved ingen treff ved <uttrykk> >;
 }
 #+END_SRC
-* TODO Hashmaps
+* Hashmaps
 
   Hashmaps er en enkel måte å ordne mange objekter med et objekt som
   indeks.\\
@@ -331,7 +331,7 @@ true/false.
 containsValue(verdi) sjekker om hashmap inneholder gitte objekt/verdi.
 size() antall nøkler.
 
-* TODO UML
+* UML
 
 Diagrammer av programmene vårt.
 Tegner selve strukturen til programmet.
@@ -373,7 +373,7 @@ F.eks. :klasenavn [atributt-fekt (kan være tomt)].
 Tegner flere ved å legge en UML-boks som "skygge" bak.. En
 representasjon for N antall.
 
-* TODO Lenkede lister
+* Lenkede lister
 ** Hva er en lenket liste?
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
@@ -410,7 +410,7 @@ Innsetting sist (FIFO):
 ** Skrive ut en lenket liste
 
 #+INCLUDE: "code/lenkeeksempel6.java" src java
-* TODO Rekursjon
+* Rekursjon
 
 Kaller seg selv.
 Midlertidig data lagres i en såkalt Call Stack. Når metode kommer til
@@ -424,7 +424,7 @@ Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 ** Hanois tårn
-* TODO Binære trær
+* Binære trær
 ** Sett inn i binærtre
 Under følger et eksempel på en sett-inn-metode for binære
 trær. Metoden ligger i klassen /BinaryTreeNode/, og vi antar at vi har
@@ -469,7 +469,7 @@ void printNodes() {
 
 *** Postorder
 
-* TODO Søk
+* Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
   fra den virkelige verden er hvis man skal gjette et tall mellom 1 og 1024
@@ -508,7 +508,7 @@ void printNodes() {
 ** Eksempel på søking i usortert mengde med tråder
 
 #+INCLUDE: "code/FinnMinst.java" src java                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-* TODO Sortering
+* Sortering
   Det er ofte en fordel å sortere store mengder data for å gjøre
   søking i i data effektivt om i det hele tatt mulig.
 
@@ -536,7 +536,7 @@ void printNodes() {
 Raskt eksempel med Quicksort som bruker tråder.
 
 #+INCLUDE: "code/QSortTrad.java" src java
-* DONE Packages, interfaces, tilgangsnivåer og abstract
+* Packages, interfaces, tilgangsnivåer og abstract
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
 organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
@@ -665,7 +665,7 @@ Hvis vi ønsker at en metode ikke skal kunne overskrives ved arv, kan
 vi bruke *final* foran metoden. Det samme gjelder om vi ønsker en
 klasse som ikke skal kunne arves, eller variabler vi ikke vil skal
 kunne endres. 
-* TODO Generiske typer
+* Generiske typer
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
 
@@ -679,7 +679,7 @@ Her lager vi en klasse som vi sier at inneholder til den generiske typen E.
 **** class Node
 En intern klasse som ved å være intern overtar egenskapene til E
 
-* DONE Subklasser og polyformi
+* Subklasser og polyformi
 ** Arv
 Vi kan arve fra en klasse i java, ved å bruke /extends/. Da vil
 klassen som arver bli kalt /subklassen/ og klassen det arves fra bli
@@ -739,7 +739,7 @@ som kan referere til alle typer klasser.
 
 Object definerer ett sett med metoder man kan benytte, blant annet
 /Object clone()/, som kloner objektet til et nytt, selvstendig objekt.
-* TODO Unntak (Exceptions)
+* Unntak (Exceptions)
 ** Hva er unntak
 Et unntak skjer når noe går galt, for eksempel å bruke en metode i et objekt
 som er null(nullPointerException). Eller prøver å få tak i en verdi i et array
@@ -787,12 +787,12 @@ void myMethod() throws EgendefinertException {
 
 Unntaket må så kastes vidre til main, eller fanges og behandles. 
 
-* TODO Finalize, garbagecollector etc
+* Finalize, garbagecollector etc
 finalize() er en metode du kan definere i klasser, som automatisk
 kjøres før objekter blir tatt av garbage collectoren og
 slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 
-* TODO Tråder (Threads)
+* Tråder (Threads)
 ** Oprettelse av en tråd
 Kan implemenere /Runnable/ eller extende /Thread/ classs.
 Tråder er små prosesser inne i én prosess. Det er raskerkere å 
@@ -867,7 +867,7 @@ notifyAll() gjør det samme som notify(), men den vekker alle sovende tråder.
 Nøkkelordet /volatile/ brukes til å indikere at en variabel skal
 endres av flere enn en tråd.
 
-* TODO Brukergrensesnitt
+* Brukergrensesnitt
 
 #+BEGIN_SRC java
 import javax.swing.*; 
@@ -891,7 +891,7 @@ Anonym klasse, når klassen ikke har navn, og er skrevet som parameter
 til en metode.
 
 Bruk /repaint()/-metoden for å tegne vindu på nytt..
-* DONE Shorthands
+* Shorthands
 ** If-shorthand
 
 #+BEGIN_SRC java
@@ -906,7 +906,7 @@ Burde isteden skrives slik:
 #+BEGIN_SRC java
 return (condition ? x : y);
 #+END_SRC
-* DONE Prinsipper for større programmer
+* Prinsipper for større programmer
 -KISS
   - Moduler
     - Små
