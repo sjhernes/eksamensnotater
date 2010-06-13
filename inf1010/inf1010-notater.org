@@ -171,7 +171,32 @@
    string[ ] t = s.split(" ");
    #+END_SRC
 ** Innlesing av tekst
+for å lese fra terminal er det lettest å bruke en klasse som
+finnes i og java.util.*;
 
+Vi bruker også System.in
+
+#+BEGIN_SRC java
+import java.util.*;
+Scanner tast = new Scanner(System.in);
+
+String s = tast.nextLine();
+#+END_SRC
+
+Fra fil så trenger vi også noen klasser i java.io.*
+'programmet' under leser fra en fil og over i terminalen linje for linje.
+
+#+BEGIN_SRC java
+import java.util.*;
+import java.io.*;
+
+Scanner f = new Scanner(new File(filnavn));
+
+while (f.hasNextLine()){
+  String inn = f.nextLine();
+  System.out.println(inn);
+}
+#+END_SRC
 
 * TODO Arrayer
 
@@ -630,20 +655,14 @@ kan derfor brukes på hva som helst.
 
 #+INCLUDE: "code/generics.java" src java
 
+Over er et eksempel på en generisk LIFO-liste
+
 *** Forklaring
+**** class List
+Her lager vi en klasse som vi sier at inneholder til den generiske typen E.
 **** class Node
-Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
-**** class Person
-Her lager jeg klassen som skal holde rede på person objektene
-**** class tester
-Denne klassen setter inn to person objekter inn i den generiske typen E.
-Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
-men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
-dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "code/generics2.java" src java
-dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
-feks  "tmp.data.navn"
-**** Trenger eksempel på comparable.
+En intern klasse som ved å være intern overtar egenskapene til E
+
 * DONE Subklasser og polyformi
 ** Arv
 Vi kan arve fra en klasse i java, ved å bruke /extends/. Da vil
@@ -738,7 +757,7 @@ Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en
 
 Eksempel på en enkel tråd:
 
-#+INCLUDE: "code/programeksempler/tradeksempel.java" src java
+#+INCLUDE: "code/tradeksempel.java" src java
 
 * TODO Brukergrensesnitt
 
@@ -780,20 +799,18 @@ Burde isteden skrives slik:
 return (condition ? x : y);
 #+END_SRC
 * DONE Prinsipper for større programmer
-#+BEGIN_SRC
 -KISS
-    -Moduler
-        -Små
-            -Definert av grensesnitt
-            -Kun en funksjonalitet
-                -F.eks. LinkedList
-    -Dokumentasjon
-    -Testing
-    -Versjonkontroll
-    -Konvensjoner
-        -Hvordan kode ser ut
-        -Hvordan kode struktureres
-#+END_SRC
+  - Moduler
+    - Små
+      - Definert av grensesnitt
+      - Kun en funksjonalitet
+        - F.eks. LinkedList
+  - Dokumentasjon
+  - Testing
+  - Versjonkontroll
+  - Konvensjoner
+    - Hvordan kode ser ut
+    - Hvordan kode struktureres
 
-Ca over 40 linjer i en metode, på tide å splitte.
+Ved over ca 40 linjer i en metode, på tide å splitte.
 * TODO Software life cycle and software testing
