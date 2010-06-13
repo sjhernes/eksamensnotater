@@ -15,17 +15,17 @@
   |--------+---------------------------------------|
   | *Type* | *Lovlige verdier*                     |
   |--------+---------------------------------------|
-  | byte   | \pm{}127                              |
+  | byte   | -+127                                 |
   |--------+---------------------------------------|
-  | short  | \pm{}32 767                           |
+  | short  | -+32 767                              |
   |--------+---------------------------------------|
-  | int    | \pm{}2 147 483 647                    |
+  | int    | -+2 147 483 647                       |
   |--------+---------------------------------------|
-  | long   | \pm{}9 223 372 036 854 775 807L       |
+  | long   | -+9 223 372 036 854 775 807L          |
   |--------+---------------------------------------|
-  | float  | \pm{}3.402 823 47 E+38F               |
+  | float  | -+3.402 823 47 E+38F                  |
   |--------+---------------------------------------|
-  | double | \pm{}1.797 693 134 862 315 70 E+308   |
+  | double | -+1.797 693 134 862 315 70 E+308      |
   |--------+---------------------------------------|
 
   negative tall er har alltid èn større range pga 0. 
@@ -208,6 +208,21 @@ while (f.hasNextLine()){
   man kan nå finne lengden på arrayet og bruke det som en int a.length;
 
   Man kan lage arrayer av alle mulige objekter.
+
+** array-metoder
+*** rask sortering
+#+BEGIN_SRC java
+import java.util.*;
+char[] sorteres = "noesomskalsorteres".toCharArray();
+Arrays.sort(sorteres);
+for(int i = 0;i<sorteres.length;i++){
+    System.out.print(sorteres[i]+" ");
+}
+#+END_SRC
+
+Arrays er en klasse i java.util som kan sortere for oss "raskt og gæli"
+bruker antagelig quicksort under panseret og funker med de fleste tall og 
+chars.
 
 * TODO Løkker og kontrollstrukturer
 
