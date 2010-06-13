@@ -520,6 +520,9 @@ void printNodes() {
 
 #+INCLUDE: "code/QSort.java" src java
 ** Sortering med tråder
+Raskt eksempel med Quicksort som bruker tråder.
+
+#+INCLUDE: "code/QSortTrad.java" src java
 * DONE Packages, interfaces, tilgangsnivåer og abstract
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 

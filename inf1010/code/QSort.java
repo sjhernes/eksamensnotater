@@ -2,8 +2,9 @@ public class QSort {
     static int antallBytt = 0;
 
     public static void main(String[] args) {
-	char [] tegn = {'e','k','s','e','m','p','e','l'};
+	char [] tegn = "åøæzywvutsrqponmlkjihgfedcba".toCharArray();
 	quicksort(tegn,0,tegn.length-1);
+	for(int i=0;i<tegn.length;i++){System.out.print(tegn[i]+" "); }
     }
     static void quicksort(char[] a, int fra, int til) {
 	//man kan ikke sortere bare en ting
@@ -14,8 +15,8 @@ public class QSort {
 	    int forst = fra;     // der vi midlertidig pivoterer rundt, 
 	    int sist = til - 1;  // snevrer oss mot et punkt
 	    while (ikkeFerdig) {
-		while (a[forst] < pivot) { forst++ ;}// vi finner stedet
-		while (a[sist] > pivot) { sist--;}// der vi vil bytte
+		while (a[forst] < pivot && forst<a.length-1) { forst++ ;}// vi finner stedet
+		while (a[sist] > pivot && sist>0) { sist--;}// der vi vil bytte
 		if (forst < sist) { // hvis vi ikke har funnet midten
 		    bytt(a, forst, sist);
 		    forst++; sist--;
