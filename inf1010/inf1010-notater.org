@@ -740,6 +740,33 @@ som kan referere til alle typer klasser.
 Object definerer ett sett med metoder man kan benytte, blant annet
 /Object clone()/, som kloner objektet til et nytt, selvstendig objekt.
 * TODO Unntak (Exceptions)
+** Hva er unntak
+Et unntak skjer når noe går galt, for eksempel å bruke en metode i et objekt
+som er null(nullPointerException). Eller prøver å få tak i en verdi i et array
+som er utenfor arrayets størelse (IndexOutOfBoundsException).
+** Fange unntak
+Å fange unntak er lett
+
+#+BEGIN_SRC java
+try { 
+    noe();
+} catch (Exception e) {
+    gjørDetSomSkalSkjeHvisNoeGårGalt();
+}
+#+END_SRC
+
+Man kan også bruke exceptions som en sofistikert if. Hvis man vet at koden funker, men at det
+skal skje noe på et visst punkt eller etter en viss tid, kan man bruke exceptions til å
+behandle unntaket når det kommer, eller bare gå videre i koden.
+
+#+BEGIN_SRC java
+try { 
+    while(noe()) { kodeSkjer(); }
+} catch (Exception e) {
+    løkkaErFerdigFordiNoeKultSkjedde();
+}
+#+END_SRC
+
 ** Definer eget unntak
 Vi kan definere våres egene unntak, hvis vi ikke finner et passende
 unntak i Java sin /Exception/-klasse. Det gjøres slik:
