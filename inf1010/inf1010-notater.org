@@ -738,7 +738,7 @@ Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en
 
 Eksempel på en enkel tråd:
 
-#+INCLUDE: "code/programeksempler/tradeksempel.java" src java
+#+INCLUDE: "code/tradeksempel.java" src java
 
 * TODO Brukergrensesnitt
 
