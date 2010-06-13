@@ -15,17 +15,17 @@
   |--------+---------------------------------------|
   | *Type* | *Lovlige verdier*                     |
   |--------+---------------------------------------|
-  | byte   | \pm{}127                              |
+  | byte   | -+127                                 |
   |--------+---------------------------------------|
-  | short  | \pm{}32 767                           |
+  | short  | -+32 767                              |
   |--------+---------------------------------------|
-  | int    | \pm{}2 147 483 647                    |
+  | int    | -+2 147 483 647                       |
   |--------+---------------------------------------|
-  | long   | \pm{}9 223 372 036 854 775 807L       |
+  | long   | -+9 223 372 036 854 775 807L          |
   |--------+---------------------------------------|
-  | float  | \pm{}3.402 823 47 E+38F               |
+  | float  | -+3.402 823 47 E+38F                  |
   |--------+---------------------------------------|
-  | double | \pm{}1.797 693 134 862 315 70 E+308   |
+  | double | -+1.797 693 134 862 315 70 E+308      |
   |--------+---------------------------------------|
 
   negative tall er har alltid èn større range pga 0. 
@@ -171,7 +171,32 @@
    string[ ] t = s.split(" ");
    #+END_SRC
 ** Innlesing av tekst
+for å lese fra terminal er det lettest å bruke en klasse som
+finnes i og java.util.*;
 
+Vi bruker også System.in
+
+#+BEGIN_SRC java
+import java.util.*;
+Scanner tast = new Scanner(System.in);
+
+String s = tast.nextLine();
+#+END_SRC
+
+Fra fil så trenger vi også noen klasser i java.io.*
+'programmet' under leser fra en fil og over i terminalen linje for linje.
+
+#+BEGIN_SRC java
+import java.util.*;
+import java.io.*;
+
+Scanner f = new Scanner(new File(filnavn));
+
+while (f.hasNextLine()){
+  String inn = f.nextLine();
+  System.out.println(inn);
+}
+#+END_SRC
 
 * TODO Arrayer
 
@@ -183,6 +208,21 @@
   man kan nå finne lengden på arrayet og bruke det som en int a.length;
 
   Man kan lage arrayer av alle mulige objekter.
+
+** array-metoder
+*** rask sortering
+#+BEGIN_SRC java
+import java.util.*;
+char[] sorteres = "noesomskalsorteres".toCharArray();
+Arrays.sort(sorteres);
+for(int i = 0;i<sorteres.length;i++){
+    System.out.print(sorteres[i]+" ");
+}
+#+END_SRC
+
+Arrays er en klasse i java.util som kan sortere for oss "raskt og gæli"
+bruker antagelig quicksort under panseret og funker med de fleste tall og 
+chars.
 
 * TODO Løkker og kontrollstrukturer
 
@@ -384,7 +424,6 @@ Klassisk eksempel på en rekursjonsmetode er dette fakultetseksempelet.
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 ** Hanois tårn
-* TODO Trær
 * TODO Binære trær
 ** Sett inn i binærtre
 Under følger et eksempel på en sett-inn-metode for binære
@@ -430,7 +469,6 @@ void printNodes() {
 
 *** Postorder
 
-* TODO Binære søketrær
 * TODO Søk
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
@@ -495,6 +533,9 @@ void printNodes() {
 
 #+INCLUDE: "code/QSort.java" src java
 ** Sortering med tråder
+Raskt eksempel med Quicksort som bruker tråder.
+
+#+INCLUDE: "code/QSortTrad.java" src java
 * DONE Packages, interfaces, tilgangsnivåer og abstract
 ** Packages
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
@@ -630,20 +671,14 @@ kan derfor brukes på hva som helst.
 
 #+INCLUDE: "code/generics.java" src java
 
+Over er et eksempel på en generisk LIFO-liste
+
 *** Forklaring
+**** class List
+Her lager vi en klasse som vi sier at inneholder til den generiske typen E.
 **** class Node
-Her lager vi en node klasse som vi caster til den generiske typen E, også lager vi en singlylinkedlist struktur på nodene.
-**** class Person
-Her lager jeg klassen som skal holde rede på person objektene
-**** class tester
-Denne klassen setter inn to person objekter inn i den generiske typen E.
-Det er rimelig udramatisk å legge personobjekter inn i generiske typen på denne måten,
-men merk at hvis man skal hente noe ut av personobjektene, så må vi konvertere(eller caste)
-dataobjektet i noden tilbake til et personobjekt. Dette kan vi gjøre på denne måten:
-#+INCLUDE: "code/generics2.java" src java
-dette vil gi en riktig konvertering slik at vi kan hente ut variablene til Person objektet
-feks  "tmp.data.navn"
-**** Trenger eksempel på comparable.
+En intern klasse som ved å være intern overtar egenskapene til E
+
 * DONE Subklasser og polyformi
 ** Arv
 Vi kan arve fra en klasse i java, ved å bruke /extends/. Da vil
@@ -662,7 +697,7 @@ Så kan vi la det som blir subklassen extende denne klassen, og arve
 fra superklassen, slik:
 
 #+BEGIN_SRC java
-class SubClass {
+class SubClass extends Classname {
     System.out.print(someVar); // Vil printe ut 10, fra superklassen.
 }
 #+END_SRC
@@ -751,7 +786,7 @@ class RammeDemo2 extends JFrame {
         // En annen måte å sette tittel på rammen:
         super("Første vindu");                     
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setSize(300,200);        
+        setSize(300,200);        
         setVisible(true);
     } 
     public static void main(String[] args) {
@@ -780,20 +815,18 @@ Burde isteden skrives slik:
 return (condition ? x : y);
 #+END_SRC
 * DONE Prinsipper for større programmer
-#+BEGIN_SRC
 -KISS
-    -Moduler
-        -Små
-            -Definert av grensesnitt
-            -Kun en funksjonalitet
-                -F.eks. LinkedList
-    -Dokumentasjon
-    -Testing
-    -Versjonkontroll
-    -Konvensjoner
-        -Hvordan kode ser ut
-        -Hvordan kode struktureres
-#+END_SRC
+  - Moduler
+    - Små
+      - Definert av grensesnitt
+      - Kun en funksjonalitet
+        - F.eks. LinkedList
+  - Dokumentasjon
+  - Testing
+  - Versjonkontroll
+  - Konvensjoner
+    - Hvordan kode ser ut
+    - Hvordan kode struktureres
 
-Ca over 40 linjer i en metode, på tide å splitte.
-* TODO Software life cycle and software testing
+Ved over ca 40 linjer i en metode, på tide å splitte.
+
