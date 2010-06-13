@@ -766,14 +766,79 @@ kjøres før objekter blir tatt av garbage collectoren og
 slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 
 * TODO Tråder (Threads)
+** Oprettelse av en tråd
+Kan implemenere /Runnable/ eller extende /Thread/ classs.
+Tråder er små prosesser inne i én prosess. Det er raskerkere å 
+skifte fra en tråd til en annen enn fra en prosess til en annen.
+Å bruke flere prosesser/tråder for å løse en oppgave kalles
+paralellprogrammering.
 
-Kan implemenere Runnable eller extende Thread classs.
-Tråder er små prosesser inne i én prosess. Det er raskerkere å skifte fra en tråd til en annen enn fra en prosess til en annen.
-Å bruke flere prosesser/tråder for å løse en oppgave kalles paralellprogrammering.
+For å oprette en tråd gjør vi følgende:
 
-Eksempel på en enkel tråd:
+#+BEGIN_SRC java
+MyThreadClass myThreadClass = new MyThreadClass();
+Thread newThread = new Thread(myThreadClass);
+newThread.start(); // Kaller på run()-metoden.
+#+END_SRC
+
+** Nyttige metoder
+
+Hvis vi lurer på om en tråd er fullført eller ikke kan vi kalle på
+metoden /isAlive()/, som vil returnere en boolean.
+
+En annen måte å vente/få beskjed når en tråd er fullført er å bruke
+metoden /join()/. Det gjøres på følgende måte:
+
+#+BEGIN_SRC java
+myClass.myThread.join();
+#+END_SRC
+
+Vi kan også sette *prioriteten* til en tråd ved å kalle metoden
+/setPriority(int level);/. Prioritetsnivået er et tall mellom 1
+og 10. 
+
+** Synkronisering
+
+Vi kan enkelt synkronisere metoder, hvis vi ikke ønsker at flere
+tråder skal kunne jobbe på de samme variablene, eller metodene, ved å
+legge til nøkkelordet /synchronized/. Den putter på en lås på metoden,
+som sier at kun en tråd kan jobbe på metoden av gangen, og andre
+tråder må vente.
+
+Vi kan også synkronisere en blokk av kode, ved følgende statement:
+
+#+BEGIN_SRC java
+synchronized(object) { 
+    // Kode til å synkronisere.
+}
+#+END_SRC
+
+** Kommunikasjon mellom tråder
+
+Hvis vi har flere tråder som skal jobbe etterhverandre på et
+synkronisert objekt, men det ene objektet er avhengig av at den andre
+tråden har fullført en prosedyre, kan vi benytte oss av /wait()/ og
+/notify()/-metoden. 
+
+*** wait()
+
+Gjør at tråden sovner, og låser opp låsen på det synkroniserte
+objektet. Kan kaste /InterruptedException/.
+*** notify()
+
+notify() vekker den andre sovende tråden, hvis den blir kalt inne i
+det samme, synkroniserte objektet.
+
+*** notifyAll()
+
+notifyAll() gjør det samme som notify(), men den vekker alle sovende tråder.
+
+** Eksempel på en enkel tråd
 
 #+INCLUDE: "code/tradeksempel.java" src java
+
+Nøkkelordet /volatile/ brukes til å indikere at en variabel skal
+endres av flere enn en tråd.
 
 * TODO Brukergrensesnitt
 
