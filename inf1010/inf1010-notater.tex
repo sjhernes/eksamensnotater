@@ -1,22 +1,15 @@
-% Created 2010-06-13 Sun 22:33
-\documentclass[11pt]{article}
+% Created 2010-06-14 Mon 02:18
+\documentclass[a4paper,norsk,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{fixltx2e}
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{soul}
-\usepackage{t1enc}
-\usepackage{textcomp}
-\usepackage{marvosym}
-\usepackage{wasysym}
-\usepackage{latexsym}
 \usepackage{amssymb}
 \usepackage{hyperref}
-\tolerance=1000
-\documentclass[a4paper,norsk,10pt]{article}
+
 \usepackage{fullpage} %Utnytter større del av arket.
 \usepackage[sc,osf]{mathpazo} %Pen font.
 \usepackage[norsk]{babel} %Norsk språkpakke.
@@ -25,11 +18,10 @@
 \usepackage{amsmath} %Større matematikkpakke.
 \usepackage[usenames,dvipsnames]{color} %Flere farger.
 \usepackage{parskip} %Norsk type linjeskift.
-\providecommand{\alert}[1]{\textbf{#1}}
 
 \title{INF1010 - Eksamensnotater}
-\author{Eivind, Sjur, Annabelle \& Martin}
-\date{13 June 2010}
+\author{Eivind, Sjur, Annabelle & Martin}
+\date{14 June 2010}
 
 \begin{document}
 
@@ -67,7 +59,7 @@
 
   negative tall er har alltid èn større range pga 0. 
 \subsection{Integere}
-\label{sec-1_1}
+\label{sec-1.1}
 
 
    Integere er heltall, og lite annet.
@@ -116,7 +108,6 @@ int x = (int) 3.14
 
 \end{itemize}
 
-
    husk at:
 \begin{verbatim}
 int x, y=1;
@@ -126,7 +117,7 @@ x = y++ + y + ++y;
    så øker den slik at neste gang y brukes er den 2. 
    når vi skriver ++y så vil y være 3 før vi legger det til.
 \subsection{desimaltall}
-\label{sec-1_2}
+\label{sec-1.2}
 
 
    Jeg velger å bare leke med floats, men reglene er ca det samme som for int.
@@ -190,7 +181,7 @@ float x = (3 + 0.0) / 2;
 
 \end{itemize}
 \subsection{presidensregler}
-\label{sec-2_1}
+\label{sec-2.1}
 
 
 \begin{itemize}
@@ -241,7 +232,7 @@ float x = (3 + 0.0) / 2;
 \end{tabular}
 \end{center}
 \subsection{char}
-\label{sec-3_1}
+\label{sec-3.1}
 
 
    en char-verdi er rett og slett en bokstav, den kan sammenlignes (`a' < `b') 
@@ -249,7 +240,7 @@ float x = (3 + 0.0) / 2;
    i fra ascii-verdier (alle store bokstaver er mindre enn de små bokstavene).
    og kan dermed i mange sammenhenger tenkes på som tall.
 \subsection{String}
-\label{sec-3_2}
+\label{sec-3.2}
 
 
    En string er en rekke med char-verdier, altså ord. Man kan legge ord
@@ -265,7 +256,7 @@ String s = "" + 42;
 string[ ] t = s.split(" ");
 \end{verbatim}
 \subsection{Innlesing av tekst}
-\label{sec-3_3}
+\label{sec-3.3}
 
 for å lese fra terminal er det lettest å bruke en klasse som
 finnes i og java.util.*;
@@ -306,9 +297,9 @@ String[] a = new string[3];
 
   Man kan lage arrayer av alle mulige objekter.
 \subsection{array-metoder}
-\label{sec-4_1}
+\label{sec-4.1}
 \subsubsection{rask sortering}
-\label{sec-4_1_1}
+\label{sec-4.1.1}
 
 \begin{verbatim}
 import java.util.*;
@@ -330,16 +321,16 @@ chars.
 \begin{center}
 \begin{tabular}{lll}
  \textbf{Navn}  &  \textbf{Beskrivelse}                 &  \textbf{Eksempel}                             \\
- for            &  bestemt antall ganger                &  for(int i=0;i<3;i++)\{\}                      \\
-                &  alle objekter i array                &  for(String s : a)\{\}                         \\
+ for            &  bestemt antall ganger                &  for(int i=0;i<3;i++)\{ \}                     \\
+                &  alle objekter i array                &  for(String s : a)\{ \}                        \\
                 &  alle objekter i hash                 &  for(String s : hm.values())                   \\
- while          &  i mens test er sann                  &  while(b)\{\}                                  \\
- do-while       &  utfører løkka før testen             &  do \{\} while(b);                             \\
+ while          &  i mens test er sann                  &  while(b)\{ \}                                 \\
+ do-while       &  utfører løkka før testen             &  do \{ \} while(b);                            \\
  switch         &  Hopper mellom kodeblokker ved input  &  switch(c)\{case a: <>; break; default: <>;\}  \\
 \end{tabular}
 \end{center}
 \subsection{while}
-\label{sec-5_1}
+\label{sec-5.1}
 
    
    while-løkker er kanskje den enkleste formen for løkker, den gjør en blokk kode
@@ -350,7 +341,7 @@ chars.
    kan man kjøre koden ``while(kan());'' og dermed si at man skal kjøre helt til ``kan()''
    returnerer false.
 \subsection{for}
-\label{sec-5_2}
+\label{sec-5.2}
 
    
    for-løkker er en naturlig utvidelse av while da man ofte trenger tellere eller ting
@@ -369,14 +360,14 @@ for(int i=0;i<array.length;i++;){
    til noe, eller når man går igjennom noder i en graf, så kan man f.eks sette 
    src$_{\mathrm{java}}$\{for(Node n = root;n.next!=null;n=n.next)\}
 \subsection{while .. do}
-\label{sec-5_3}
+\label{sec-5.3}
 
    
    Mindre brukt løkketype, egentlig en while-løkke hvor koden kjøres minst en gang før
    predikatet blir testet.
   
 \subsection{switch}
-\label{sec-5_4}
+\label{sec-5.4}
 
 
 Ved bruk av if-setning kan man velge en av to muligheter ved at
@@ -461,7 +452,7 @@ Tegner selve strukturen til programmet.
 
 Tegner selve arkitekturen til programmet vårt. 
 \subsection{Navneklassen}
-\label{sec-7_1}
+\label{sec-7.1}
 
 
 +public
@@ -495,7 +486,7 @@ representasjon for N antall.
 \section{Lenkede lister}
 \label{sec-8}
 \subsection{Hva er en lenket liste?}
-\label{sec-8_1}
+\label{sec-8.1}
 
 En lenket liste er en liste med objekter refererer til neste, eller forrige objekt ved hjelp av pekere.
 
@@ -531,8 +522,6 @@ Hvilke operasjoner trenger vi?
 \item fjerne en person
 \end{itemize}
 
-\ldots{}
-
 \begin{verbatim}
 class Personer {
     Person personliste ;
@@ -544,9 +533,9 @@ class Personer {
 }
 \end{verbatim}
 \subsection{Innsettingsmetoder}
-\label{sec-8_2}
+\label{sec-8.2}
 \subsubsection{LIFO}
-\label{sec-8_2_1}
+\label{sec-8.2.1}
 
 Innsetting først (LIFO):
 
@@ -562,13 +551,27 @@ void settInnPersonForst ( Person inn ) {
 }
 \end{verbatim}
 \subsubsection{FIFO}
-\label{sec-8_2_2}
+\label{sec-8.2.2}
 
 Innsetting sist (FIFO):
 
-CANNOT INCLUDE FILE code/lenkeeksempel4.java
+\begin{verbatim}
+void settInnPersonSist ( Person inn ) {
+    // Hvis lista er tom, sett inn objektet først
+    if ( personliste == null ) personliste = inn ;
+    else {
+        // finne siste element i lista
+        Person p = personliste ;
+        while (p. nestePerson != null ){
+            p = p. nestePerson;
+        }
+        // her er p.nestePerson==null, altså er p siste
+        p. nestePerson = inn;
+    }
+}
+\end{verbatim}
 \subsubsection{Innsetting etter et bestemt objekt}
-\label{sec-8_2_3}
+\label{sec-8.2.3}
 
 
 \begin{verbatim}
@@ -584,7 +587,7 @@ void settInnPersonEtter ( Person e , Person i ) {
 }
 \end{verbatim}
 \subsection{Skrive ut en lenket liste}
-\label{sec-8_3}
+\label{sec-11.1}
 
 
 \begin{verbatim}
@@ -602,7 +605,7 @@ System. out . println ( . . . ) ;
 }
 \end{verbatim}
 \section{Rekursjon}
-\label{sec-9}
+\label{sec-12}
 
 
 Kaller seg selv.
@@ -633,11 +636,11 @@ class Recursion {
 Dersom fact() blir kalt med tallet 1, vil den returnere 1, ellers vil den returnere produktet av fact(n-1)*n. Denne metoden rekurserer inntil n = 1.
 Når en metode kaller seg selv, vil nye lokale variable og parametere lagres i stack, og koden utføres med disse nye variablene og parameterene fra starten aav. Den lagerr ikke kopi av metoden, kun argumenter/variabler.
 \subsection{Hanois tårn}
-\label{sec-9_1}
+\label{sec-12.1}
 \section{Binære trær}
-\label{sec-10}
+\label{sec-13}
 \subsection{Sett inn i binærtre}
-\label{sec-10_1}
+\label{sec-13.1}
 
 Under følger et eksempel på en sett-inn-metode for binære
 trær. Metoden ligger i klassen \emph{BinaryTreeNode}, og vi antar at vi har
@@ -661,11 +664,11 @@ void addNodeToBinaryTree(Node node) {
 }
 \end{verbatim}
 \subsection{Traversering av treet}
-\label{sec-10_2}
+\label{sec-13.2}
 \subsubsection{Preorder}
-\label{sec-10_2_1}
+\label{sec-13.2.1}
 \subsubsection{Inorder}
-\label{sec-10_2_2}
+\label{sec-13.2.2}
 
 Hvis vi ønsker å traverse binærtreet i synkende rekkefølge bruker vi
 \emph{inorder traversal}.
@@ -682,9 +685,9 @@ void printNodes() {
 }
 \end{verbatim}
 \subsubsection{Postorder}
-\label{sec-10_2_3}
+\label{sec-13.2.3}
 \section{Søk}
-\label{sec-11}
+\label{sec-14}
 
   hvis vi har sorterte data vil alltid binærsøk være den raskeste måten
   å søke på. Binærsøk så halverer vi antall muligheter for hver et eksempel
@@ -728,7 +731,7 @@ void printNodes() {
   være lurt å enten sortere det først, eller dele opp mengden i delmengder og søke hver
   del for seg selv.
 \subsection{Eksempel på søking i usortert mengde med tråder}
-\label{sec-11_1}
+\label{sec-14.1}
 
 
 \begin{verbatim}
@@ -792,7 +795,7 @@ class Soketraad extends Thread {
 }
 \end{verbatim}
 \section{Sortering}
-\label{sec-12}
+\label{sec-15}
 
   Det er ofte en fordel å sortere store mengder data for å gjøre
   søking i i data effektivt om i det hele tatt mulig.
@@ -804,7 +807,7 @@ class Soketraad extends Thread {
 \item quicksort
 \end{itemize}
 \subsection{Innstikksortering}
-\label{sec-12_1}
+\label{sec-15.1}
 
    veldig simpel sorteringsalgoritme som er effektiv på små mengder (i forhold til andre
    sorteringsalgoritmer), men taper mye når det er større mengder data som skal sorteres
@@ -833,7 +836,7 @@ class InSort{
 }
 \end{verbatim}
 \subsection{Quicksort}
-\label{sec-12_2}
+\label{sec-15.2}
 
 
    Mer populær for mellomstore til store datamengder, den tar et objekt fra mengden og
@@ -848,7 +851,9 @@ public class QSort {
     public static void main(String[] args) {
         char [] tegn = "åøæzywvutsrqponmlkjihgfedcba".toCharArray();
         quicksort(tegn,0,tegn.length-1);
-        for(int i=0;i<tegn.length;i++){System.out.print(tegn[i]+" "); }
+        for(int i = 0;i < tegn.length; i++){
+            System.out.print(tegn[i]+" "); 
+        }
     }
     static void quicksort(char[] a, int fra, int til) {
         //man kan ikke sortere bare en ting
@@ -879,7 +884,7 @@ public class QSort {
 }
 \end{verbatim}
 \subsection{Sortering med tråder}
-\label{sec-12_3}
+\label{sec-15.3}
 
 Raskt eksempel med Quicksort som bruker tråder.
 
@@ -906,17 +911,15 @@ public class QSortTrad {
         public void run() {
             if (!(til-fra < 1)){
                 char pivot = a[til];
-                boolean ikkeFerdig = true;
-                int forst = fra; 
-                int sist = til - 1;
+                int forst = fra, sist = til - 1;
 
-                while (ikkeFerdig) {
-                    while (a[forst] < pivot && forst<a.length-1) { forst++ ;}
-                    while (a[sist] > pivot && sist>0) { sist--;}
+                for(;;) {
+                    while (a[forst] < pivot && forst < a.length-1) { forst++; }
+                    while (a[sist] > pivot && sist > 0) { sist--; }
                     if (forst < sist) { 
                         bytt(a, forst, sist);
                         forst++; sist--;
-                    } else ikkeFerdig = false; 
+                    } else break;
                 }
         
                 bytt(a, forst, til);
@@ -924,9 +927,7 @@ public class QSortTrad {
                 new Qtrad(fra, forst-1).start();
                 fra = forst+1;
                 run();
-            } else { 
-                ferdige++;
-            }
+            } else { ferdige++; }
         }
         void bytt (char[] a, int fra, int til) {
             char temp = a[til];
@@ -937,9 +938,9 @@ public class QSortTrad {
 }
 \end{verbatim}
 \section{Packages, interfaces, tilgangsnivåer og abstract}
-\label{sec-13}
+\label{sec-16}
 \subsection{Packages}
-\label{sec-13_1}
+\label{sec-16.1}
 
 Pakker er grupper med relaterte klasser, som hjelper deg med å 
 organisere koden din. Klasser definert i en pakke, er kun tilgjengelig
@@ -959,7 +960,7 @@ Alle klasser i Java hører til en pakke, men når ingen blir spesifisert
 blir default (global package) benyttet. Denne pakken har heller ikke
 noe navn.
 \subsubsection{Opprette en pakke}
-\label{sec-13_1_1}
+\label{sec-16.1.1}
 
 For å oprette en pakke bruker vi følgende syntax:
 
@@ -982,7 +983,7 @@ For at Java skal finne pakkenne må de enten ligge i samme mappe som du
 allerede jobber i, eller så kan man manuelt sett \textbf{CLASSPATH} som Java
 leter etter.
 \subsubsection{Importering av pakker}
-\label{sec-13_1_2}
+\label{sec-16.1.2}
 
 Istedenfor å extende hver klasse i en pakke, for å kunne benytte
 klassene kan man bruke \emph{import}, med eller uten wildcard, slik:
@@ -996,7 +997,7 @@ Hele Java API'et er definert i pakker og importeres på samme måte. Det
 eneste er \emph{java.lang}, som automatisk importeres, som blant annet
 inneholder \emph{System}-klassen og \emph{println()}.
 \subsection{Interfaces}
-\label{sec-13_2}
+\label{sec-16.2}
 
 Bruker interface på en klasse hvis vi ønsker egenskaper som flere
 forskjellige klasser skal arve. Vi beskrivker kun ønsket oppførsel, og
@@ -1021,21 +1022,21 @@ class ClassName implements InterfaceName{ }
 Vi kan implementere så mange interfaces vi ønsker, og separerer dem
 med komma.
 \subsubsection{Variabler i et interface}
-\label{sec-13_2_1}
+\label{sec-16.2.1}
 
 
 Variabler i et interface vil implisitt være \emph{public}, \emph{static} og
 \emph{final}. Det gjør det veldig lett å dele variabler over flere klasser
 i et program, ved å implementere dette interfacet.
 \subsubsection{Interfaces kan extende}
-\label{sec-13_2_2}
+\label{sec-16.2.2}
 
 
 Vi kan også la et interface extende et annet interface, og hvis en
 klasse implementerer det ene interfacet, må den også implementere alle
 metoder som er arvet fra det andre interfacet.
 \subsection{Tilgangsnivåer}
-\label{sec-13_3}
+\label{sec-16.3}
 
 
 \begin{center}
@@ -1053,7 +1054,7 @@ metoder som er arvet fra det andre interfacet.
 Så for å kunne bruke \emph{protected} utenfor en pakke må det være en
 subklasse av klassen, f.eks. \emph{class Class01 extends Package01.Class02}.
 \subsection{Abstract}
-\label{sec-13_4}
+\label{sec-16.4}
 
 
 Vi kan ha abstrakte metoder. Hvis en subklasse arver fra en
@@ -1078,7 +1079,7 @@ metodene.
 Abstrakte klasser gjør at vi i objektorientert programmering kan lage
 en mer virkelighetslik objektmodell.
 \subsubsection{Bruk av final}
-\label{sec-13_4_1}
+\label{sec-16.4.1}
 
 
 Hvis vi ønsker at en metode ikke skal kunne overskrives ved arv, kan
@@ -1086,20 +1087,45 @@ vi bruke \textbf{final} foran metoden. Det samme gjelder om vi ønsker en
 klasse som ikke skal kunne arves, eller variabler vi ikke vil skal
 kunne endres. 
 \subsubsection{Forklaring}
-\label{sec-14_1}
+\label{sec-17.1}
 \begin{itemize}
 
 \item class List\\
-\label{sec-14_1_1}%
+\label{sec-17.1.1}%
 Her lager vi en klasse som vi sier at inneholder til den generiske typen E.
 
 \item class Node\\
-\label{sec-14_1_2}%
+\label{sec-17.1.2}%
 En intern klasse som ved å være intern overtar egenskapene til E
 
 \end{itemize} % ends low level
+\subsubsection{implementering av Comparable}
+\label{sec-17.2}
+
+\begin{verbatim}
+class Name implements Comparable <Name> {
+    String name;
+    Person (String name) { this.name = name; }
+
+    public int compareTo(Name n) {
+        return n.name.compareTo(name);
+    }
+}
+
+/** Som du ser her implementerer vi Comparable, og vi kan da definere compareTo 
+  * til å sammenligne verdier i objektet. Her vil vi da sammenligne 'name' variabelen, 
+  * Så vi bruker da "compareTo(String);", og vi har da definert "compareTo(Name);" 
+  * som kan brukes på samme måte med objekter av Name. */
+\end{verbatim}
+\begin{verbatim}
+class List<E extends Comparable<E>>{
+
+/** Hvis vi nå extender nodeklassen vår med Comparable<E> som vist over, kan vi bruke 
+  * compareTo(); som vi definerte i 
+  * Person klassen, til å sammenlikne E objekter av typen Person. */
+\end{verbatim}
 \section{Generiske typer}
-\label{sec-14}
+\label{sec-17}
 
 Objektholdere som kan holde hva som helst, egner seg godt til å lage datastrukturer, siden strukturen blir ikke avhengig av noen spesiell type objekt å
 kan derfor brukes på hva som helst. 
@@ -1131,9 +1157,9 @@ class List<E>{
 
 Over er et eksempel på en generisk LIFO-liste
 \section{Subklasser og polyformi}
-\label{sec-15}
+\label{sec-18}
 \subsection{Arv}
-\label{sec-15_1}
+\label{sec-18.1}
 
 Vi kan arve fra en klasse i java, ved å bruke \emph{extends}. Da vil
 klassen som arver bli kalt \emph{subklassen} og klassen det arves fra bli
@@ -1165,13 +1191,13 @@ som gjør dem spesielle. F.eks. kan man tenke at man lager en
 superklasse som definerer et \emph{kjøretøy}, også har du subklasser som
 utvider dette, f.eks. til \emph{varebil} og \emph{personbil}.
 \subsection{Tilgangskontroll og arv}
-\label{sec-15_2}
+\label{sec-18.2}
 
 
 Selv om du arver metoder og variabler fra en klasse, får du ikke
 tilgang til elementer som er definert som \textbf{private}.
 \subsection{Arv og konstruktører}
-\label{sec-15_3}
+\label{sec-18.3}
 
 
 Ved kjøring av en subklasse, vil både konstruktøren til subklassen og
@@ -1185,13 +1211,13 @@ Konstruktøren til superklassen vil altid eksekveres først, også går
 det nedover i hierarkiet. Kaller man på super() må dette gjøres øverst
 i konstruktøren.
 \subsection{Polymorfi}
-\label{sec-15_4}
+\label{sec-18.4}
 
 Vi kan overskrive metoder i subklassene. Java bestemmer hvilken av
 metodene som kjøres, ved run-time, ved å se på hvilke objekter som
 refereres til, selv om selve pekeren er av typen Superklasse. 
 \subsection{Object-klassen}
-\label{sec-15_5}
+\label{sec-18.5}
 
 Java definerer en Object-klasse, som er en superklasse til alle
 klasser. Det gjør at man kan ha en referansevariabel av typen Object
@@ -1200,15 +1226,15 @@ som kan referere til alle typer klasser.
 Object definerer ett sett med metoder man kan benytte, blant annet
 \emph{Object clone()}, som kloner objektet til et nytt, selvstendig objekt.
 \section{Unntak (Exceptions)}
-\label{sec-16}
+\label{sec-19}
 \subsection{Hva er unntak}
-\label{sec-16_1}
+\label{sec-19.1}
 
 Et unntak skjer når noe går galt, for eksempel å bruke en metode i et objekt
 som er null(nullPointerException). Eller prøver å få tak i en verdi i et array
 som er utenfor arrayets størelse (IndexOutOfBoundsException).
 \subsection{Fange unntak}
-\label{sec-16_2}
+\label{sec-19.2}
 
 Å fange unntak er lett
 
@@ -1232,7 +1258,7 @@ try {
 }
 \end{verbatim}
 \subsection{Definer eget unntak}
-\label{sec-16_3}
+\label{sec-19.3}
 
 Vi kan definere våres egene unntak, hvis vi ikke finner et passende
 unntak i Java sin \emph{Exception}-klasse. Det gjøres slik:
@@ -1253,15 +1279,15 @@ void myMethod() throws EgendefinertException {
 
 Unntaket må så kastes vidre til main, eller fanges og behandles. 
 \section{Finalize, garbagecollector etc}
-\label{sec-17}
+\label{sec-20}
 
 finalize() er en metode du kan definere i klasser, som automatisk
 kjøres før objekter blir tatt av garbage collectoren og
 slettes. F.eks. hvis du skal dobbeltsjekke at en fil har blitt lukket.
 \section{Tråder (Threads)}
-\label{sec-18}
+\label{sec-21}
 \subsection{Oprettelse av en tråd}
-\label{sec-18_1}
+\label{sec-21.1}
 
 Kan implemenere \emph{Runnable} eller extende \emph{Thread} classs.
 Tråder er små prosesser inne i én prosess. Det er raskerkere å 
@@ -1277,7 +1303,7 @@ Thread newThread = new Thread(myThreadClass);
 newThread.start(); // Kaller på run()-metoden.
 \end{verbatim}
 \subsection{Nyttige metoder}
-\label{sec-18_2}
+\label{sec-21.2}
 
 
 Hvis vi lurer på om en tråd er fullført eller ikke kan vi kalle på
@@ -1294,7 +1320,7 @@ Vi kan også sette \textbf{prioriteten} til en tråd ved å kalle metoden
 \emph{setPriority(int level);}. Prioritetsnivået er et tall mellom 1
 og 10. 
 \subsection{Synkronisering}
-\label{sec-18_3}
+\label{sec-21.3}
 
 
 Vi kan enkelt synkronisere metoder, hvis vi ikke ønsker at flere
@@ -1311,7 +1337,7 @@ synchronized(object) {
 }
 \end{verbatim}
 \subsection{Kommunikasjon mellom tråder}
-\label{sec-18_4}
+\label{sec-21.4}
 
 
 Hvis vi har flere tråder som skal jobbe etterhverandre på et
@@ -1319,24 +1345,24 @@ synkronisert objekt, men det ene objektet er avhengig av at den andre
 tråden har fullført en prosedyre, kan vi benytte oss av \emph{wait()} og
 \emph{notify()}-metoden. 
 \subsubsection{wait()}
-\label{sec-18_4_1}
+\label{sec-21.4.1}
 
 
 Gjør at tråden sovner, og låser opp låsen på det synkroniserte
 objektet. Kan kaste \emph{InterruptedException}.
 \subsubsection{notify()}
-\label{sec-18_4_2}
+\label{sec-21.4.2}
 
 
 notify() vekker den andre sovende tråden, hvis den blir kalt inne i
 det samme, synkroniserte objektet.
 \subsubsection{notifyAll()}
-\label{sec-18_4_3}
+\label{sec-21.4.3}
 
 
 notifyAll() gjør det samme som notify(), men den vekker alle sovende tråder.
 \subsection{Eksempel på en enkel tråd}
-\label{sec-18_5}
+\label{sec-21.5}
 
 
 \begin{verbatim}
@@ -1386,7 +1412,7 @@ class Stoppeklokke extends Thread {
 Nøkkelordet \emph{volatile} brukes til å indikere at en variabel skal
 endres av flere enn en tråd.
 \section{Brukergrensesnitt}
-\label{sec-19}
+\label{sec-22}
 
 
 \begin{verbatim}
@@ -1412,9 +1438,9 @@ til en metode.
 
 Bruk \emph{repaint()}-metoden for å tegne vindu på nytt..
 \section{Shorthands}
-\label{sec-20}
+\label{sec-23}
 \subsection{If-shorthand}
-\label{sec-20_1}
+\label{sec-23.1}
 
 
 \begin{verbatim}
@@ -1430,7 +1456,7 @@ Burde isteden skrives slik:
 return (condition ? x : y);
 \end{verbatim}
 \section{Prinsipper for større programmer}
-\label{sec-21}
+\label{sec-24}
 
 -KISS
 \begin{itemize}
@@ -1462,7 +1488,6 @@ return (condition ? x : y);
 \end{itemize}
 
 \end{itemize}
-
 
 Ved over ca 40 linjer i en metode, på tide å splitte.
 

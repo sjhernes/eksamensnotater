@@ -89,9 +89,9 @@
 
 * Sannhetsverdier (boolean)
 
-  - &&
+  - &\&
     - Og 
-    - true && true
+    - true &\& true
    - || 
      - Eller
      - true || false
@@ -117,7 +117,7 @@
      - !
      - <, <=, >=, >
      - ==, !=
-     - \&\&
+     - &\&
      - ||
 
 * Tekst - Strenger og char
@@ -227,11 +227,11 @@ chars.
 * Løkker og kontrollstrukturer
 
   | *Navn*   | *Beskrivelse*                       | *Eksempel*                                     |
-  | for      | bestemt antall ganger               | for(int i=0;i<3;i++)\{\}                       |
-  |          | alle objekter i array               | for(String s : a)\{\}                          |
+  | for      | bestemt antall ganger               | for(int i=0;i<3;i++)\{ \}                      |
+  |          | alle objekter i array               | for(String s : a)\{ \}                         |
   |          | alle objekter i hash                | for(String s : hm.values())                    |
-  | while    | i mens test er sann                 | while(b)\{\}                                   |
-  | do-while | utfører løkka før testen            | do \{\} while(b);                              |
+  | while    | i mens test er sann                 | while(b)\{ \}                                  |
+  | do-while | utfører løkka før testen            | do \{ \} while(b);                             |
   | switch   | Hopper mellom kodeblokker ved input | switch(c){case a: <>; break; default: <>;}     |
 
 ** while
@@ -389,7 +389,6 @@ Hvilke operasjoner trenger vi?
 - Sette inn ny person
 - Finne en person
 - fjerne en person
-...
 
 #+INCLUDE: "code/lenketeksempel2.java" src java
 
